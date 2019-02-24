@@ -1,0 +1,61 @@
+.w-30 {
+  width: 30%;
+  flex: 0 0 30%;
+}
+
+.w-33 {
+  width: 33.3%;
+  flex: 0 0 33.3%;
+}
+.w-sm-33 {
+	@include screen("sm"){
+		width: 33.3%;
+		flex: 0 0 33.3%;
+	}
+}
+
+.w-66 {
+  width: 66.7%;
+  flex: 0 0 66.7%;
+}
+
+.w-sm-66 {
+	@include screen("sm"){
+		width: 66.7%;
+		flex: 0 0 66.7%;
+	}
+}
+
+.w-70 {
+  width: 70%;
+  flex: 0 0 70%;
+}
+
+.w-100 {
+  width: 100%;
+  flex: 0 0 100%;
+}
+
+.w-md-100 {
+	@include screen("md"){
+		width: 100%;
+		flex: 0 0 100%;
+	}
+}
+
+.line-height-md {
+	line-height: $line-height-md;
+}
+
+.max-w-lg {
+  max-width: 50rem;
+}
+
+.max-w-sm {
+  max-width: 15rem;
+}
+
+.w-control {
+  max-width: 360px;
+  min-width: 300px;
+}

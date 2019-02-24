@@ -1,0 +1,80 @@
+.icon-sprite {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  fill: white;
+  background-repeat: no-repeat;
+  background-image: url(sprite.svg);
+}
+
+.inactive {
+	display: none;
+}
+
+.logo-wrapper {
+	padding: 2em 0;
+}
+
+.logo {
+	width: $logo-width / 2;
+	height: $logo-height / 2;
+	@include screen("md") {
+		width: $logo-width;
+		height: $logo-height;
+	}
+	
+	&--sm {
+		width: $logo-width / 3 ;
+		height: $logo-height / 3;
+	}	
+}
+
+.hover-img-darken:hover {
+	opacity:0.5;
+}
+
+.ratio-16-9 {
+	position: relative;
+	overflow: hidden; 
+	display: block;
+	padding-top: 56.25%;				
+	background-color: black;
+	
+	& img {	
+		position: absolute;
+		border: 0;		
+		top: 0;
+		left:0;
+		right: 0;
+		bottom: 0;
+		display: block;
+		margin: auto;
+	}
+}
+
+.ratio-4-3 {
+	position: relative;
+	overflow: hidden; 
+	display: block;
+	padding-top: 75.8%;			
+	background-color: black;	
+	
+	& img {	
+		position: absolute;
+		border: 0;		
+		top: 0;
+		left:0;
+		right: 0;
+		bottom: 0;
+		display: block;
+		margin: auto;
+	}
+}
+
+.img-overlay:hover:before {
+	background-color: rgba(0,0,0,0.3);
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}

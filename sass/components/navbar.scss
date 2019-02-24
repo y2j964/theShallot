@@ -1,0 +1,72 @@
+// Components
+
+.navbar-primary {	
+	display: flex;
+	overflow: scroll;
+	justify-content: flex-start;
+	
+	@include screen("sm") {
+		overflow: hidden;
+	}
+	
+	@include screen("md") {
+		justify-content: center;
+	}
+	
+	&__link {
+		display: block;
+		text-transform: uppercase;
+		line-height: 42px;    
+		padding: 0px 8px;
+		font-size: $font-sm;
+		color: $grey;
+		@include screen("md") {
+			padding: 0 12px;
+			margin-left: -1px;
+			border-left: 1px solid rgb(229, 229, 229);
+			border-right: 1px solid rgb(229, 229, 229);
+			
+			&:first-child{
+				padding-left: 18px
+			}
+		}
+	}
+}
+
+.navbar-secondary {
+	@extend %flex-centered;
+	flex-wrap: wrap;
+	
+	&__link {
+		font-size: $font-sm;
+		color: $grey;
+		
+		&:hover{
+			text-decoration: underline;
+			color: $grey;
+		}
+	}
+}
+
+.navbar-sprite {
+	@extend %flex-centered;
+	
+	&__item {
+		border-radius: 50%;
+		display: flex;
+		-webkit-box-align: center;
+		align-items: center;
+		display: flex;
+		-webkit-box-pack: center;
+		justify-content: center;
+		border: 1px solid;
+		border-color: transparent;
+		padding: 0;
+		height: 34px;
+		width: 34px;
+		
+		// &:hover {
+			// background-color: darken(currentColor, 10%);
+		// }
+	}
+}

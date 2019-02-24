@@ -1,0 +1,20 @@
+.btn-j {
+	padding: 0 2rem;
+	border-radius: 1.5rem;
+	height: 34px;
+	line-height: 34px;
+	border: 1px solid transparent;
+	box-shadow: none;
+	font-size: $font-sm;
+	
+	&__primary {
+		background-color: $grey;
+		color: white;
+		
+		&--inverted {
+			color: $grey;
+			background-color: white;
+			border-color: $grey;
+		}
+	}
+}
