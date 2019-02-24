@@ -1,0 +1,11 @@
+{
+  "name": "theshallot",
+  "version": "1.0.0",
+  "description": "a copycat webpage of the Onion's homepage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Justin Mooney",
+  "license": "ISC"
+}
