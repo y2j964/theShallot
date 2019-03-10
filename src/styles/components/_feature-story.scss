@@ -1,0 +1,122 @@
+.feature-story {
+		display: block;
+		padding: 1.5em 0; 		
+		border-bottom: 1px solid $light-grey;
+	
+	&__header {
+		margin: 0 0 1em;
+	}
+	
+	&__title {
+		font-weight: bold;
+		text-transform: capitalize;
+		margin: 0 0 .5em;
+		font-size: $font-xl-2;
+		font-family: latoregular;
+	}
+	
+	&__img {
+		margin: 0 -1em;
+		@include screen("sm"){
+			padding: 0 1em;
+		}	
+	}
+	
+	&__text {
+		display: none;
+		@include screen("md"){
+			display: block;
+			margin: 1em 0 0;
+		}
+	}
+	
+	&__hashtag {
+		text-transform: uppercase;
+		font-weight: bold;
+		margin: 0 0 1em;
+		
+		&:hover {
+			text-decoration: none;
+		}
+	}	
+	
+	&--transition-sm {
+		@include screen("sm") {
+			display: flex;			
+		}
+		
+		& .feature-story__img {
+			@include screen("sm") {
+				width: 33.3%;
+			}
+		}
+		
+		& .feature-story__header {
+			margin-top: 1em;
+			@include screen("sm") {
+				width: 70%;
+				margin-left: 1em;
+				margin-bottom: 0;
+				margin-top: 0;
+			}
+		}		
+	}
+	
+	&--aside {	
+		border-bottom: none; 				
+		
+		& .feature-story__title {
+			font-size: $font-lg;
+			margin: 16px 0 0;
+		}
+	
+		& .feature-story__img {
+			margin: 0;
+			padding: 0;
+		}
+		
+	}
+}
+// <article class="bb-neutral-light py-4">         done   
+            // <div>
+              // <span class="media-card__hashtag"><a class="anchor-primary" href="">Music News</a></span>
+              // <h2 class=" font-weight-bold"><a href="#">Sound Opinions hosts admit to cloning themselves to keep up with workload</a></h2>
+              // <time class="d-block mb-3 " datetime="2019-02-04T14:02"><a href="#">Tuesday 2:02pm</a></time>                             
+            // </div>            
+            // <div class="px-sm-3 mx-3-offset ">
+              // <a class="ratio-4-3" href="#"><img src="images/soundOpinions.jpg" alt="Greg Kot and Jim DeRogatis of Sound Opinions"></a>
+            // </div>                          
+            // <div class="d-none d-md-block">done
+              // <p class="mb-0">Being a music critic is not without its demands. Today I spoke to Greg Kot and Jim DeRogatis to discuss the sheer volume of sound opinions they've issued over the tenure of their WBEZ radio program, Sound Opinions. "We really couldn't have accomplished this without clones," said either DeRogatis or a clone of DeRogatis in a startling admission. "Kot just cloned himself again to prepare for this week's Buried Treasures feautre." Kot, sitting beside him, nodded his head. "I've surprised even myself with this one," said Kot. "And by I, I mean Greg Kot #7 really outdid himself."</p>
+            // </div>            
+          // </article>  
+
+
+// <article class="mb-4">
+                // <div class="ratio-16-9">
+                  // <a href="#"><img src="images/apple.png" alt=""></a>
+                // </div>
+                // <h3 class=" font-weight-bold"><a href="#">Top 5 Punk Rock anthems co-opted by Apple commercials</a></h3>
+                // <time class="d-block mb-3 " datetime="2019-03-01T11:12"> <a href="#">Wednesday 11:12am</a></time>              
+              // </article>
+					
+
+
+
+
+  // .left-grid article:not(:last-child),
+  // .right-grid article:not(:last-child) {
+    // border-bottom: 1px solid rgb(229, 229, 229);
+  // }
+
+  // .right-grid a {
+      // display: block;
+  // }
+// }
+
+// darken on hover
+// $anchor-primary-color: rgb(117, 26, 255);
+// &:hover {
+    // background: d
+// prefix mixin
+// font mixin fallback

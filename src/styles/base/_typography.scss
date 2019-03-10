@@ -1,0 +1,83 @@
+/* Base styles */
+
+@font-face {
+    font-family: 'latoregular';
+    src: url('../src/assets/fonts/lato-regular-webfont.woff2') format('woff2'),
+         url('../src/assets/fonts/lato-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+  box-sizing: border-box;  
+}
+
+ul,
+li {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p,
+span {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: inherit;
+	cursor: pointer;
+}
+
+a:focus {
+  outline: 1px dotted;
+  outline-color: inherit;
+}
+
+.hover-underline:hover{
+  text-decoration: underline;
+}
+
+input:focus{
+  outline: none;
+}
+
+time {
+	font-size: $font-sm;
+}
+
+.font-sm {
+	font-size: $font-sm;
+}
+
+.font-md {
+	font-size: $font-sm;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.text-grey {
+	color: $grey;
+}
+
+.anchor-primary {
+  color: $magenta;
+  font-family: Verdana, Geneva, sans-serif;	
+		
+	&:hover {
+		color: darken($magenta, 10%)		
+	}
+}
+		

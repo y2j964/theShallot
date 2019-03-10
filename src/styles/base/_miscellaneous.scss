@@ -1,0 +1,212 @@
+.icon-sprite {
+	//important to combat injected stylesheet setting this to none
+  display: inline-block!important;
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+.logo-wrapper {
+	@include screen("md") {
+		padding: 2em 0;
+		margin: 0 auto;
+	}
+}
+
+.icon-google1 {  
+  width: 18px;
+  height: 18px;	
+	margin-right: 10px;
+}
+
+.icon-facebook-2 {
+	fill: $facebook-blue;
+	margin-right: 10px;
+}
+
+.l-display-on-medium {
+	display: none;
+	@include screen("md") {
+		display: flex;
+	}
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.hide {
+	display: none;
+}
+
+.icon-twitter-2 {
+	fill: $twitter-blue;
+	margin-right: 10px;
+}
+
+.logo {
+	width: $logo-width / 1.8;
+	height: $logo-height / 1.8;
+	@include screen("md") {
+		width: $logo-width;
+		height: $logo-height;
+	}
+}	
+	
+.logo-sm {
+		width: $logo-width / 2.3 ;
+		height: $logo-height / 2.3;
+		margin-bottom: 16px;
+	}	
+	
+.icon-search-container {
+	background-color: white;
+	min-width: 32px;
+	@extend %flex-centered;
+}	
+	
+.icon-search {
+	width: 14px;
+	height: 14px;
+	fill: #a6a6a6;	
+}	
+
+.anchor-default {
+	color: $blue-link;
+}
+
+.font-sm {
+	font-size: $font-sm;
+}
+
+.font-md {
+	font-size: $font-md;
+}
+
+.font-lg {
+	font-size: $font-lg;
+}
+
+.w-20 {
+	width: 20%;
+	flex: 0 0 20%;
+}
+
+.w-260 {
+	width: 260px;
+}
+
+.fr-2 {
+	width: 16.666667%;
+	flex: 0 0 16.666667%;
+}
+
+.fr-10 {
+	width: 83.333333%;
+	flex: 0 0 83.333333%;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.icon-user {
+	width: 25px;
+	height: 25px;
+	fill: white;
+	stroke:white;
+}
+
+.icon-user-wrapper {
+	display: block;
+}
+
+.icon-close {
+	width: 28px;
+	height: 28px;
+}
+
+.icon-x-wrapper {
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 0;
+	padding: 2em;
+}
+
+.icon-menu-wrapper {
+		@include screen("md"){
+		display: none;
+	}	
+}
+
+.icon-menu {
+	width: 25px;
+	height: 25px;
+	// stroke-width: 0;
+	}
+	
+// made into a pseudo element b/c of counter content
+.number-overlay:before {					
+	transition: all .5s ease-in-out;					
+	@extend %flex-centered;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;		
+	cursor: pointer;
+	content: counter(thumbnail-item);
+	font-size: 2em;		
+	color: white;				
+	z-index: 1;
+	opacity: 0;	
+ // transform: translate(80px,0);
+}
+
+.ratio-16-9 {
+	position: relative;
+	overflow: hidden; 
+	display: block;
+	padding-top: 56.25%;		
+	background-color: black;
+	
+
+	& img {
+		position: absolute;
+		border: 0;		
+		top: 0;
+		left:0;
+		right: 0;
+		bottom: 0;
+		display: block;
+		margin: auto;		
+	}	
+}
+
+.ratio-4-3 {
+	position: relative;
+	overflow: hidden; 
+	display: block;
+	padding-top: 75.8%;			
+	background-color: black;	
+	
+	& img {	
+		position: absolute;
+		border: 0;		
+		top: 0;
+		left:0;
+		right: 0;
+		bottom: 0;
+		display: block;
+		margin: auto;
+	}
+}
+
+.img-overlay:hover:before {
+	background-color: rgba(0,0,0,0.3);
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}

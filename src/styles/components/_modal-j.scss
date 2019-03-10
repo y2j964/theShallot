@@ -1,0 +1,57 @@
+.modal-j-wrapper {
+	//change to none in production
+	display: none;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	background-color: white;
+	z-index: 10;
+	position: fixed;
+	padding: 2.25em;
+	@extend %position-zeroes;
+	
+	&--is-active {
+		display: flex;
+	}
+}
+
+.modal-j {	
+	max-width: 1000px;
+	width: 70%;
+	//the onion uses a bigger px and then a negative mx in body to compensate
+	padding: 2em .8em;
+	line-height: 1.4;
+	
+	@include screen("lg"){
+		border: 1px solid $light-grey;
+		position: relative;
+	}
+	
+	&__heading {
+		text-align: center;
+		font-size: $font-xl-1;		
+		margin: 0 0 1.5em;
+	}
+	
+	&__body {
+		display: block;
+		margin: 0 0 3em;
+		
+		@include screen("lg"){
+			display: flex;
+		}
+	}
+	
+	&__text {
+		margin: 0;
+		font-size: $font-md;
+	}
+	
+	&__footer {
+		text-align: center;
+		background-color: $light-grey;
+		position: absolute;
+		left: 0;
+		right: 0;				
+	}
+}	

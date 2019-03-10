@@ -1,0 +1,61 @@
+.reel-story {
+	display: none;
+	// background-color: blue;
+	opacity: 0;
+	transition: all 700ms ease-in-out;
+	
+	&__img {
+		margin: 0;
+		padding: 0;		
+	}
+	
+	&__title {
+		font-size: $font-lg;
+		margin: 16px 0 0;
+		font-weight: bold;
+		text-transform: capitalize;				
+		font-family: latoregular;		
+	}	
+	
+	&__thumbnail-item {		
+		width: 33.3%;
+		flex: 1 1 33.3%;
+		counter-increment: thumbnail-item;		
+		background-color: rgba(0,0,0,.5);
+		opacity: 1;		
+		transition: all 300ms ease-in-out;
+		
+		&:not(:last-child) {
+			margin-right: 1px;
+		}		
+		
+		&--is-active {
+			position: relative;						
+			opacity: .6;
+			transition: all 300ms ease-in-out;
+		 
+		  & .number-overlay:before {  
+				opacity: 1; 
+				// transform: translate(0,0)
+
+			}						
+		}
+	}
+	
+	&__nav {
+		counter-reset: thumbnail-item;
+	
+	}
+
+	&--is-active {
+		transition: all 1000ms ease-in-out;
+		display: block;
+		padding: 0 0 1.5em;
+		opacity: 1;
+		// background-color: red; 		
+		
+		
+		// this works
+		// &:hover{opacity: 1;}
+	}		
+}

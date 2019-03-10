@@ -1,4 +1,10 @@
-index.html
-index2.html
-index3.html
-styles3.css
+
+.DS_Store
+
+node_modules
+
+.sass-cache
+
+dist/*
+
+ignore/*
