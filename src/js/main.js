@@ -1,6 +1,6 @@
+// init DOM elements
 let reelStory = document.querySelectorAll(".reel-story");
 let thumbnail = document.querySelectorAll(".reel-story__thumbnail-item");
-let current = 0;
 let magnifyingGlass = document.querySelector(".js-magnifying-glass");
 let hamburgerMenu = document.querySelector(".js-hamburger-menu");
 let userIcon = document.querySelector(".js-icon-user");
@@ -9,21 +9,37 @@ let xIcon = document.querySelector(".icon-close");
 let modal = document.querySelector(".modal-j-wrapper");
 let login = document.querySelector(".js-login");
 let userName = document.querySelector("#username");
-let userNameError = document.querySelector(".js-username-error");
+let userNameError = document.querySelector("#js-username-error");
 let key = document.querySelector("#key");
-let keyError = document.querySelector(".js-key-error");
+let keyError = document.querySelector("#js-key-error");
+
+// variables
+let current = 0;
+let emailRegex = /\S+@\S+\.\S+/
+// events 
+
+//functions 
+
 
 // basic form validation
-function validateForm(input, errorMessage) {
-  if(!input.value){
-    errorMessage.classList.toggle("hide")
-  }
-}
 
-// prevent form from submitting; there's nowhere for it to go
+
 login.addEventListener("submit", function(e){
-  validateForm(userName, userNameError);
-  validateForm(key, keyError);
+  // validateForm(userName, userNameError);
+  // validateForm(key, keyError);
+  
+  if (!userName.value && userNameError.classList.contains("hide")) {
+    userNameError.classList.toggle("hide")          
+  } else if(userName.value && !userNameError.classList.contains("hide")){
+    userNameError.classList.toggle("hide")}
+  
+  if (!key.value && keyError.classList.contains("hide")) {
+    keyError.classList.toggle("hide")
+  } else if(key.value && !keyError.classList.contains("hide")) {
+    keyError.classList.toggle("hide")
+  }   
+  
+  // prevent form from submitting; no server side code
   e.preventDefault()
 })
 

@@ -27,12 +27,17 @@
 .l-display-on-medium {
 	display: none;
 	@include screen("md") {
-		display: flex;
+		display: block;
 	}
 }
 
 .nowrap {
 	white-space: nowrap;
+}
+
+.warning-message {
+	display: block;
+	color: #eeb544;
 }
 
 .hide {

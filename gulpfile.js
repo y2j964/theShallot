@@ -6,7 +6,9 @@ var gulp = require('gulp'),
     concat = require("gulp-concat"),
     rename = require("gulp-rename"),
     plumber = require("gulp-plumber"),
-   cleanCSS = require("gulp-clean-css"),
+    cleanCSS = require("gulp-clean-css"),
+    sourcemaps =require("gulp-sourcemaps"),
+    lineEndings = require("gulp-line-ending-corrector"),
     browserSync = require("browser-sync").create();           
     
 sass.compiler = require("node-sass");
@@ -25,6 +27,7 @@ gulp.task("scripts", function(){
   return gulp.src("src/**/*.js")
     .pipe(concat("main.js"))
     .pipe(terser())
+    .pipe(lineEndings())
     .pipe(gulp.dest("dist"))
     .pipe(browserSync.stream())
 });    
@@ -44,8 +47,13 @@ gulp.task("serve", function(){
 //compile sass and rename to conventional styles.css
 gulp.task("sass", function(){
   return gulp.src("src/styles/**/*.scss")
+    .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
     .pipe(prefix("last 2 versions"))
+    .pipe(sourcemaps.init())
+    .pipe(cleanCSS())
+    .pipe(sourcemaps.write())
+    .pipe(lineEndings())
     .pipe(rename("styles.css"))
     .pipe(gulp.dest("dist/"))  
     .pipe(browserSync.stream())
