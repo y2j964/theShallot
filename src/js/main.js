@@ -3,7 +3,6 @@ const reelArticles = document.querySelector(".js-reel-articles");
 const reelStoryNav = document.querySelector(".reel-story__nav");
 const thumbnail = document.querySelectorAll(".reel-story__thumbnail-item");
 const reelStory = document.querySelectorAll(".reel-story");
-// const magnifyingGlass = document.querySelector(".js-magnifying-glass");
 const lSearchbar = document.querySelector(".l-searchbar");
 const hamburgerMenu = document.querySelector(".js-hamburger-menu");
 const userIcon = document.querySelector(".js-icon-user");
@@ -11,7 +10,7 @@ const body = document.querySelector("body");
 const jsModals = document.querySelector(".js-modals");
 const jsModalMenu = jsModals.querySelector(".js-modal-menu");
 const jsModalForm = jsModals.querySelector(".js-modal-form");
-const xIcons = document.querySelectorAll(".icon-close");
+const xIcons = document.querySelectorAll(".js-icon-close");
 const tabSwitches = document.querySelector(".tab-switches");
 const tabUser = tabSwitches.querySelector(".js-icon-user");
 const login = document.querySelector(".js-login");
@@ -73,10 +72,12 @@ jsModals.addEventListener("click", closeModal);
 function closeModal(e){    
   const lModal = document.querySelector(".l-modal--is-visible");
   
-  if(e.target.classList.contains("icon-close")){
-      lModal.classList.remove("l-modal--is-visible");
-      body.classList.remove("no-scroll");
-  }
+  if(!e.target.classList.contains("js-icon-close")){
+      return
+  } 
+  
+  lModal.classList.remove("l-modal--is-visible");
+  body.classList.remove("no-scroll");
 }  
 
 tabUser.addEventListener("click", switchModal);

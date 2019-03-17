@@ -12,6 +12,7 @@
 	}
 	
 	&__item {		
+		color: #a6a6a6;
 		padding: 0 8px;
 		
 		&:hover {
@@ -29,29 +30,6 @@
 		
 		&:hover{
 			text-decoration: none;
-		}
-	}
-}
-
-.dropdown {
-	display: none;
-	padding: 1.25em;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 100%;
-	z-index: 1;
-	background-color: white;	
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12),
-            0 2px 4px 0 rgba(0,0,0,0.08);
-
-	&__link {
-		font-size: $font-md;
-		text-transform: uppercase;
-		 transition: color 300ms;
-		
-		&:focus{
-			color: $magenta;
 		}
 	}
 }

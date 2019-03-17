@@ -61,6 +61,10 @@ time {
 	font-size: $font-sm;
 }
 
+.font-xs {
+	font-size: .7em;
+}
+
 .font-sm {
 	font-size: $font-sm;
 }
@@ -75,6 +79,10 @@ time {
 
 .text-grey {
 	color: $grey;
+}
+
+.text-grey-darker {
+	color: $grey-darker;
 }
 
 .text-light-grey {
