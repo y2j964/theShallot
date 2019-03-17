@@ -1,0 +1,11 @@
+.btn-group {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	&__item {		
+		width: 260px;
+		margin: 1.5rem;
+		text-align: left;
+	}
+}

@@ -1,0 +1,54 @@
+// defines a series (or group) of tabs set vertically. when said to be dynamic, the tab group shifts to a horizontal layout.
+// tab-group__item need only be utilized in this horizontal layout
+// tab-group__link should be used on each tab for proper aligning and themes
+// tab-group__icon sets a consistent height and width, as well as spacing for all icons displayed in the tab-group
+
+.tab-group {
+	display: flex;
+	flex-direction: column;
+	padding: 8px 0;
+	text-transform: uppercase;
+
+	// &:first-child {
+		// margin-top: 48 + 1 + px;
+	// }
+	
+	&:not(:last-child) {
+		border-bottom: 1px solid $light-grey;
+	}
+	
+	&--dynamic-lg {
+		@include screen("lg"){
+			flex-direction: row;
+		}
+		
+	  .tab-group__item {
+			margin-right: 1.5rem;
+		}
+	}
+	
+	&__item {		
+		margin: 0 8px 0 0;
+	}
+	
+	&__link {
+		//setting height w/ line height so that text is centered and we can vertical-align icon to top
+		line-height: 48px;
+		display: flex;
+		vertical-align: bottom;
+		color: $grey;
+		text-transform: uppercase;
+	
+		&:hover {
+			text-decoration: none;
+		}
+	}		
+		
+	&__icon {
+		width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    vertical-align: top;
+	}
+	
+}

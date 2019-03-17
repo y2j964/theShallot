@@ -1,0 +1,54 @@
+.l-searchbar {
+	background-color: white;
+	min-width: 32px;	
+	display: flex;
+	justify-content: center;
+	align-items: center;		
+	
+	&-overlay {
+		display: none;
+		position: absolute;
+		top: 0;
+		left:0;
+		width: 90%;
+		//need to match spacing on top-nav so that the box starts the same place the magnifying box starts
+		margin: 0 8px;
+		background-color: #000;
+		min-width: 32px;
+		z-index:10;	
+		
+		// &--is-active {
+			// display: block;
+		// }
+	}
+
+	&--is-expanded {
+		
+		.l-searchbar-overlay {
+			display: block;
+		}			
+		
+		.magnifying-glass {
+			// element is still focusable  even after the overlay; so we'll just toggle it like so
+			display: none;	
+		}
+		
+	}	
+}
+
+.searchbar {
+	padding: 0 .562rem 0 .4rem;
+	background-color: white;
+	max-width: 360px;
+	display: flex;
+	height: 30px;
+	color: #7D7D7D;		
+	
+	&__input {
+		text-transform: uppercase;
+		border: 0;
+		padding: 8px;
+		flex-grow: 1;
+		margin: 0 0 0 8px;
+	}
+}	

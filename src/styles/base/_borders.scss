@@ -2,9 +2,20 @@
   border-bottom: 1px solid $light-grey;
 }
 
+.bb-thicker-neutral-light {
+  border-bottom: 2px solid $light-grey;
+}
+
 .br-neutral-light{
   border-right: 1px solid rgb(229, 229, 229);
 }
+
+
+.bx-neutral-light{
+  border-right: 1px solid $light-grey;
+  border-left: 1px solid $light-grey;
+}
+
 
 .br-lg-light-grey {
 	@include screen("lg"){
@@ -39,4 +50,8 @@
 
 .b-black {
 	border-color: black;
+}
+
+.b-none {
+	border: none;
 }

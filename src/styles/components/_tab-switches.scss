@@ -1,0 +1,21 @@
+.tab-switches {
+	display: flex;
+	align-items: center;
+	// add the border of 1px
+	background-color: $lighter-grey;
+	border-bottom: 1px solid $light-grey;
+	
+	&__item {		
+		@extend %flex-centered;
+		height: 48px;
+		width: 48px;
+		margin-bottom: -1px;
+		border-right: 1px solid $light-grey;
+		border-bottom: 1px solid $light-grey;		
+		
+		&--is-active {
+			background-color: white;
+			border-bottom-color: transparent;			
+		}
+	}
+}	

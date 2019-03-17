@@ -40,8 +40,13 @@ a:hover {
 }
 
 a:focus {
-  outline: 1px dotted;
-  outline-color: inherit;
+  // outline: 1px dotted;
+  // outline-color: inherit;
+}
+
+// to prevent inner svg or use element from eating my click event in event delegation
+a > svg {
+	pointer-events: none;
 }
 
 .hover-underline:hover{
@@ -70,6 +75,10 @@ time {
 
 .text-grey {
 	color: $grey;
+}
+
+.text-light-grey {
+	color: $light-grey;
 }
 
 .anchor-primary {

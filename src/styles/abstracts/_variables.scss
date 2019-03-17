@@ -1,9 +1,10 @@
 // colors
 
 $purple: rgb(117, 26, 255);
+$gold:  #e6b800;
 $magenta: #b30086;
 $grey: rgb(125, 125, 125);
-$light-grey: rgb(229, 229, 229);
+$light-grey: #e5e5e5;
 $lighter-grey: #f5f5f5;
 $blue-link: #0A7BC2;
 $black-light: rgb(34, 34, 34);
@@ -68,11 +69,6 @@ $line-height-md: 1.5;
   margin-right: auto;
 }
 
-@mixin order($order-binary) {
-	-webkit-box-ordinal-group: ($order-binary + 1); 
-	-ms-flex-order: $order-binary; 
-	order: $order-binary;
-}
 
 @mixin width-percentage($percentage, $flex-grow:0, $flex-shrink:0){
 	width: $percentage;    

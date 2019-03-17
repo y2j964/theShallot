@@ -1,19 +1,29 @@
-.modal-j-wrapper {
-	//change to none in production
+.l-modal {
 	display: none;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
+	// justify-content: center;
+	// align-items: center;
+	// overflow: hidden;
+	overflow: auto;
 	background-color: white;
 	z-index: 10;
 	position: fixed;
-	padding: 2.25em;
+	// padding: 2.25em;
 	@extend %position-zeroes;
 	
-	&--is-active {
+	&--is-visible {
 		display: flex;
 	}
+	
+	// &--fullscreen {
+		// // display: flex;	
+		// justify-content: flex-start;
+		// align-items: flex-start;
+		// overflow: auto;
+		// padding: 0;
+	// }
 }
+
+//l modal; 
 
 .modal-j {	
 	max-width: 1000px;

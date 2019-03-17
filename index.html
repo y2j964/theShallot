@@ -6,14 +6,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
-	<meta name="robots" content="index,follow" />
+	<meta name="robots" content="index,follow"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="dist/styles.css" />    
+  <link rel="stylesheet" type="text/css" href="dist/styles.css" />   
 </head>
-<body>
+<body class="">
   <header class="">
-    <div class= "l-display-on-medium"></div>
+    <div class= "l-display-on-medium">
       <nav class="top-nav">   
         <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -31,7 +31,19 @@
         </symbol>
         </defs>
         </svg>      
-        <a role="button" tabindex="0" class="icon-search-container js-magnifying-glass"><svg class="icon icon-search d-inline"><use xlink:href="#icon-search"></use></svg></a>     
+        <div class="l-searchbar">        
+          <a role="button" tabindex="0" class="js-searchbar-toggler magnifying-glass">
+            <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
+          </a>
+          <div class="l-searchbar-overlay">          
+            <div class="searchbar">            
+              <a role="button" tabindex="0" class="js-searchbar-toggler">
+                <svg class=" icon-close icon-close--sm icon-close--grey"><use xlink:href="#icon-close"></use></svg>
+              </a>
+              <input type="text" placeholder="Search the Shallot" class="searchbar__input">
+            </div>
+          </div>
+        </div>                
         <ul class="top-nav__list">
           <li class="top-nav__item"><a class="top-nav__link" href="#">Dropdown</a>
             <div class="dropdown">
@@ -67,102 +79,12 @@
           </li>
           <li class="top-nav__item"><a class="top-nav__link" href="#">Nothing</a></li>
           <li class="top-nav__item"><a class="top-nav__link" href="#">Nothing</a></li>
-        </ul>      
-        <a role="button" tabindex="0" class="ml-auto js-icon-user"><svg class="icon icon-user"><use xlink:href="#icon-user"></use></svg></a>      
-        <div class="modal-j-wrapper">
-          <div class="modal-j">
-            <div>
-              <h2 class="modal-j__heading">Log into your Kinja account</h2>
-              <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <symbol id="icon-close" viewBox="0 0 24 24">
-                <title>close</title>
-                <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
-                </symbol>
-              </svg>  
-              <a role="button" class="icon-x-wrapper"><svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg></a>          
-              <div class="modal-j__body">
-                <div class="w-lg-50 d-flex flex-column align-items-center br-lg-light-grey pr-3 py-4">
-                <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">                           
-                  <def>
-                    <symbol id="icon-google1" viewBox="0 0 24 28">
-                    <title>google1</title>
-                    <path d="M12 12.281h11.328c0.109 0.609 0.187 1.203 0.187 2 0 6.844-4.594 11.719-11.516 11.719-6.641 0-12-5.359-12-12s5.359-12 12-12c3.234 0 5.953 1.188 8.047 3.141l-3.266 3.141c-0.891-0.859-2.453-1.859-4.781-1.859-4.094 0-7.438 3.391-7.438 7.578s3.344 7.578 7.438 7.578c4.75 0 6.531-3.406 6.813-5.172h-6.813v-4.125z"></path>
-                    </symbol> 
-                  </def>
-                </svg>
-                <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">             
-                  <defs>
-                    <symbol id="icon-facebook" viewBox="0 0 32 32">
-                    <title>facebook</title>
-                    <path d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z"></path>
-                    </symbol>
-                    <symbol id="icon-instagram" viewBox="0 0 32 32">
-                    <title>instagram</title>
-                    <path d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z"></path>
-                    <path d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z"></path>
-                    <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z"></path>
-                    </symbol>
-                    <symbol id="icon-twitter" viewBox="0 0 32 32">
-                    <title>twitter</title>
-                    <path d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z"></path>
-                    </symbol>
-                    <symbol id="icon-rss" viewBox="0 0 32 32">
-                    <title>rss</title>
-                    <path d="M4.259 23.467c-2.35 0-4.259 1.917-4.259 4.252 0 2.349 1.909 4.244 4.259 4.244 2.358 0 4.265-1.895 4.265-4.244-0-2.336-1.907-4.252-4.265-4.252zM0.005 10.873v6.133c3.993 0 7.749 1.562 10.577 4.391 2.825 2.822 4.384 6.595 4.384 10.603h6.16c-0-11.651-9.478-21.127-21.121-21.127zM0.012 0v6.136c14.243 0 25.836 11.604 25.836 25.864h6.152c0-17.64-14.352-32-31.988-32z"></path>
-                    </symbol>
-                  </defs>
-                </svg>
-                  <button class="btn-j btn-j--inverted mb-4 w-260 text-left">
-                    <a href="#"><svg class="icon-sprite icon-facebook-2"><use xlink:href="#icon-facebook"></use></svg></a>
-                    <span>Connect with Facebook</span>
-                  </button>
-                  <button class="btn-j btn-j--inverted mb-4 w-260 text-left">
-                    <a href="#"><svg class="icon-sprite icon-twitter-2"><use xlink:href="#icon-twitter"></use></svg></a>
-                    <span>Connect with Twitter</span>
-                  </button>
-                  <button class="btn-j btn-j--inverted mb-4 w-260 text-left">
-                    <a><svg class="icon icon-google1"><use xlink:href="#icon-google1"></use></svg></a>
-                    <span>Connect with Google</span>
-                  </button>
-                </div>
-                <div class="w-lg-50 d-flex flex-column pl-3">
-                  <h3 class="mb-3 font-lg text-center">Or</h3>
-                  <p class="modal-j__text mb-3">Use burner accounts to comment anonymously.
-                  <span><a href="#" class="anchor-default">Learn more.</a></span></p>
-                  <h3 class="mb-3 font-lg">Sign in with your burner account</h3>
-                  <form class="form js-login">
-                    <div class="my-2 d-flex">
-                      <div class="w-33">
-                        <label for="username" class="font-sm">User name:</label>
-                      </div>
-                      <div class="w-66 mb-4">
-                        <input type="text" id="username" class="w-100 bb-only b-black">
-                        <small id="js-username-error" class="warning-message hide">Please enter a user-name</small>
-                      </div>
-                    </div>
-                    <div class="my-2 d-flex">                  
-                      <div class="w-33 flex-grow-1 ">
-                        <label for="key" class="font-sm">Key:</label>
-                      </div>
-                      <div class="w-66 flex-grow-1 mb-4">
-                        <input type="password" id="key" class="w-100 bb-only b-black ">
-                        <small id="js-key-error" class="warning-message hide">Please enter a key</small>
-                      </div>
-                    </div>
-                    <div class="text-right my-2">
-                      <button type="submit" class="btn-j btn-j--inverted btn-j--tiny">OK</button>
-                    </div>
-                  </form>
-                </div>
-              </div>          
-              <footer class="modal-j__footer p-3">
-                <p class="modal-j__text">Don't have an account?<a href="#" class="anchor-default"> Create one here</a></p>
-              </footer>                    
-            </div>
-          </div>  
+        </ul> 
+        <div class="d-flex align-items-center ml-auto pr-2">
+          <a role="button" tabindex="0" class="ml-auto js-icon-user"><svg class="icon icon-user"><use xlink:href="#icon-user"></use></svg></a>              
         </div>
       </nav>
-    </div>
+    </div>   
     <div class="d-flex align-items-center p-2">
       <div class="logo-wrapper">
         <h1 class=" text-center my-0 d-inline" href="#">
@@ -362,6 +284,169 @@
       </div>    
       <a role="button" tabindex="0" class="ml-auto icon-menu-wrapper js-hamburger-menu"><svg class="icon icon-menu"><use xlink:href="#icon-menu"></use></svg></a>
     </div>
+    <div class="js-modals">
+      <div class="l-modal js-modal-menu">
+        <ul class="tab-switches fixed-header">
+          <li>
+            <a href="#" class="tab-switches__item tab-switches__item--is-active">
+              <img class="square-sm" src="favicon-32x32.png" alt="shallot logo">
+            </a>      
+          </li>  
+          <li>
+            <a href="#" class="tab-switches__item icon-user-2-wrapper js-icon-user">
+              <svg class="icon icon-user-2"><use xlink:href="#icon-user"></use></svg>
+            </a>
+          </li>
+          <li class="d-flex ml-auto pr-2">
+            <a class="js-icon-close" href="#">
+              <svg class="icon icon-close"><use xlink:href="#icon-close"></use>
+            </a>              
+          </li>        
+        </ul>
+        <div class= "w-100 mt-50 overflow-auto px-3 py-4">      
+          <form class="d-flex bb-neutral-light pb-3 bb-neutral-light">
+            <div>
+              <svg class="icon icon-search d-inline"><use xlink:href="#icon-search"></use></svg>
+            </div>
+            <input class="flex-grow-1 pl-5 pr-3 b-none uppercase text-light-grey" type="text" placeholder="Search the Shallot">
+          </form>    
+          <ul class="tab-group tab-group--dynamic-lg">      
+            <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs>
+              <symbol id="icon-price-tag" viewBox="0 0 32 32">
+              <title>price-tag</title>
+              <path d="M30.5 0h-12c-0.825 0-1.977 0.477-2.561 1.061l-14.879 14.879c-0.583 0.583-0.583 1.538 0 2.121l12.879 12.879c0.583 0.583 1.538 0.583 2.121 0l14.879-14.879c0.583-0.583 1.061-1.736 1.061-2.561v-12c0-0.825-0.675-1.5-1.5-1.5zM23 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"></path>
+              </symbol>
+              </def>
+            </svg>
+            <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Politics</span></a></li>
+            <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Sports</span></a></li>
+            <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Local</span></a></li>
+            <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Entertainment</span></a></li>
+            <li class="tab-group__item"><a class="tab-group__link" href="#"><svg class="tab-group__icon icon-price-tag"><use xlink:href="#icon-price-tag"></use></svg><span>Opinion</span></a></li>
+            <li class="tab-group__item"><a class="tab-group__link" href="#"><svg class="tab-group__icon icon-price-tag"><use xlink:href="#icon-price-tag"></use></svg><span>Video</span></a></li>
+          </ul>
+          <ul class="tab-group">        
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/mogcjp3kihx7oyz31doa.png" alt="shallot logo"><span class="uppercase">Clickhole</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span class="uppercase">the Shallot</span></a></li>
+          </ul>
+          <ul class="tab-group">      
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/no63bw902mddhwxtjtxh.png" alt="shallot logo"><span class="uppercase">The AV Club</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/rnxqtvv6advgidzfs6am.png" alt="shallot logo"><span class="uppercase">Deadspin</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/fdj3buryz5nuzyf2k620.png" alt="shallot logo"><span class="uppercase">Gizmodo</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/aqhdzcldymb9mkltfhxh.png" alt="shallot logo"><span class="uppercase">Jalopnik</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/pch44wvo0v6acpdlt0f6.png" alt="shallot logo"><span class="uppercase">Jezebel</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/ghxlwgdztvqerb4zptdx.png" alt="shallot logo"><span class="uppercase">Kotaku</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/u0939doeuioaqhspkjyc.png" alt="shallot logo"><span class="uppercase">Lifehacker</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/guli6kfxfg1sgjwfade4.png" alt="shallot logo"><span class="uppercase">Splinter</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/f5zr3vuc90hrpnmx0nme.png" alt="shallot logo"><span class="uppercase">The Root</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/j59upeyynundqjvbmcwj.png" alt="shallot logo"><span class="uppercase">The Takeout</span></a></li>
+          </ul>
+          <ul class="tab-group">      
+            <li>
+              <a class="tab-group__link" href="#">
+                <img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/nnak0ogtqbt96hhn2yzn.png" alt="open box">
+                <span>the Inventory</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <div class="l-modal js-modal-form">
+      <div class="flex-centered w-100 p-6">
+        <div class="modal-j">
+          <div>
+            <h2 class="modal-j__heading">Log into your Kinja account</h2>
+            <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <symbol id="icon-close" viewBox="0 0 24 24">
+                <title>close</title>
+                <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+                </symbol>
+              </svg>  
+            <a role="button" class="icon-close-wrapper"><svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg></a>          
+            <div class="modal-j__body">
+              <div class=" btn-group w-lg-50 br-lg-light-grey pr-3 py-4">
+                <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">                           
+                    <def>
+                      <symbol id="icon-google1" viewBox="0 0 24 28">
+                      <title>google1</title>
+                      <path d="M12 12.281h11.328c0.109 0.609 0.187 1.203 0.187 2 0 6.844-4.594 11.719-11.516 11.719-6.641 0-12-5.359-12-12s5.359-12 12-12c3.234 0 5.953 1.188 8.047 3.141l-3.266 3.141c-0.891-0.859-2.453-1.859-4.781-1.859-4.094 0-7.438 3.391-7.438 7.578s3.344 7.578 7.438 7.578c4.75 0 6.531-3.406 6.813-5.172h-6.813v-4.125z"></path>
+                      </symbol> 
+                    </def>
+                  </svg>
+                <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">             
+                    <defs>
+                      <symbol id="icon-facebook" viewBox="0 0 32 32">
+                      <title>facebook</title>
+                      <path d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z"></path>
+                      </symbol>
+                      <symbol id="icon-instagram" viewBox="0 0 32 32">
+                      <title>instagram</title>
+                      <path d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z"></path>
+                      <path d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z"></path>
+                      <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z"></path>
+                      </symbol>
+                      <symbol id="icon-twitter" viewBox="0 0 32 32">
+                      <title>twitter</title>
+                      <path d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z"></path>
+                      </symbol>
+                      <symbol id="icon-rss" viewBox="0 0 32 32">
+                      <title>rss</title>
+                      <path d="M4.259 23.467c-2.35 0-4.259 1.917-4.259 4.252 0 2.349 1.909 4.244 4.259 4.244 2.358 0 4.265-1.895 4.265-4.244-0-2.336-1.907-4.252-4.265-4.252zM0.005 10.873v6.133c3.993 0 7.749 1.562 10.577 4.391 2.825 2.822 4.384 6.595 4.384 10.603h6.16c-0-11.651-9.478-21.127-21.121-21.127zM0.012 0v6.136c14.243 0 25.836 11.604 25.836 25.864h6.152c0-17.64-14.352-32-31.988-32z"></path>
+                      </symbol>
+                    </defs>
+                  </svg>
+                <button class="btn-group__item btn-j btn-j--inverted">
+                  <a href="#"><svg class="icon-sprite icon-facebook-2"><use xlink:href="#icon-facebook"></use></svg></a>
+                  <span>Connect with Facebook</span>
+                </button>
+                <button class="btn-group__item btn-j btn-j--inverted">
+                  <a href="#"><svg class="icon-sprite icon-twitter-2"><use xlink:href="#icon-twitter"></use></svg></a>
+                  <span>Connect with Twitter</span>
+                </button>
+                <button class="btn-group__item btn-j btn-j--inverted">
+                  <a><svg class="icon icon-google1"><use xlink:href="#icon-google1"></use></svg></a>
+                  <span>Connect with Google</span>
+                </button> 
+              </div>
+              <div class="w-lg-50 d-flex flex-column pl-3">
+                <h3 class="mb-3 font-lg text-center">Or</h3>
+                <p class="modal-j__text mb-3">Use burner accounts to comment anonymously.
+                <span><a href="#" class="anchor-default">Learn more.</a></span></p>
+                <h3 class="mb-3 font-lg">Sign in with your burner account</h3>
+                <form class="form js-login">
+                  <div class="my-2 d-flex">
+                    <div class="w-33">
+                      <label for="username" class="font-sm">User name:</label>
+                    </div>
+                    <div class="w-66 mb-4">
+                      <input type="text" id="username" class="w-100 bb-only b-black">
+                      <small id="js-username-error" class="warning-message hide">Please enter a user-name</small>
+                    </div>
+                  </div>
+                    <div class="my-2 d-flex">                  
+                      <div class="w-33 flex-grow-1 ">
+                        <label for="key" class="font-sm">Key:</label>
+                      </div>
+                      <div class="w-66 flex-grow-1 mb-4">
+                        <input type="password" id="key" class="w-100 bb-only b-black ">
+                        <small id="js-key-error" class="warning-message hide">Please enter a key</small>
+                      </div>
+                    </div>
+                    <div class="text-right my-2">
+                      <button type="submit" class="btn-j btn-j--inverted btn-j--tiny">OK</button>
+                    </div>
+                  </form>
+                </div>
+              </div>          
+              <footer class="modal-j__footer p-3">
+                <p class="modal-j__text">Don't have an account?<a href="#" class="anchor-default"> Create one here</a></p>
+              </footer>                    
+            </div>
+          </div>  
+        </div>  
+      </div>
+    </div>  
   </header>
   <nav class="by-neutral-light">
     <ul class="navbar-primary mb-0">
@@ -442,34 +527,36 @@
             <section class="">
               <h2 class="font-weight-bold">You may also like</h2>
               <ol class="reel-story__nav list-unstyled d-flex mb-1">
-                <li class="reel-story__thumbnail-item reel-story__thumbnail-item--is-active"><a class="ratio-16-9 number-overlay" href="#"><img src="src/assets/images//bigSleep.jpg" alt=""></a></li>
-                <li class="reel-story__thumbnail-item"><a class="ratio-16-9 number-overlay" href="#"><img src="src/assets/images//maltese.jpg" alt=""></a></li>
-                <li class="reel-story__thumbnail-item"><a class="ratio-16-9 number-overlay" href="#"><img src="src/assets/images//noir.jpg" alt=""></a></li>
+                <li class="reel-story__thumbnail-item reel-story__thumbnail-item--is-active"><a class="ratio-16-9 number-overlay" href="#"><img src="src/assets/images//bigSleep.jpg" alt="Humphrey Bogart in The Big Sleep talking to Dorothy Malone"></a></li>
+                <li class="reel-story__thumbnail-item"><a class="ratio-16-9 number-overlay" href="#"><img src="src/assets/images//maltese.jpg" alt="Humphrey Bogart pointing authoritatively in The Maltese Falcon"></a></li>
+                <li class="reel-story__thumbnail-item"><a class="ratio-16-9 number-overlay" href="#"><img src="src/assets/images//noir.jpg" alt="Humphrey Bogart and Lauren Bacall in The Big Sleep"></a></li>
               </ol>
               <div class="progress-bar">              
               
               </div>
-              <article class="reel-story reel-story--is-active">                
-                <div class="reel-story__img" >                  
-                  <a class="ratio-16-9" href="#"><img src="src/assets/images//bigSleep.jpg" alt="Humphrey Bogart in The Big Sleep talking to Dorothy Malone"></a>
-                </div>
-                <h3 class="reel-story__title"><a href="#">Woman believes to have understood the plot to The Big Sleep</a></h3>
-                <time datetime="2019-02-03T11:42"><a href="#">Wednesday 11:42am</a></time>   
-              </article>
-              <article class="reel-story">                
-                <div class="reel-story__img">
-                  <a class="ratio-16-9" href="#"><img src="src/assets/images//maltese.jpg" alt="Humphrey Bogart pointing authoritatively in The Maltese Falcon"></a>
-                </div>
-                  <h3 class="reel-story__title"><a href="#">Same Woman to do a one-woman show of the Maltese Falcon</a></h3>                    
-                  <time datetime="2019-02-03T16:22"><a href="#">Thursday 4:22pm</a></time>
-              </article>
-              <article class="reel-story">                
-                  <div class="reel-story__img">
-                    <a class="ratio-16-9" href="#"><img src="src/assets/images//noir.jpg" alt="Humphrey Bogart and Lauren Bacall in The Big Sleep"></a>
+              <div class="js-reel-articles">
+                <article class="reel-story reel-story--is-active">                
+                  <div class="reel-story__img" >                  
+                    <a class="ratio-16-9" href="#"><img class="js-thumbnail-img" src="src/assets/images//bigSleep.jpg" alt="Humphrey Bogart in The Big Sleep talking to Dorothy Malone"></a>
                   </div>
-                  <h3 class="reel-story__title"><a href="#">Woman's Husband: "I love her, but it is exhausting being married a noir obsessive"</a></h3>
-                  <time datetime="2019-02-05T13:02"><a href="#">Friday 1:02pm</a></time>                                    
-              </article>                  
+                  <h3 class="reel-story__title"><a href="#">Woman believes to have understood the plot to The Big Sleep</a></h3>
+                  <time datetime="2019-02-03T11:42"><a href="#">Wednesday 11:42am</a></time>   
+                </article>
+                <article class="reel-story">                
+                  <div class="reel-story__img">
+                    <a class="ratio-16-9" href="#"><img class="js-thumbnail-img" src="src/assets/images//maltese.jpg" alt="Humphrey Bogart pointing authoritatively in The Maltese Falcon"></a>
+                  </div>
+                    <h3 class="reel-story__title"><a href="#">Same Woman to do a one-woman show of the Maltese Falcon</a></h3>                    
+                    <time datetime="2019-02-03T16:22"><a href="#">Thursday 4:22pm</a></time>
+                </article>
+                <article class="reel-story">                
+                    <div class="reel-story__img">
+                      <a class="ratio-16-9" href="#"><img class="js-thumbnail-img" src="src/assets/images//noir.jpg" alt="Humphrey Bogart and Lauren Bacall in The Big Sleep"></a>
+                    </div>
+                    <h3 class="reel-story__title"><a href="#">Woman's Husband: "I love her, but it is exhausting being married a noir obsessive"</a></h3>
+                    <time datetime="2019-02-05T13:02"><a href="#">Friday 1:02pm</a></time>                                    
+                </article>                  
+              </div>
             </section>
             <section class="my-6">
               <h2 class=" font-weight-bold">Top 5 Lists</h2>
@@ -564,7 +651,6 @@
         </main>
       </div>
     </div>
-
   <section class="newsletter">    
     <h1 class="d-inline mb-0 p-0">
       <a href="#">
@@ -585,29 +671,29 @@
       <input class="w-100 text-center bg-lighter-grey bb-only b-black line-height-md" id="emailAddress" name="emailAddress" placeholder="Your email address">
     </label>
   </form>
-  <button class="btn-j btn-j--primary">Subscribe</button>
-   
-    
-</section>
+  <button class="btn-j btn-j--primary">Subscribe</button>     
+  </section>
   <footer class="p-5 bg-black-light">
-    <ul class="d-flex justify-content-center social-sprite">
-      <li class="px-1"><a class="navbar-sprite__item bg-facebook" href="#"><svg class="icon-sprite icon-facebook"><use xlink:href="#icon-facebook"></use></svg></a></li>
-      <li class="px-1"><a class="navbar-sprite__item bg-instagram" href="#"><svg class="icon-sprite icon-instagram"><use xlink:href="#icon-instagram"></use></svg></a></li>
-      <li class="px-1"><a class="navbar-sprite__item bg-twitter" href="#"><svg class="icon-sprite icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a></li>
-      <li class="px-1"><a class="navbar-sprite__item bg-rss" href="#"><svg class="icon-sprite icon-rss"><use xlink:href="#icon-rss"></use></svg></a></li>
+    <ul class="navbar-sprite">
+      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-facebook" href="#"><svg class="icon-sprite icon-facebook"><use xlink:href="#icon-facebook"></use></svg></a></li>
+      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-instagram" href="#"><svg class="icon-sprite icon-instagram"><use xlink:href="#icon-instagram"></use></svg></a></li>
+      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-twitter" href="#"><svg class="icon-sprite icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a></li>
+      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-rss" href="#"><svg class="icon-sprite icon-rss"><use xlink:href="#icon-rss"></use></svg></a></li>
     </ul>
     <ul class="navbar-secondary my-5">
-      <li class="px-4"><a class="navbar-secondary__link" href="#">About</a></li>
-      <li class="px-4"><a class="navbar-secondary__link" href="#">Need Help</a></li>
-      <li class="px-4"><a class="navbar-secondary__link" href="#">Content Guide</a></li>
-      <li class="px-4"><a class="navbar-secondary__link" href="#">The Shallot Store</a></li>
-      <li class="px-4"><a class="navbar-secondary__link" href="#">Privacy</a></li>
-      <li class="px-4"><a class="navbar-secondary__link" href="#">Terms of Use</a></li>
-      <li class="px-4"><a class="navbar-secondary__link" href="#">Advertising</a></li>
-      <li class="px-4"><a class="navbar-secondary__link" href="#">Jobs</a></li>
+      <li class="navbar-secondary__item"><a class="navbar-secondary__link" href="#">About</a></li>
+      <li class="navbar-secondary__item"><a class="navbar-secondary__link" href="#">Need Help</a></li>
+      <li class="navbar-secondary__item"><a class="navbar-secondary__link" href="#">Content Guide</a></li>
+      <li class="navbar-secondary__item"><a class="navbar-secondary__link" href="#">The Shallot Store</a></li>
+      <li class="navbar-secondary__item"><a class="navbar-secondary__link" href="#">Privacy</a></li>
+      <li class="navbar-secondary__item"><a class="navbar-secondary__link" href="#">Terms of Use</a></li>
+      <li class="navbar-secondary__item"><a class="navbar-secondary__link" href="#">Advertising</a></li>
+      <li class="navbar-secondary__item"><a class="navbar-secondary__link" href="#">Jobs</a></li>
     </ul>
-  <p class="font-sm text-grey text-center mb-1">All quotes and stories are fictitious</p>
-  <p class="font-sm text-grey mb-0 text-center">With apologies to <a class="text-grey hover-underline" href="https://www.theonion.com/">The Onion</a></p>
+    <div class="legal-aside">
+      <p class="font-sm text-grey text-center mb-1">All quotes and stories are fictitious</p>
+      <p class="font-sm text-grey text-center mb-0 ">With apologies to <a class="text-grey hover-underline" href="https://www.theonion.com/">The Onion</a></p>
+    </div>
   </footer>
   <script src="src/js/main.js"></script>
 </body>

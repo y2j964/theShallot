@@ -5,8 +5,7 @@
 	background-color: black;
 	padding: 0 8px;
 	position: relative;	
-	z-index:1;
-	
+	// z-index:1;	
 	
 	&__list {
 		display: flex;		
@@ -49,5 +48,10 @@
 	&__link {
 		font-size: $font-md;
 		text-transform: uppercase;
+		 transition: color 300ms;
+		
+		&:focus{
+			color: $magenta;
+		}
 	}
 }

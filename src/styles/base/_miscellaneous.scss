@@ -1,27 +1,5 @@
-.icon-sprite {
-	//important to combat injected stylesheet setting this to none
-  display: inline-block!important;
-  width: 18px;
-  height: 18px;
-  fill: white;
-}
-
-.logo-wrapper {
-	@include screen("md") {
-		padding: 2em 0;
-		margin: 0 auto;
-	}
-}
-
-.icon-google1 {  
-  width: 18px;
-  height: 18px;	
-	margin-right: 10px;
-}
-
-.icon-facebook-2 {
-	fill: $facebook-blue;
-	margin-right: 10px;
+.overflow-auto {
+	overflow: auto;
 }
 
 .l-display-on-medium {
@@ -44,11 +22,6 @@
 	display: none;
 }
 
-.icon-twitter-2 {
-	fill: $twitter-blue;
-	margin-right: 10px;
-}
-
 .logo {
 	width: $logo-width / 1.8;
 	height: $logo-height / 1.8;
@@ -59,21 +32,9 @@
 }	
 	
 .logo-sm {
-		width: $logo-width / 2.3 ;
-		height: $logo-height / 2.3;
-		margin-bottom: 16px;
-	}	
-	
-.icon-search-container {
-	background-color: white;
-	min-width: 32px;
-	@extend %flex-centered;
-}	
-	
-.icon-search {
-	width: 14px;
-	height: 14px;
-	fill: #a6a6a6;	
+	width: $logo-width / 2.3 ;
+	height: $logo-height / 2.3;
+	margin-bottom: 16px;
 }	
 
 .anchor-default {
@@ -114,42 +75,6 @@
 .no-scroll {
 	overflow: hidden;
 }
-
-.icon-user {
-	width: 25px;
-	height: 25px;
-	fill: white;
-	stroke:white;
-}
-
-.icon-user-wrapper {
-	display: block;
-}
-
-.icon-close {
-	width: 28px;
-	height: 28px;
-}
-
-.icon-x-wrapper {
-	position: absolute;
-	display: block;
-	top: 0;
-	right: 0;
-	padding: 2em;
-}
-
-.icon-menu-wrapper {
-		@include screen("md"){
-		display: none;
-	}	
-}
-
-.icon-menu {
-	width: 25px;
-	height: 25px;
-	// stroke-width: 0;
-	}
 	
 // made into a pseudo element b/c of counter content
 .number-overlay:before {					
@@ -214,4 +139,95 @@
 
 .overflow-hidden {
 	overflow: hidden;
+}
+
+.text-black {
+	color: black;
+}
+
+// .full-screen{
+	// display: block;
+	// position: fixed;
+	// top: 0;
+	// left: 0;
+	// right: 0;
+	// bottom: 0;
+	// z-index: 10;
+	// overflow: auto;
+	// background-color: white;
+// }
+
+.uppercase {
+	text-transform: uppercase;
+	color: $grey;
+}
+
+.square-30{
+	// 32 is important for it to line up right with text; the text is 16px + line-height of 16px on the top and bottom (16 + 16 = 32); 
+	// different fonts look bigger or smaller, so this may not be as plainly mathematical as I'm making it out to be
+	width: 32px;
+	height: 32px;
+	margin-right: 10px;
+	vertical-align: top;
+}
+
+.square-sm{
+	// 32 is important for it to line up right with text; the text is 16px + line-height of 16px on the top and bottom (16 + 16 = 32); 
+	// different fonts look bigger or smaller, so this may not be as plainly mathematical as I'm making it out to be
+	width: 32px;
+	height: 32px;
+	vertical-align: top;
+}
+
+.line-height-lg {
+	//setting height w/ line height so that text is centered and we can vertical-align icon to top
+	line-height: 48px;
+	display: flex;
+	vertical-align: bottom;
+	
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.square-48 {
+	height: 48px;
+	width: 48px;
+}
+
+.fixed-height {
+// add the border of 1px
+	height: 48px + 1 + px;
+}
+
+.flex-row-lg {
+	@include screen("lg"){
+		flex-direction: row!important;
+	}
+}
+
+.tab--is-active {
+	background-color: white;
+	border-bottom: none;
+	margin-bottom: -1px;
+}
+
+.fixed-header {
+	position:fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+
+.mt-50 {
+	margin-top: 49px
+}	
+
+.p-6 {
+	padding: 2.25em;
+}
+
+.flex-centered {
+	@extend %flex-centered;
 }
