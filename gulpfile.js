@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     prefix = require("gulp-autoprefixer"),
     terser = require("gulp-terser"),
+    eslint = require("gulp-eslint"),
     sass = require("gulp-sass"),
     imagemin = require("gulp-imagemin"),
     concat = require("gulp-concat"),
@@ -22,9 +23,24 @@ gulp.task("imageMin", function(){
   .pipe(gulp.dest("dist/assets/images"))
 });
 
+//js linter
+gulp.task("eslint", function(){
+  return gulp.src("src/js/*.js")
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
+})
+
+gulp.task("eslintFix", function(){
+  return gulp.src("src/js/*.js")
+    .pipe(eslint({fix:true}))
+    .pipe(eslint.format())
+    .pipe(gulp.dest("src/js/"))    
+})
+
 // concatenate and minify js
 gulp.task("scripts", function(){
-  return gulp.src("src/**/*.js")
+  return gulp.src("src/js/*.js")        
     .pipe(concat("main.js"))
     .pipe(terser())
     .pipe(lineEndings())
@@ -39,9 +55,12 @@ gulp.task("serve", function(){
       baseDir: "./"
     }  
   });  
+  // watch and compile
   gulp.watch("src/styles/**/*.scss", gulp.series("sass"));
+  gulp.watch("src/js/*.js", gulp.series("scripts"));
+  // watch and reload
   gulp.watch("*.html").on("change", browserSync.reload);
-  gulp.watch("src/js/*.js").on("change", browserSync.reload);
+  gulp.watch("dist/*.js").on("change", browserSync.reload);
 });
 
 //compile sass and rename to conventional styles.css
