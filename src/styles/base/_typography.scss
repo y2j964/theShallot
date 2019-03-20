@@ -45,7 +45,8 @@ a:focus {
 }
 
 // to prevent inner svg or use element from eating my click event in event delegation
-a > svg {
+a > svg,
+a > img {
 	pointer-events: none;
 }
 

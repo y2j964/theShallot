@@ -8,7 +8,7 @@ var gulp = require('gulp'),
     rename = require("gulp-rename"),
     plumber = require("gulp-plumber"),
     cleanCSS = require("gulp-clean-css"),
-    sourcemaps =require("gulp-sourcemaps"),
+    sourcemaps = require("gulp-sourcemaps"),
     lineEndings = require("gulp-line-ending-corrector"),
     browserSync = require("browser-sync").create();           
     
@@ -69,7 +69,6 @@ gulp.task("sass", function(){
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
     .pipe(prefix("last 2 versions"))
-    .pipe(sourcemaps.init())
     .pipe(cleanCSS())
     .pipe(sourcemaps.write())
     .pipe(lineEndings())

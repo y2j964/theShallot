@@ -11,8 +11,11 @@ const jsModals = document.querySelector('.js-modals');
 const jsModalMenu = jsModals.querySelector('.js-modal-menu');
 const jsModalForm = jsModals.querySelector('.js-modal-form');
 const xIcons = document.querySelectorAll('.js-icon-close');
+const kinjaCloseIcon = document.querySelector('.js-icon-close-kinja');
 const tabSwitches = document.querySelector('.tab-switches');
-const tabUser = tabSwitches.querySelector('.js-icon-user');
+const [homeSwitch, userSwitch] = tabSwitches.querySelectorAll('.js-home-switch');
+// const userSwitch = tabSwitches.querySelector('.js-user-switch');
+// const tabUser = tabSwitches.querySelector('.js-icon-user');
 const login = document.querySelector('.js-login');
 const userName = document.querySelector('#username');
 const userNameError = document.querySelector('#js-username-error');
@@ -24,6 +27,8 @@ const modalNav = document.querySelector('.js-modal-nav');
 const current = 0;
 const emailRegex = /\S+@\S+\.\S+/;
 
+// FUNCTIONS //
+
 // hamburger-menu expand and collapse
 function expandMenu() {
   // remove scroll from body
@@ -31,12 +36,11 @@ function expandMenu() {
   // toggle the display of modal
   // the first modal represents the menu we want, so we'll just return the first we find
   jsModals.querySelector('.l-modal').classList.toggle('l-modal--is-visible');
-
+  tabSwitches.classList.add('tab-switches--is-visible');
+  kinjaCloseIcon.classList.add('icon-close--is-hidden');
   // if menu is open and click on user, (1)toggle is-visible between two modals, (
   // 2)remove x from modalForm, and (3)retain header from modalMenu
 }
-
-// FUNCTIONS //
 
 // validate fields in Kinja form
 function validateField(input, message) {
@@ -69,7 +73,7 @@ function displayModal() {
     // jsModalMenu.classList.remove("l-modal--is-visible")
   // }
 
-  // toggle the display of modal
+  // display modal
   jsModalForm.classList.add('l-modal--is-visible');
 }
 
@@ -81,13 +85,27 @@ function closeModal(e) {
   }
 
   lModal.classList.remove('l-modal--is-visible');
+  tabSwitches.classList.remove('tab-switches--is-visible');
+  kinjaCloseIcon.classList.remove('icon-close--is-hidden');
   body.classList.remove('no-scroll');
 }
 
 // clicks on tabSwitches
-function switchModal() {
-  jsModalMenu.classList.remove('l-modal--is-visible');
-  jsModalForm.classList.add('l-modal--is-visible');
+function switchModal(e) {
+  if (e.target.classList.contains('tab-switches__item')) {    
+    // only change if not currently active
+     if (!e.target.classList.contains('tab-switches__item--is-active')) {      
+      // grab activeTab (there can only be one activeTab at a time)
+      const activeTab = tabSwitches.querySelector('.tab-switches__item--is-active');
+      // remove active state from activeTab
+      activeTab.classList.remove('tab-switches__item--is-active');
+      // add active background color on newly activated tab
+      e.target.classList.add('tab-switches__item--is-active');
+      // switch modals
+      jsModalMenu.classList.toggle('l-modal--is-visible');
+      jsModalForm.classList.toggle('l-modal--is-visible'); 
+    }  
+  }
 }
 
 // search bar expand and collapse
@@ -150,7 +168,7 @@ userIcon.addEventListener('click', displayModal);
 // clicks on close icon
 jsModals.addEventListener('click', closeModal);
 
-tabUser.addEventListener('click', switchModal);
+tabSwitches.addEventListener('click', switchModal);
 
 reelStoryNav.addEventListener('mouseover', reelTransition);
 
