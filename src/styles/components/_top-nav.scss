@@ -15,8 +15,14 @@
 		color: #a6a6a6;
 		padding: 0 8px;
 		
-		&:hover {
+		&:hover,
+		// focus-within to keep dropdown open while tabbing through contents
+		&:focus-within	{
 			background-color: white;			
+			
+			.top-nav__link {
+				outline: none;
+			}
 			
 			.dropdown {
 				display: flex;
@@ -28,8 +34,8 @@
 		color: #a6a6a6;
 		text-transform: uppercase;		
 		
-		&:hover{
+		&:hover {
 			text-decoration: none;
-		}
+		}							
 	}
 }

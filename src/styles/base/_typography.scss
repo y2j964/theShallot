@@ -35,7 +35,7 @@ a {
 
 a:hover {
   text-decoration: underline;
-  color: inherit;
+  color: black;
 	cursor: pointer;
 }
 
@@ -46,7 +46,9 @@ a:focus {
 
 // to prevent inner svg or use element from eating my click event in event delegation
 a > svg,
-a > img {
+a > img,
+button > svg,
+button > img {
 	pointer-events: none;
 }
 
@@ -56,6 +58,15 @@ a > img {
 
 input:focus{
   outline: none;
+}
+
+.button-plain {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+	cursor: pointer;
 }
 
 time {
@@ -99,3 +110,19 @@ time {
 	}
 }
 		
+
+.anchor-default {
+	color: $blue-link;
+}
+
+.font-sm {
+	font-size: $font-sm;
+}
+
+.font-md {
+	font-size: $font-md;
+}
+
+.font-lg {
+	font-size: $font-lg;
+}

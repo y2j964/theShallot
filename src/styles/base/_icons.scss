@@ -1,3 +1,18 @@
+.logo {
+	width: $logo-width / 1.8;
+	height: $logo-height / 1.8;
+	@include screen("md") {
+		width: $logo-width;
+		height: $logo-height;
+	}
+}	
+	
+.logo-sm {
+	width: $logo-width / 2.3 ;
+	height: $logo-height / 2.3;
+	margin-bottom: 16px;
+}	
+
 .icon-sprite {
 	//important to combat injected stylesheet setting this to none
   display: inline-block!important;

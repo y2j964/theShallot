@@ -32,22 +32,22 @@
         </symbol>
         </defs>
         </svg>      
-        <div class="l-searchbar">        
-          <a role="button" tabindex="0" class="js-searchbar-toggler magnifying-glass">
+        <div class="l-searchbar" aria-expanded="false">        
+          <button class="button-plain js-searchbar-toggler magnifying-glass" aria-label="open searchbar" >
             <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
-          </a>
-          <div class="l-searchbar-overlay">          
-            <div class="searchbar">            
-              <a role="button" tabindex="0" class="js-searchbar-toggler">
+          </button>
+          <div class="l-searchbar-overlay">
+            <form class="searchbar">     
+              <button class="button-plain js-searchbar-toggler" type="button" aria-label="close searchbar">
                 <svg class=" icon-close icon-close--sm icon-close--grey"><use xlink:href="#icon-close"></use></svg>
-              </a>
-              <input type="text" placeholder="SEARCH THE SHALLOT" class="searchbar__input">
-            </div>
+              </button>
+              <input type="text" placeholder="SEARCH THE SHALLOT" role="search" class="searchbar__input">
+            </form>
           </div>
         </div>                
         <ul class="top-nav__list">
-          <li class="top-nav__item"><a class="top-nav__link" href="#">Dropdown</a>
-            <div class="dropdown">
+          <li class="top-nav__item" id="dropdown-nav" aria-haspopup="true" aria-expanded="false"><a class="top-nav__link" href="#">Dropdown</a>
+            <div class="dropdown" aria-labelledby="dropdown-nav" >
               <ul class="d-flex flex-column fr-2">
                 <li class="dropdown__item"><a class="dropdown__link" href="#">acoustic</a></li>
                 <li class="dropdown__item"><a class="dropdown__link" href="#">pickups</a></li>
@@ -76,378 +76,26 @@
                   <h2 class="dropdown-story__title">mustang</h2>
                 </a></li>              
               </ul>
-            </div>
+            </div>            
           </li>
-          <li class="top-nav__item"><a class="top-nav__link" href="#">Nothing</a></li>
-          <li class="top-nav__item"><a class="top-nav__link" href="#">Nothing</a></li>
+          <li class="top-nav__item"><a class="top-nav__link"  href="#">Nothing</a></li>
+          <li class="top-nav__item"><a class="top-nav__link"  href="#">Nothing</a></li>
         </ul> 
         <div class="d-flex align-items-center ml-auto pr-2">
-          <a role="button" tabindex="0" class="ml-auto js-icon-user"><svg class="icon icon-user pointer"><use xlink:href="#icon-user"></use></svg></a>              
+          <button tabindex="0" class="button-plain ml-auto js-icon-user" aria-label="log in"><svg class="icon icon-user pointer"><use xlink:href="#icon-user"></use></svg></button>
         </div>
       </nav>
     </div>   
     <div class="d-flex align-items-center p-2">
       <div class="logo-wrapper">
-        <h1 class=" text-center my-0 d-inline" href="#">
-          <a href="#">
-            <svg class="logo"
-               xmlns:dc="http://purl.org/dc/elements/1.1/"
-               xmlns:cc="http://creativecommons.org/ns#"
-               xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns="http://www.w3.org/2000/svg"
-               xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-               xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-               version="1.1"
-               id="svg1083"
-               viewBox="0 0 709.63719 95.632124"
-               sodipodi:docname="logo2.svg"
-               inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
-              <metadata
-                 id="metadata1089">
-                <rdf:RDF>
-                  <cc:Work
-                     rdf:about="">
-                    <dc:format>image/svg+xml</dc:format>
-                    <dc:type
-                       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                    <dc:title></dc:title>
-                  </cc:Work>
-                </rdf:RDF>
-              </metadata>
-              <defs
-                 id="defs1087">
-                <filter
-                   inkscape:collect="always"
-                   style="color-interpolation-filters:sRGB"
-                   id="filter2303"
-                   x="-0.087694019"
-                   width="1.175388"
-                   y="-0.15804756"
-                   height="1.3160951">
-                  <feGaussianBlur
-                     inkscape:collect="always"
-                     stdDeviation="0.28894411"
-                     id="feGaussianBlur2305" />
-                </filter>
-              </defs>
-              <sodipodi:namedview
-                 pagecolor="#ffffff"
-                 bordercolor="#666666"
-                 borderopacity="1"
-                 objecttolerance="10"
-                 gridtolerance="10"
-                 guidetolerance="10"
-                 inkscape:pageopacity="0"
-                 inkscape:pageshadow="2"
-                 inkscape:window-width="1366"
-                 inkscape:window-height="705"
-                 id="namedview1085"
-                 showgrid="false"
-                 fit-margin-top="0"
-                 fit-margin-left="0"
-                 fit-margin-right="0"
-                 fit-margin-bottom="0"
-                 inkscape:zoom="0.92335789"
-                 inkscape:cx="333.83061"
-                 inkscape:cy="-66.563843"
-                 inkscape:window-x="-8"
-                 inkscape:window-y="-8"
-                 inkscape:window-maximized="1"
-                 inkscape:current-layer="svg1083" />
-              <path
-                 style="fill:none;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                 d="m 13.036398,83.354111 c 0.268196,0.130134 0.550617,0.234315 0.804587,0.390403 0.02956,0.01817 0.0084,0.07043 0,0.104089 -0.02661,0.106444 -0.07748,0.205824 -0.104089,0.312268 -0.02203,0.08812 0,0.308284 0,0.416357 0,0.242874 0,0.485749 0,0.728624"
-                 id="path1883"
-                 inkscape:connector-curvature="0" />
-              <path
-                 style="fill:#ffccaa;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter2303)"
-                 d="m 7.1822646,78.836364 7.9077904,4.387704"
-                 id="path1889"
-                 inkscape:connector-curvature="0" />
-              <g
-                 inkscape:groupmode="layer"
-                 id="layer1"
-                 inkscape:label="Layer 1"
-                 transform="translate(60.577044,38.666744)" />
-              <g
-                 inkscape:groupmode="layer"
-                 id="layer2"
-                 inkscape:label="Layer 2"
-                 transform="translate(60.577044,38.666744)" />
-              <path
-                 style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-                 d="m 15.090051,83.224068 v 0"
-                 id="path2344"
-                 inkscape:connector-curvature="0" />
-              <g
-                 id="g891"
-                 transform="translate(6.4887986,36.812149)">
-                <g
-                   transform="matrix(1.9651897,0,0,1.9651897,56.159218,-41.139876)"
-                   id="g1795">
-                  <path
-                     sodipodi:nodetypes="ccsccscsssssscsscsccsccccscscc"
-                     style="fill:none;stroke:#b30086;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-                     d="m -8.5736697,12.501438 c 0,0 -10.6949903,2.474874 -11.4020973,2.828427 -0.707106,0.353554 -6.894291,4.772971 -7.954951,5.833631 -1.06066,1.06066 -3.358757,6.098796 -3.358757,6.098796 l -0.08839,6.805903 c 0,0 2.032932,6.452349 2.828427,6.452349 0.795495,0 3.71231,3.181981 3.71231,3.181981 0,0 1.944544,-2.651651 3.977476,-0.795495 2.032932,1.856155 5.656854,3.623922 4.507806,4.507805 -1.149049,0.883884 4.596194,1.767767 7.7781743,0.795495 3.1819805,-0.972271 8.39689301,-4.419417 8.83883474,-6.275572 C 0.70710678,40.078602 2.2097087,36.012738 1.8561553,32.74237 1.5026019,29.472001 -1.2374369,17.627962 -1.0606602,19.307341 c 0.17677673,1.679378 -0.6187184,-3.623922 -0.6187184,-3.623922 0,0 3.3587572,-3.447146 4.1542523,-4.242641 0.7954952,-0.795495 2.9168155,-1.6793787 3.6239223,-2.2097088 0.7071068,-0.5303301 1.9445436,-4.065864 1.9445436,-4.065864 0,0 -0.1767767,-2.6516504 -0.7954951,-2.3864854 C 6.6291261,3.0438848 5.2149125,4.104545 5.2149125,4.104545 L 4.065864,2.9554965 c 0,0 -1.5909903,-0.5303301 -1.0606602,0 0.5303301,0.5303301 1.1490485,1.6793786 1.1490485,1.6793786 L 1.4142136,5.2535935 0.88388347,5.1652052 0.35355339,4.3697101 c 0,0 -0.79549513,-0.7954952 -0.70710678,0.4419417 0.0883884,1.2374369 -2.03293201,3.5355339 -2.03293201,3.5355339 0,0 0.5617318,-0.6972228 0.031402,-0.078504 -0.5303301,0.6187185 -3.0366055,2.6417663 -3.5669356,2.9953193 -0.5303301,0.353554 -2.6516504,1.237437 -2.6516507,1.237437 z"
-                     id="path1750"
-                     inkscape:connector-curvature="0" />
-                </g>
-                <path
-                   sodipodi:nodetypes="ccccc"
-                   inkscape:connector-curvature="0"
-                   id="path2335"
-                   d="m 22.88985,53.366547 0.146289,-1.818673 c 2.097313,-0.361607 -5.930334,-5.351768 -5.930334,-5.351768 -5.78405,-7.170434 -9.5463882,-0.07232 -9.5463882,-0.07232 0,0 1.1538592,12.098921 15.3304412,7.24276"
-                   style="fill:#e9c6af;stroke:#e9c6af;stroke-width:0.39303795;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-                <path
-                   inkscape:connector-curvature="0"
-                   id="path2361"
-                   d="m 20.855265,39.75085 c 0,0 31.603759,-68.662924 39.31658,-65.84116"
-                   style="fill:none;stroke:#b30086;stroke-width:1.9651897px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-                <path
-                   sodipodi:nodetypes="cc"
-                   inkscape:connector-curvature="0"
-                   id="path2363"
-                   d="M 6.3702098,34.107323 C 4.9707884,36.073741 -6.6836375,15.738952 28.782943,-8.2514138"
-                   style="fill:none;stroke:#b30086;stroke-width:1.9651897px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-                <g
-                   id="g876">
-                  <path
-                     style="fill:none;stroke:#b30086;stroke-width:1.9651897px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.95220588"
-                     d="M 33.08291,44.265673 C 34.558278,44.818937 61.045356,27.851585 49.046167,2.5413805"
-                     id="path2365"
-                     inkscape:connector-curvature="0"
-                     sodipodi:nodetypes="cc" />
-                </g>
-                <path
-                   sodipodi:nodetypes="cc"
-                   inkscape:connector-curvature="0"
-                   id="path2340"
-                   d="M 7.7436533,46.860734 C 4.8620151,48.354946 2.5123046,45.969441 2.0144199,48.039006"
-                   style="fill:none;stroke:#e4c1af;stroke-width:1.57215178;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-                <path
-                   sodipodi:nodetypes="cc"
-                   inkscape:connector-curvature="0"
-                   id="path2342"
-                   d="M 9.7589652,50.083067 C 7.7990127,49.259497 4.5942403,47.969498 -0.97189419,52.555203"
-                   style="fill:none;stroke:#e4c1af;stroke-width:1.57215178;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-                <path
-                   sodipodi:nodetypes="cc"
-                   inkscape:connector-curvature="0"
-                   id="path2346"
-                   d="m 18.854032,53.622106 c -2.445975,1.859482 -1.051697,2.950915 1.376612,3.835542"
-                   style="fill:none;stroke:#e4c1af;stroke-width:1.57215178;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-                <path
-                   sodipodi:nodetypes="ccc"
-                   inkscape:connector-curvature="0"
-                   id="path2348"
-                   d="m 15.008492,52.902603 -1.473892,3.270496 1.473892,2.210839"
-                   style="fill:none;stroke:#e4c1af;stroke-width:1.57215178;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-                <path
-                   sodipodi:nodetypes="cc"
-                   inkscape:connector-curvature="0"
-                   id="path2350"
-                   d="m 11.534496,51.860404 c 1.924405,2.1682 -0.407358,3.485166 -0.6948,5.210995"
-                   style="fill:none;stroke:#e4c1af;stroke-width:1.57215178;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-                <path
-                   sodipodi:nodetypes="cc"
-                   inkscape:connector-curvature="0"
-                   id="path2354"
-                   d="m 10.704677,51.335378 c 0,0 -6.325454,1.105419 -6.8781636,3.316258"
-                   style="fill:none;stroke:#e9c6af;stroke-width:1.37563276;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-              </g>
-              <flowRoot
-                 xml:space="preserve"
-                 id="flowRoot60"
-                 style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
-                   id="flowRegion62"><rect
-                     id="rect64"
-                     width="892.39502"
-                     height="106.13436"
-                     x="90.972313"
-                     y="4.6598163" /></flowRegion><flowPara
-                   id="flowPara66" /></flowRoot>  <text
-                 xml:space="preserve"
-                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.41333008px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.07125592"
-                 x="91.653755"
-                 y="78.714844"
-                 id="text70"
-                 transform="scale(0.93348378,1.0712559)"><tspan
-                   sodipodi:role="line"
-                   id="tspan68"
-                   x="91.653755"
-                   y="78.714844"
-                   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.41333008px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:1.07125592">the SHALLOT</tspan></text>
-            </svg>
-
+        <h1 class=" text-center my-0 d-inline" href="#" aria-label="The Shallot">
+          <a href="#">            
+            <svg class="logo" xmlns="http://www.w3.org/2000/svg" id="svg1083" viewBox="0 0 709.637 95.632"><defs id="defs1087"><filter id="filter2303" x="-.088" width="1.175" y="-.158" height="1.316" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation=".289" id="feGaussianBlur2305"/></filter></defs><path d="M13.036 83.354c.269.13.551.234.805.39.03.019.008.07 0 .105-.027.106-.077.205-.104.312-.022.088 0 .308 0 .416v.729" id="path1883" fill="none" stroke="#000" stroke-width="0"/><path d="M7.182 78.836l7.908 4.388" id="path1889" fill="#fca" filter="url(#filter2303)"/><path d="M15.09 83.224" id="path2344" fill="none" stroke="#000"/><g id="g891" transform="translate(6.489 36.812)"><g transform="matrix(1.96519 0 0 1.96519 56.16 -41.14)" id="g1795"><path d="M-8.574 12.501s-10.695 2.475-11.402 2.829c-.707.353-6.894 4.773-7.955 5.833-1.06 1.061-3.358 6.1-3.358 6.1l-.089 6.805s2.033 6.453 2.829 6.453c.795 0 3.712 3.182 3.712 3.182s1.944-2.652 3.977-.796 5.657 3.624 4.508 4.508c-1.149.884 4.596 1.768 7.778.795 3.182-.972 8.397-4.42 8.84-6.275.441-1.856 1.944-5.922 1.59-9.193-.353-3.27-3.093-15.114-2.917-13.435.177 1.68-.618-3.624-.618-3.624s3.358-3.447 4.154-4.242c.795-.796 2.917-1.68 3.624-2.21.707-.53 1.944-4.066 1.944-4.066s-.176-2.651-.795-2.386c-.619.265-2.033 1.326-2.033 1.326l-1.15-1.15s-1.59-.53-1.06 0 1.15 1.68 1.15 1.68l-2.74.619-.531-.089-.53-.795s-.796-.796-.708.442c.089 1.237-2.032 3.535-2.032 3.535s.561-.697.03-.078c-.53.618-3.036 2.641-3.566 2.995-.53.354-2.652 1.237-2.652 1.237z" id="path1750" fill="none" stroke="#b30086"/></g><path id="path2335" d="M22.89 53.367l.146-1.82c2.097-.36-5.93-5.35-5.93-5.35-5.784-7.171-9.547-.073-9.547-.073s1.154 12.099 15.33 7.243" fill="#e9c6af" stroke="#e9c6af" stroke-width=".393"/><path id="path2361" d="M20.855 39.75S52.46-28.911 60.172-26.09" fill="none" stroke="#b30086" stroke-width="1.965"/><path id="path2363" d="M6.37 34.107C4.97 36.074-6.684 15.74 28.783-8.25" fill="none" stroke="#b30086" stroke-width="1.965"/><g id="g876"><path d="M33.083 44.266c1.475.553 27.962-16.414 15.963-41.725" id="path2365" fill="none" stroke="#b30086" stroke-width="1.965" stroke-opacity=".952"/></g><path id="path2340" d="M7.744 46.86c-2.882 1.495-5.232-.89-5.73 1.179" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2342" d="M9.759 50.083c-1.96-.824-5.165-2.114-10.73 2.472" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2346" d="M18.854 53.622c-2.446 1.86-1.052 2.951 1.377 3.836" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2348" d="M15.008 52.903l-1.473 3.27 1.473 2.21" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2350" d="M11.534 51.86c1.925 2.169-.407 3.486-.694 5.211" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2354" d="M10.705 51.335s-6.326 1.106-6.878 3.317" fill="none" stroke="#e9c6af" stroke-width="1.376"/></g><text style="line-height:1.25;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start" x="91.654" y="78.715" id="text70" transform="scale(.93348 1.07126)" font-weight="700" font-size="91.413" font-family="sans-serif" letter-spacing="0" word-spacing="0" stroke-width="1.071"><tspan id="tspan68" x="91.654" y="78.715" style="-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start">the SHALLOT</tspan></text></svg>
           </a>            
         </h1>
       </div>    
-      <a role="button" tabindex="0" class="ml-auto icon-menu-wrapper js-hamburger-menu"><svg class="icon icon-menu"><use xlink:href="#icon-menu"></use></svg></a>
-    </div>
-    <div class="js-modals">
-      <ul class="tab-switches fixed-header">
-        <li>
-          <a href="#" class="tab-switches__item tab-switches__item--is-active js-home-switch">
-            <img class="square-sm" src="favicon-32x32.png" alt="shallot logo">
-          </a>      
-        </li>  
-        <li>
-          <a href="#" class="tab-switches__item icon-user-2-wrapper js-icon-user js-user-switch">
-            <svg class="icon icon-user-2"><use xlink:href="#icon-user"></use></svg>
-          </a>
-        </li>
-        <li class="d-flex ml-auto pr-2">
-          <a class="js-icon-close" href="#">
-            <svg class="icon icon-close"><use xlink:href="#icon-close"></use>
-          </a>              
-        </li>        
-      </ul>
-      <div class="l-modal js-modal-menu">        
-        <div class= "w-100 mt-50 overflow-auto px-3 py-4">      
-          <form class="d-flex bb-neutral-light pb-3 bb-neutral-light">
-            <div>
-              <svg class="icon icon-search d-inline"><use xlink:href="#icon-search"></use></svg>
-            </div>
-            <input class="flex-grow-1 pl-5 pr-3 b-none uppercase text-light-grey" type="text" placeholder="Search the Shallot">
-          </form>    
-          <ul class="tab-group tab-group--dynamic-lg">      
-            <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <defs>
-              <symbol id="icon-price-tag" viewBox="0 0 32 32">
-              <title>price-tag</title>
-              <path d="M30.5 0h-12c-0.825 0-1.977 0.477-2.561 1.061l-14.879 14.879c-0.583 0.583-0.583 1.538 0 2.121l12.879 12.879c0.583 0.583 1.538 0.583 2.121 0l14.879-14.879c0.583-0.583 1.061-1.736 1.061-2.561v-12c0-0.825-0.675-1.5-1.5-1.5zM23 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"></path>
-              </symbol>
-              </def>
-            </svg>
-            <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Politics</span></a></li>
-            <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Sports</span></a></li>
-            <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Local</span></a></li>
-            <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Entertainment</span></a></li>
-            <li class="tab-group__item"><a class="tab-group__link" href="#"><svg class="tab-group__icon icon-price-tag"><use xlink:href="#icon-price-tag"></use></svg><span>Opinion</span></a></li>
-            <li class="tab-group__item"><a class="tab-group__link" href="#"><svg class="tab-group__icon icon-price-tag"><use xlink:href="#icon-price-tag"></use></svg><span>Video</span></a></li>
-          </ul>
-          <ul class="tab-group">        
-            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/mogcjp3kihx7oyz31doa.png" alt="shallot logo"><span class="uppercase">Clickhole</span></a></li>
-            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span class="uppercase">the Shallot</span></a></li>
-          </ul>
-          <ul class="tab-group">      
-            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/no63bw902mddhwxtjtxh.png" alt="shallot logo"><span class="uppercase">The AV Club</span></a></li>
-            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/rnxqtvv6advgidzfs6am.png" alt="shallot logo"><span class="uppercase">Deadspin</span></a></li>
-            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/fdj3buryz5nuzyf2k620.png" alt="shallot logo"><span class="uppercase">Gizmodo</span></a></li>
-            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/aqhdzcldymb9mkltfhxh.png" alt="shallot logo"><span class="uppercase">Jalopnik</span></a></li>
-            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/pch44wvo0v6acpdlt0f6.png" alt="shallot logo"><span class="uppercase">Jezebel</span></a></li>
-            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/ghxlwgdztvqerb4zptdx.png" alt="shallot logo"><span class="uppercase">Kotaku</span></a></li>
-            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/u0939doeuioaqhspkjyc.png" alt="shallot logo"><span class="uppercase">Lifehacker</span></a></li>
-            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/guli6kfxfg1sgjwfade4.png" alt="shallot logo"><span class="uppercase">Splinter</span></a></li>
-            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/f5zr3vuc90hrpnmx0nme.png" alt="shallot logo"><span class="uppercase">The Root</span></a></li>
-            <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/j59upeyynundqjvbmcwj.png" alt="shallot logo"><span class="uppercase">The Takeout</span></a></li>
-          </ul>
-          <ul class="tab-group">      
-            <li>
-              <a class="tab-group__link" href="#">
-                <img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/nnak0ogtqbt96hhn2yzn.png" alt="open box">
-                <span>the Inventory</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <div class="l-modal js-modal-form">
-      <div class="flex-centered w-100 p-6">
-        <div class="modal-j">
-          <div>
-            <h2 class="modal-j__heading">Log into your Kinja account</h2>
-            <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <symbol id="icon-close" viewBox="0 0 24 24">
-                <title>close</title>
-                <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
-                </symbol>
-              </svg>  
-            <a role="button" class="icon-close-wrapper js-icon-close js-icon-close-kinja"><svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg></a>          
-            <div class="modal-j__body">
-              <div class=" btn-group w-lg-50 br-lg-light-grey pr-3 py-4">
-                <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">                           
-                    <def>
-                      <symbol id="icon-google1" viewBox="0 0 24 28">
-                      <title>google1</title>
-                      <path d="M12 12.281h11.328c0.109 0.609 0.187 1.203 0.187 2 0 6.844-4.594 11.719-11.516 11.719-6.641 0-12-5.359-12-12s5.359-12 12-12c3.234 0 5.953 1.188 8.047 3.141l-3.266 3.141c-0.891-0.859-2.453-1.859-4.781-1.859-4.094 0-7.438 3.391-7.438 7.578s3.344 7.578 7.438 7.578c4.75 0 6.531-3.406 6.813-5.172h-6.813v-4.125z"></path>
-                      </symbol> 
-                    </def>
-                  </svg>
-                <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">             
-                    <defs>
-                      <symbol id="icon-facebook" viewBox="0 0 32 32">
-                      <title>facebook</title>
-                      <path d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z"></path>
-                      </symbol>
-                      <symbol id="icon-instagram" viewBox="0 0 32 32">
-                      <title>instagram</title>
-                      <path d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z"></path>
-                      <path d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z"></path>
-                      <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z"></path>
-                      </symbol>
-                      <symbol id="icon-twitter" viewBox="0 0 32 32">
-                      <title>twitter</title>
-                      <path d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z"></path>
-                      </symbol>
-                      <symbol id="icon-rss" viewBox="0 0 32 32">
-                      <title>rss</title>
-                      <path d="M4.259 23.467c-2.35 0-4.259 1.917-4.259 4.252 0 2.349 1.909 4.244 4.259 4.244 2.358 0 4.265-1.895 4.265-4.244-0-2.336-1.907-4.252-4.265-4.252zM0.005 10.873v6.133c3.993 0 7.749 1.562 10.577 4.391 2.825 2.822 4.384 6.595 4.384 10.603h6.16c-0-11.651-9.478-21.127-21.121-21.127zM0.012 0v6.136c14.243 0 25.836 11.604 25.836 25.864h6.152c0-17.64-14.352-32-31.988-32z"></path>
-                      </symbol>
-                    </defs>
-                  </svg>
-                <button class="btn-group__item btn-j btn-j--inverted">
-                  <a href="#"><svg class="icon-sprite icon-facebook-2"><use xlink:href="#icon-facebook"></use></svg></a>
-                  <span>Connect with Facebook</span>
-                </button>
-                <button class="btn-group__item btn-j btn-j--inverted">
-                  <a href="#"><svg class="icon-sprite icon-twitter-2"><use xlink:href="#icon-twitter"></use></svg></a>
-                  <span>Connect with Twitter</span>
-                </button>
-                <button class="btn-group__item btn-j btn-j--inverted">
-                  <a><svg class="icon icon-google1"><use xlink:href="#icon-google1"></use></svg></a>
-                  <span>Connect with Google</span>
-                </button> 
-              </div>
-              <div class="w-lg-50 d-flex flex-column pl-3">
-                <h3 class="mb-3 font-lg text-center">Or</h3>
-                <p class="modal-j__text mb-3">Use burner accounts to comment anonymously.
-                <span><a href="#" class="anchor-default">Learn more.</a></span></p>
-                <h3 class="mb-3 font-lg">Sign in with your burner account</h3>
-                <form class="form js-login">
-                  <div class="my-2 d-flex">
-                    <div class="w-33">
-                      <label for="username" class="font-sm">User name:</label>
-                    </div>
-                    <div class="w-66 mb-4">
-                      <input type="text" id="username" class="w-100 bb-only b-black">
-                      <small id="js-username-error" class="warning-message hide">Please enter a user-name</small>
-                    </div>
-                  </div>
-                    <div class="my-2 d-flex">                  
-                      <div class="w-33 flex-grow-1 ">
-                        <label for="key" class="font-sm">Key:</label>
-                      </div>
-                      <div class="w-66 flex-grow-1 mb-4">
-                        <input type="password" id="key" class="w-100 bb-only b-black ">
-                        <small id="js-key-error" class="warning-message hide">Please enter a key</small>
-                      </div>
-                    </div>
-                    <div class="text-right my-2">
-                      <button type="submit" class="btn-j btn-j--inverted btn-j--tiny">OK</button>
-                    </div>
-                  </form>
-                </div>
-              </div>          
-              <footer class="modal-j__footer p-3">
-                <p class="modal-j__text">Don't have an account?<a href="#" class="anchor-default"> Create one here</a></p>
-              </footer>                    
-            </div>
-          </div>  
-        </div>  
-      </div>
-    </div>  
+      <button tabindex="0" class="button-plain ml-auto icon-menu-wrapper js-hamburger-menu" aria-label="open navigation"><svg class="icon icon-menu"><use xlink:href="#icon-menu"></use></svg></button>
+    </div>    
   </header>
   <nav class="by-neutral-light">
     <ul class="navbar-primary mb-0">
@@ -523,11 +171,11 @@
   </div>
     <div class="container-fluid bt-md-neutral-light">
       <div class="row">
-        <aside class="sidebar col-lg-4 py-lg-4 br-neutral-light">
-          <div class=" w-control">
+        <aside class="l-sidebar br-neutral-light">
+          <div class="max-w-sm">
             <section class="">
               <h2 class="font-weight-bold">You may also like</h2>
-              <ol class="reel-story__nav list-unstyled d-flex mb-1">
+              <ol class="reel-story__nav list-unstyled d-flex mb-1" aria-hidden="true">
                 <li class="reel-story__thumbnail-item reel-story__thumbnail-item--is-active"><a class="ratio-16-9 number-overlay" href="#"><img src="dist/assets/images//bigSleep.jpg" alt="Humphrey Bogart in The Big Sleep talking to Dorothy Malone"></a></li>
                 <li class="reel-story__thumbnail-item"><a class="ratio-16-9 number-overlay" href="#"><img src="dist/assets/images//maltese.jpg" alt="Humphrey Bogart pointing authoritatively in The Maltese Falcon"></a></li>
                 <li class="reel-story__thumbnail-item"><a class="ratio-16-9 number-overlay" href="#"><img src="dist/assets/images//noir.jpg" alt="Humphrey Bogart and Lauren Bacall in The Big Sleep"></a></li>
@@ -585,7 +233,7 @@
             </section>
           </div>
         </aside>
-        <main class="main-wrapper col-12 col-lg-8 py-4">          
+        <main class="l-main">          
           <article class="feature-story">            
             <div class="feature-story__header">
               <span class=""><a class="media-card-2__hashtag anchor-primary" href="">Social Media Media</a></span>
@@ -653,33 +301,33 @@
       </div>
     </div>
   <section class="newsletter">    
-    <h1 class="d-inline mb-0 p-0">
+    <h1 class="d-inline mb-0 p-0" aria-label="The Shallot">
       <a href="#">
         <svg class="logo-sm" ><use xlink:href="#svg1083"></use></svg>
       </a>  
     </h1>
-  <form class="newsletter__form mx-auto">
-    <p>Want The Shallot's email newsletter?</p>
-    <label class="d-block" for="daily">
-      <input id="daily" type="checkbox" checked>
-      Daily Headlines
-    </label>
-    <label class="d-block" for="weekly">
-      <input id="weekly" type="checkbox" checked>
-      Weekly Updates
-    </label>
-    <label class="d-block mt-3 mb-5" for="emailAddress">
-      <input class="w-100 text-center bg-lighter-grey bb-only b-black line-height-md" id="emailAddress" name="emailAddress" placeholder="Your email address">
-    </label>
-  </form>
-  <button class="btn-j btn-j--primary">Subscribe</button>     
+    <form class="newsletter__form mx-auto">
+      <p>Want The Shallot's email newsletter?</p>
+      <label class="d-block" for="daily">
+        <input class="checkbox" id="daily" type="checkbox" checked aria-checked="true">
+        Daily Headlines
+      </label>
+      <label class="d-block" for="weekly">
+        <input class="checkbox" id="weekly" type="checkbox" checked aria-checked="true">
+        Weekly Updates
+      </label>
+      <label class="d-block mt-3 mb-5" for="emailAddress">
+        <input class="w-100 text-center bg-lighter-grey bb-only b-black line-height-md" id="emailAddress" name="emailAddress" placeholder="Your email address">
+      </label>
+    </form>
+    <button class="btn-j btn-j--primary">Subscribe</button>     
   </section>
   <footer class="p-5 bg-black-light">
     <ul class="navbar-sprite">
-      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-facebook" href="#"><svg class="icon-sprite icon-facebook"><use xlink:href="#icon-facebook"></use></svg></a></li>
-      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-instagram" href="#"><svg class="icon-sprite icon-instagram"><use xlink:href="#icon-instagram"></use></svg></a></li>
-      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-twitter" href="#"><svg class="icon-sprite icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a></li>
-      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-rss" href="#"><svg class="icon-sprite icon-rss"><use xlink:href="#icon-rss"></use></svg></a></li>
+      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-facebook" aria-label="facebook" href="#"><svg class="icon-sprite icon-facebook"><use xlink:href="#icon-facebook"></use></svg></a></li>
+      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-instagram" aria-label="instagram" href="#"><svg class="icon-sprite icon-instagram"><use xlink:href="#icon-instagram"></use></svg></a></li>
+      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-twitter" aria-label="twitter" href="#"><svg class="icon-sprite icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a></li>
+      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-rss" aria-label="rss" href="#"><svg class="icon-sprite icon-rss"><use xlink:href="#icon-rss"></use></svg></a></li>
     </ul>
     <ul class="navbar-secondary my-5">
       <li class="navbar-secondary__item"><a class="navbar-secondary__link" href="#">About</a></li>
@@ -696,6 +344,159 @@
       <p class="font-xs text-grey-darker text-center mb-0 ">With apologies to <a class="text-grey-darker" href="https://www.theonion.com/">The Onion</a></p>
     </div>
   </footer>
+  <div class="js-modals" tabindex="-1">
+    <ul class="tab-switches fixed-header" tabindex="-1">
+      <li>
+        <button class="button-plain tab-switches__item tab-switches__item--is-active js-tab-switch" aria-label="home navigation" aria-pressed="true">
+          <img class="square-sm" src="favicon-32x32.png" alt="shallot logo">
+        </button>      
+      </li>  
+      <li>
+        <button class="button-plain tab-switches__item icon-user-2-wrapper js-icon-user js-tab-switch" aria-label="user login" aria-pressed="false">
+          <svg class="icon icon-user-2"><use xlink:href="#icon-user"></use></svg>
+        </button>
+      </li>
+      <li class="d-flex ml-auto pr-2">
+        <button class="button-plain js-icon-close" aria-label="close">
+          <svg class="icon icon-close"><use xlink:href="#icon-close"></use>
+        </button>              
+      </li>        
+    </ul>
+    <nav class="l-modal js-modal-menu" role="dialog" aria-label="major Shallot links and affiliate site links">
+      <div class= "w-100 mt-50 overflow-auto px-3 py-4">      
+        <form class="d-flex bb-neutral-light pb-3 bb-neutral-light">
+          <div>
+            <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>
+          </div>
+          <input class="flex-grow-1 pl-5 pr-3 b-none text-light-grey" type="text" placeholder="SEARCH THE SHALLOT" role="search">
+        </form>    
+        <ul class="tab-group tab-group--dynamic-lg">      
+          <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+            <symbol id="icon-price-tag" viewBox="0 0 32 32">
+            <title>price-tag</title>
+            <path d="M30.5 0h-12c-0.825 0-1.977 0.477-2.561 1.061l-14.879 14.879c-0.583 0.583-0.583 1.538 0 2.121l12.879 12.879c0.583 0.583 1.538 0.583 2.121 0l14.879-14.879c0.583-0.583 1.061-1.736 1.061-2.561v-12c0-0.825-0.675-1.5-1.5-1.5zM23 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"></path>
+            </symbol>
+            </def>
+          </svg>
+          <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Politics</span></a></li>
+          <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Sports</span></a></li>
+          <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Local</span></a></li>
+          <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Entertainment</span></a></li>
+          <li class="tab-group__item"><a class="tab-group__link" href="#"><svg class="tab-group__icon icon-price-tag"><use xlink:href="#icon-price-tag"></use></svg><span>Opinion</span></a></li>
+          <li class="tab-group__item"><a class="tab-group__link" href="#"><svg class="tab-group__icon icon-price-tag"><use xlink:href="#icon-price-tag"></use></svg><span>Video</span></a></li>
+        </ul>
+        <ul class="tab-group">        
+          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/mogcjp3kihx7oyz31doa.png" alt="shallot logo"><span class="uppercase">Clickhole</span></a></li>
+          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span class="uppercase">the Shallot</span></a></li>
+        </ul>
+        <ul class="tab-group">      
+          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/no63bw902mddhwxtjtxh.png" alt="shallot logo"><span class="uppercase">The AV Club</span></a></li>
+          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/rnxqtvv6advgidzfs6am.png" alt="shallot logo"><span class="uppercase">Deadspin</span></a></li>
+          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/fdj3buryz5nuzyf2k620.png" alt="shallot logo"><span class="uppercase">Gizmodo</span></a></li>
+          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/aqhdzcldymb9mkltfhxh.png" alt="shallot logo"><span class="uppercase">Jalopnik</span></a></li>
+          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/pch44wvo0v6acpdlt0f6.png" alt="shallot logo"><span class="uppercase">Jezebel</span></a></li>
+          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/ghxlwgdztvqerb4zptdx.png" alt="shallot logo"><span class="uppercase">Kotaku</span></a></li>
+          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/u0939doeuioaqhspkjyc.png" alt="shallot logo"><span class="uppercase">Lifehacker</span></a></li>
+          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/guli6kfxfg1sgjwfade4.png" alt="shallot logo"><span class="uppercase">Splinter</span></a></li>
+          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/f5zr3vuc90hrpnmx0nme.png" alt="shallot logo"><span class="uppercase">The Root</span></a></li>
+          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/j59upeyynundqjvbmcwj.png" alt="shallot logo"><span class="uppercase">The Takeout</span></a></li>
+        </ul>
+        <ul class="tab-group">      
+          <li>
+            <a class="tab-group__link" href="#">
+              <img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/nnak0ogtqbt96hhn2yzn.png" alt="open box">
+              <span>the Inventory</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  <div class="l-modal js-modal-form" role="dialog" aria-labelledby="kinja-form-label">
+    <div class="flex-centered w-100 p-6">
+      <div class="modal-j">        
+        <h2 class="modal-j__heading" id="kinja-form-label">Log into your Kinja account</h2>
+        <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <symbol id="icon-close" viewBox="0 0 24 24">
+            <title>close</title>
+            <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+            </symbol>
+          </svg>  
+        <button class="button-plain icon-close-wrapper js-icon-close js-icon-close-kinja" aria-label="close"><svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg></button>
+        <div class="modal-j__body">
+          <div class=" btn-group w-lg-50 br-lg-light-grey pr-3 py-4">
+            <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">                           
+                <def>
+                  <symbol id="icon-google1" viewBox="0 0 24 28">
+                  <title>google1</title>
+                  <path d="M12 12.281h11.328c0.109 0.609 0.187 1.203 0.187 2 0 6.844-4.594 11.719-11.516 11.719-6.641 0-12-5.359-12-12s5.359-12 12-12c3.234 0 5.953 1.188 8.047 3.141l-3.266 3.141c-0.891-0.859-2.453-1.859-4.781-1.859-4.094 0-7.438 3.391-7.438 7.578s3.344 7.578 7.438 7.578c4.75 0 6.531-3.406 6.813-5.172h-6.813v-4.125z"></path>
+                  </symbol> 
+                </def>
+              </svg>
+            <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">             
+                <defs>
+                  <symbol id="icon-facebook" viewBox="0 0 32 32">
+                  <title>facebook</title>
+                  <path d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z"></path>
+                  </symbol>
+                  <symbol id="icon-instagram" viewBox="0 0 32 32">
+                  <title>instagram</title>
+                  <path d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z"></path>
+                  <path d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z"></path>
+                  <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z"></path>
+                  </symbol>
+                  <symbol id="icon-twitter" viewBox="0 0 32 32">
+                  <title>twitter</title>
+                  <path d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z"></path>
+                  </symbol>
+                  <symbol id="icon-rss" viewBox="0 0 32 32">
+                  <title>rss</title>
+                  <path d="M4.259 23.467c-2.35 0-4.259 1.917-4.259 4.252 0 2.349 1.909 4.244 4.259 4.244 2.358 0 4.265-1.895 4.265-4.244-0-2.336-1.907-4.252-4.265-4.252zM0.005 10.873v6.133c3.993 0 7.749 1.562 10.577 4.391 2.825 2.822 4.384 6.595 4.384 10.603h6.16c-0-11.651-9.478-21.127-21.121-21.127zM0.012 0v6.136c14.243 0 25.836 11.604 25.836 25.864h6.152c0-17.64-14.352-32-31.988-32z"></path>
+                  </symbol>
+                </defs>
+              </svg>
+            <button class="btn-group__item btn-j btn-j--inverted">
+              <svg class="icon-sprite icon-facebook-2"><use xlink:href="#icon-facebook"></use></svg>
+              <span>Connect with Facebook</span>
+            </button>
+            <button class="btn-group__item btn-j btn-j--inverted">
+              <svg class="icon-sprite icon-twitter-2"><use xlink:href="#icon-twitter"></use></svg>
+              <span>Connect with Twitter</span>
+            </button>
+            <button class="btn-group__item btn-j btn-j--inverted">
+              <svg class="icon icon-google1"><use xlink:href="#icon-google1"></use></svg>
+              <span>Connect with Google</span>
+            </button> 
+          </div>
+          <div class="w-lg-50 d-flex flex-column pl-3">
+            <h3 class="mb-3 font-lg text-center text-left-lg">Or</h3>
+            <p class="modal-j__text mb-3">Use burner accounts to comment anonymously.
+            <span><a href="#" class="anchor-default">Learn more.</a></span></p>
+            <h3 class="mb-3 font-lg">Sign in with your burner account</h3>
+            <form class="js-login">
+              <div class="form-line">         
+                <label for="username" class="form-label">User name:</label>                     
+                <input type="text" id="username" class="form-input">
+                <small id="js-username-error" class="warning-message hide">Please enter a user-name</small>                
+              </div>
+                <div class="form-line">                            
+                  <label for="key" class="form-label">Key:</label>                       
+                  <input type="password" id="key" class="form-input">
+                  <small id="js-key-error" class="warning-message hide">Please enter a key</small>                  
+                </div>
+                <div class="text-right my-2">
+                  <button type="submit" class="btn-j btn-j--inverted btn-j--tiny">OK</button>
+                </div>
+              </form>
+            </div>
+          </div>          
+          <footer class="modal-j__footer p-3">
+            <p class="modal-j__text">Don't have an account?<a href="#" class="anchor-default"> Create one here</a></p>
+          </footer>                             
+        </div>  
+      </div>  
+    </div>
+  </div>  
   <script src="src/js/main.js"></script>
 </body>
 </html>

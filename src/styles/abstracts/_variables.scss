@@ -16,6 +16,7 @@ $rss-grey: rgb(125, 125, 125);
 
 @mixin bg-and-hover($color){
 	background-color: $color;
+	transition: background-color 300ms ease-in-out;
 	
 	&:hover {
 	background-color: darken($color, 10%)
