@@ -46,7 +46,16 @@
           </div>
         </div>                
         <ul class="top-nav__list">
+          <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+          <symbol id="icon-caret-down" viewBox="0 0 16 28">
+          <title>caret-down</title>
+          <path d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"></path>
+          </symbol>
+          </defs>
+          </svg>
           <li class="top-nav__item" id="dropdown-nav" aria-haspopup="true" aria-expanded="false"><a class="top-nav__link" href="#">Dropdown</a>
+          <button class="button-plain top-nav__toggle-btn" aria-label="expand sub-menu"><svg class="icon icon-caret-down"><use xlink:href="#icon-caret-down"></use></svg></button>
             <div class="dropdown" aria-labelledby="dropdown-nav" >
               <ul class="d-flex flex-column fr-2">
                 <li class="dropdown__item"><a class="dropdown__link" href="#">acoustic</a></li>
@@ -402,7 +411,7 @@
           <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/f5zr3vuc90hrpnmx0nme.png" alt="shallot logo"><span class="uppercase">The Root</span></a></li>
           <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/j59upeyynundqjvbmcwj.png" alt="shallot logo"><span class="uppercase">The Takeout</span></a></li>
         </ul>
-        <ul class="tab-group">      
+        <ul class="tab-group">
           <li>
             <a class="tab-group__link" href="#">
               <img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/nnak0ogtqbt96hhn2yzn.png" alt="open box">

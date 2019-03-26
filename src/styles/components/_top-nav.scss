@@ -14,18 +14,27 @@
 	&__item {		
 		color: #a6a6a6;
 		padding: 0 8px;
+		border-left: 1px solid transparent;
+		border-right: 1px solid transparent;
 		
-		&:hover,
+		// put border on left to separate from searchbar
+		&:first-of-type {									
+			&:hover {
+				border-left-color: $light-grey;								
+			}
+		}
+		
+		&:hover {
 		// focus-within to keep dropdown open while tabbing through contents
-		&:focus-within	{
-			background-color: white;			
+		
+			background-color: white;						
 			
-			.top-nav__link {
-				outline: none;
+			.top-nav__link {				
+				color: #a6a6a6
 			}
 			
-			.dropdown {
-				display: flex;
+			.icon-caret-down {
+				fill:black;
 			}
 		}
 	}
@@ -36,6 +45,12 @@
 		
 		&:hover {
 			text-decoration: none;
-		}							
+		}									
 	}
+	
+	&__toggle-btn {
+		margin-left: -2px;
+		margin-right: 2px;
+	}
+	
 }

@@ -50,6 +50,25 @@
 	}
 }
 
+.w-20 {
+	width: 20%;
+	flex: 0 0 20%;
+}
+
+.w-260 {
+	width: 260px;
+}
+
+.fr-2 {
+	width: 16.666667%;
+	flex: 0 0 16.666667%;
+}
+
+.fr-10 {
+	width: 83.333333%;
+	flex: 0 0 83.333333%;
+}
+
 .line-height-md {
 	line-height: $line-height-md;
 }

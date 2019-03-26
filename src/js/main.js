@@ -4,6 +4,7 @@ const reelStoryNav = document.querySelector('.reel-story__nav');
 const thumbnail = document.querySelectorAll('.reel-story__thumbnail-item');
 const reelStory = document.querySelectorAll('.reel-story');
 const lSearchbar = document.querySelector('.l-searchbar');
+const topNav = document.querySelector('.top-nav');
 const hamburgerMenu = document.querySelector('.js-hamburger-menu');
 const userIcon = document.querySelector('.js-icon-user');
 const body = document.querySelector('body');
@@ -30,17 +31,48 @@ const emailRegex = /\S+@\S+\.\S+/;
 
 // FUNCTIONS //
 
-function ariaExpanded(e) {
-  // set up as conditional so that it can be used for both mouseover and mouseout
-  console.log(e.currentTarget);
-  console.log(e.target);
-  if (!e.currentTarget === e.target) {
+let dropdownTogglePressed = false;
+let dropdownToggleHovered = false;
+
+function displayDropdown(e) {  
+  // only act on btn
+  if (!e.target.classList.contains('top-nav__toggle-btn')) {
     return
-  }   
-  e.currentTarget.getAttribute('aria-expanded') === 'false'
-    ? e.currentTarget.setAttribute('aria-expanded', 'true') 
-    : e.currentTarget.setAttribute('aria-expanded', 'false') 
+  }
+  // climb to top-nav__item parent
+  let topNavItem = e.target.closest('.top-nav__item');  
+  // toggle aria-expanded
+  topNavItem.getAttribute('aria-expanded') === 'false'
+    ? topNavItem.setAttribute('aria-expanded', 'true') 
+    : topNavItem.setAttribute('aria-expanded', 'false')
+  // toggle dropdown display
+  let dropdown = topNavItem.querySelector('.dropdown')
+  dropdown.classList.toggle('dropdown--is-visible');
+  // toggle button pressed boolean 
+  if (!dropdownTogglePressed) {
+    dropdownTogglePressed = true;
+  } else {
+    dropdownTogglePressed = false;
+  }
+  // delineate searchbar
+  // if mouse is not hovering over item (i.e. if down via focus), toggle it
+  if (!dropdownToggleHovered) {    
+    lSearchbar.classList.toggle('l-searchbar--is-delineated'); 
+  } else {
+    // if you are hovering, let mouseover handle delineation
+    return
   }  
+}  
+// engage on press if not already engaged via hover; disengage on press if not hoverd; 
+// 
+function delineateSearchbar() {
+  dropdownToggleHovered === true ? dropdownToggleHovered = false : dropdownToggleHovered = true;
+  // toggle on hover out if dropdown not displayed
+  if (!dropdownTogglePressed) {
+    lSearchbar.classList.toggle('l-searchbar--is-delineated');
+    console.log('hover toggled');  
+  }
+}
 
 function updateAriaCheckbox(e) {  
   if (e.target.classList.contains('checkbox')) {    
@@ -50,30 +82,13 @@ function updateAriaCheckbox(e) {
   }  
 }
 
+let previousActiveEl
+const focusableEls = body.querySelectorAll('a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select');
+
 function modalTrapFocus() {
-  // trap focus inside of modal by inerting all other siblings
-  for (let i = 0; i < body.children.length; i++) {    
-    if (body.children[i] !== jsModals) {
-      body.children[i].setAttribute('inert', 'true');
-    }
-  }  
-  // inert the invisible modal
-  for (let n = 0; n < lModals.length; n++) {
-    if (!lModals[n].classList.contains('is-visible')) {
-      lModals[n].setAttribute('inert', 'true');
-    } 
-  }
-  // set all inerts back to default
-  for (let i = 0; i < body.children.length; i++) { 
-    if (body.children[i] !== jsModals) {
-      body.children[i].setAttribute('inert', 'false');
-    }
-  }
-  // set all inerts back to default
-  for (let n = 0; n < lModals.length; n++) {
-    if (!lModals[n].classList.contains('is-visible')) {
-      lModals[n].setAttribute('inert', 'false');
-    } 
+  previousActiveEl = document.activeElement;
+  for (let i =0; i < focusableEls.length; i++) {
+    focusableEls[i].setAttribute('tabindex', '-1')
   }
 }
 
@@ -143,6 +158,7 @@ function closeModal(e) {
   kinjaCloseIcon.classList.remove('icon-close--is-hidden');
   // restore scroll to body
   body.classList.remove('no-scroll');
+  previousActiveEl.focus();
   
   // revert back to homeSwitch in the event that you close when the userSwitch is active
   if (!homeSwitch.classList.contains('tab-switches__item--is-active')) {
@@ -180,6 +196,11 @@ function expandSearchBar(e) {
     return;
   }  
   lSearchbar.classList.toggle('l-searchbar--is-expanded');
+  // if dropdown menu is visible when magnifying glass is clicked, disappear it
+  let dropdown = topNav.querySelector('.dropdown--is-visible');
+  if (dropdown) {   
+    dropdown.classList.remove('dropdown--is-visible');
+  }
 }
 
 // hovers on article reel thumbnails
@@ -222,19 +243,15 @@ function reelTransition(e) {
 
 // EVENTS //
 
+// hovers over first top nav item
+topNav.querySelector('.top-nav__item').addEventListener('mouseover', delineateSearchbar);
+topNav.querySelector('.top-nav__item').addEventListener('mouseout', delineateSearchbar);
+
 // clicks on hamburger menu
 hamburgerMenu.addEventListener('click', expandModalMenu);
 
 // update aria-expanded on dropdown menu
-dropdownNav.addEventListener("mouseenter", ariaExpanded);
-dropdownNav.addEventListener("focusin", ariaExpanded);
-// dropdownNav.addEventListener("focusin", function(e) {
-  // if (e.target === dropdownNav.querySelector('.dropdown__item')) {
-  // ariaExpanded;
-  // }
-// })
-dropdownNav.addEventListener("focusout", ariaExpanded);
-dropdownNav.addEventListener("mouseleave", ariaExpanded);
+topNav.addEventListener('click', displayDropdown);
 
 // clicks on magnifying glass and x
 lSearchbar.addEventListener('click', expandSearchBar);

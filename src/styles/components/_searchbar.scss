@@ -4,6 +4,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;		
+	border-bottom: 1px solid transparent;
+	
+	&--is-delineated {
+	border-bottom-color: $light-grey;
+	}
 	
 	&-overlay {
 		display: none;

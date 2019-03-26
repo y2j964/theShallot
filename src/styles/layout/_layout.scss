@@ -96,6 +96,13 @@
 	}
 }
 
+.l-display-on-medium {
+	display: none;
+	@include screen("md") {
+		display: block;
+	}
+}
+
 .newsletter {
 	text-align: center;
   background-color: $lighter-grey;
