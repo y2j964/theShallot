@@ -6,6 +6,24 @@
 	white-space: nowrap;
 }
 
+.shadow {
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+}
+
+.text-underline-none {
+	color: $grey;
+	&:hover {
+		text-decoration: none;
+		color: darken($grey, 10%);
+	}
+}
+
+.h-bar {
+	width: 1px;
+	height: 25px;
+	background-color: $light-grey;
+}
+
 .warning-message {
 	display: block;
 	color: #eeb544;

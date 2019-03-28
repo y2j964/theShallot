@@ -111,6 +111,14 @@ $line-height-md: 1.5;
 	bottom: 0;	
 }
 
+%fixed-header {
+	position:fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+
 @mixin pseudo($display: block, $pos: absolute, $content: ''){
 	content: $content;
 	display: $display;

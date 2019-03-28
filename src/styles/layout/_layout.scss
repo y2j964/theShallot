@@ -75,9 +75,10 @@
 	width:100%;
 	flex: 0 0 100%;
 	max-width: 800px;
-	padding-top: 1.5rem;
-	padding-bottom: 1.5rem;
-	padding-left: 15px;
+	// padding-top: 1.5rem;
+	// padding-bottom: 1.5rem;
+	// padding-left: 15px;
+	padding: 1.5rem 1rem;
 	margin: 0 auto;
 	@include screen("lg"){
 		width: 66.7%;

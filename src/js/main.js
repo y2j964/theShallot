@@ -8,7 +8,7 @@ const topNav = document.querySelector('.top-nav');
 const hamburgerMenu = document.querySelector('.js-hamburger-menu');
 const userIcon = document.querySelector('.js-icon-user');
 const body = document.querySelector('body');
-const dropdownNav = document.querySelector('#dropdown-nav');
+const dropdownNav = document.getElementById('dropdown-nav');
 const jsModals = document.querySelector('.js-modals');
 const lModals = document.querySelectorAll('.l-modal');
 const jsModalMenu = jsModals.querySelector('.js-modal-menu');
@@ -19,20 +19,58 @@ const tabSwitches = document.querySelector('.tab-switches');
 const [homeSwitch, userSwitch] = tabSwitches.querySelectorAll('.js-tab-switch');
 const newsletterForm = document.querySelector('.newsletter__form');
 const login = document.querySelector('.js-login');
-const userName = document.querySelector('#username');
-const userNameError = document.querySelector('#js-username-error');
-const key = document.querySelector('#key');
-const keyError = document.querySelector('#js-key-error');
+const userName = document.getElementById('username');
+const userNameError = document.getElementById('js-username-error');
+const key = document.getElementById('key');
+const keyError = document.getElementById('js-key-error');
 const modalNav = document.querySelector('.js-modal-nav');
+const pageHeight = document.body.scrollHeight;
+const navbarScroll = document.querySelector('.l-navbar-scroll');
+const vh = window.innerHeight || document.documentElement.clientHeight;
+// value will always be the same; piped to support different browsers
+const scrollBottomTrigger = document.querySelector('input[name="emailAddress"]')
+const scrollTopBound = document.getElementById('js-scroll-top');
+const scrollButton = document.getElementById('js-scroll-button');
+const lLogo = document.querySelector('.l-logo');
 
-// variables //
 const current = 0;
 const emailRegex = /\S+@\S+\.\S+/;
 
-// FUNCTIONS //
-
 let dropdownTogglePressed = false;
 let dropdownToggleHovered = false;
+
+function scrollToTop() {
+  console.log(scrollBottomTrigger);
+}
+
+// deploy navbar if scrolled to the email subscribe input
+function deployScrollNav() {   
+  // dynamically grab new top position of scrollBottomTrigger
+  const scrollBottomTriggerTop = scrollBottomTrigger.getBoundingClientRect().top;
+  // detect if topLeft of trigger el is onscreen
+  // has to be between 0 and the height of the viewport
+  if (scrollBottomTriggerTop > 0 && scrollBottomTriggerTop <= vh) {
+    // add navbar and tell screen readers it is visible
+    navbarScroll.classList.add('l-navbar-scroll--is-visible');
+    // lLogo.classList.add('fixed-header');
+    navbarScroll.setAttribute('aria-hidden', 'false');    
+  }
+  if (navbarScroll.classList.contains('l-navbar-scroll--is-visible')) {
+    // dynamically grab new top position of scrollTopBound
+    const scrollTopBoundTop = scrollTopBound.getBoundingClientRect().top;
+    if (scrollTopBoundTop > 0) {      
+    // remove navbar and tell screen readers it is no longer visible
+      navbarScroll.classList.remove('l-navbar-scroll--is-visible');      
+      // lLogo.classList.remove('fixed-header');
+      navbarScroll.setAttribute('aria-hidden', 'true');      
+    }  
+  }
+}
+
+window.addEventListener('scroll', deployScrollNav);
+scrollButton.addEventListener('click', scrollToTop);
+
+// FUNCTIONS //
 
 function displayDropdown(e) {  
   // only act on btn
@@ -59,7 +97,7 @@ function displayDropdown(e) {
   if (!dropdownToggleHovered) {    
     lSearchbar.classList.toggle('l-searchbar--is-delineated'); 
   } else {
-    // if you are hovering, let mouseover handle delineation
+    // if you are hovering, let mouseover handle delineation, and do nothing
     return
   }  
 }  
@@ -69,8 +107,7 @@ function delineateSearchbar() {
   dropdownToggleHovered === true ? dropdownToggleHovered = false : dropdownToggleHovered = true;
   // toggle on hover out if dropdown not displayed
   if (!dropdownTogglePressed) {
-    lSearchbar.classList.toggle('l-searchbar--is-delineated');
-    console.log('hover toggled');  
+    lSearchbar.classList.toggle('l-searchbar--is-delineated');    
   }
 }
 
@@ -82,8 +119,19 @@ function updateAriaCheckbox(e) {
   }  
 }
 
-let previousActiveEl
-const focusableEls = body.querySelectorAll('a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select');
+function calcPageHeight() {
+  return Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight,
+      document.body.clientHeight,
+      document.documentElement.clientHeight
+  );
+}
+
+// let previousActiveEl
+// const focusableEls = body.querySelectorAll('a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select');
 
 function modalTrapFocus() {
   previousActiveEl = document.activeElement;
@@ -91,19 +139,54 @@ function modalTrapFocus() {
     focusableEls[i].setAttribute('tabindex', '-1')
   }
 }
+   
 
 // hamburger-menu expand and collapse
 function expandModalMenu() {
   // remove scroll from body
   body.classList.toggle('no-scroll');
   // toggle the display of modal
-  // the first modal represents the menu we want, so we'll just return the first we find
-  jsModals.querySelector('.l-modal').classList.toggle('l-modal--is-visible');
-  const focusElement =   jsModals.querySelector('button');
-  // add a delay so the modal can load before focus is applied
-  setTimeout(function (){
-    focusElement.focus();
-  }, 100);
+  // the first modal represents the menu we want, so we'll just return the first we find  
+  jsModalMenu.classList.toggle('l-modal--is-visible');
+  
+  // function to extract      focusTrap(jsModalMenu)  
+  let focusableEls = jsModalMenu.querySelectorAll('a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select');
+  let firstFocusableEl = focusableEls[0];  
+  let lastFocusableEl = focusableEls[focusableEls.length - 1];
+  // let currentFocusIndex = 0;   
+  firstFocusableEl.focus(); 
+  
+  
+  jsModalMenu.addEventListener('keydown', function(e) {
+    if (e.key !== 'Tab') {
+      return
+    }
+    if (e.shiftKey) {
+      console.log('shifty');
+      if (document.activeElement === firstFocusableEl) {        
+        lastFocusableEl.focus();
+        console.log(lastFocusableEl);
+      }  
+    } 
+    
+    else {
+      console.log('tabby');
+      if (document.activeElement === lastFocusableEl) {        
+        lastFocusableEl.focus();
+        console.log(lastFocusableEl);
+      }
+    }
+  });
+  
+  // tab key events
+    // focusableEls[i].setAttribute('tabindex', '-1')
+  
+  // const focusElement =   jsModals.querySelector('button');
+  // // add a delay so the modal can load before focus is applied
+  // setTimeout(function (){
+    // focusElement.focus();
+  // }, 100);
+  
   tabSwitches.classList.add('tab-switches--is-visible');
   kinjaCloseIcon.classList.add('icon-close--is-hidden');
   // if menu is open and click on user, (1)toggle is-visible between two modals, (
@@ -142,8 +225,7 @@ function displayModalForm() {
   // }
 
   // display modal
-  jsModalForm.classList.add('l-modal--is-visible');
-  jsModalForm.setAttribute('disabled', 'true');
+  jsModalForm.classList.add('l-modal--is-visible');  
 }
 
 function closeModal(e) {  

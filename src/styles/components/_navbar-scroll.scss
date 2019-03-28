@@ -1,0 +1,33 @@
+.l-navbar-scroll {
+	padding: 0 8px;
+	@extend %fixed-header;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+	background-color: white;
+	transform: translate(0, -60px);	
+	// -60px b/c height is 60px
+	transition: transform 200ms linear;
+	
+	&--is-visible {
+		@include screen ("lg") {			
+			transform: translate(0, 0);
+		}
+	}
+}
+
+.navbar-scroll {
+	display: flex;
+	align-items: center;
+	text-transform: uppercase;
+	height: 60px;
+	line-height: 60px;
+
+	&__item {		
+		padding: 0 .5em;
+		color: $grey;
+
+		&:hover {
+			text-decoration: none;
+			color: darken($grey, 10%);
+		}
+	}
+}

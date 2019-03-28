@@ -13,6 +13,11 @@
 	margin-bottom: 16px;
 }	
 
+.favicon-sm {
+	width: 25px;
+	height: 25px;
+}
+
 .icon-sprite {
 	//important to combat injected stylesheet setting this to none
   display: inline-block!important;
@@ -21,8 +26,21 @@
   fill: white;
 }
 
-.logo-wrapper {
+.icon-arrow-up2 {
+	width: 15px;
+	height: 15px;
+	fill: $grey;
+	// margin-top: -6px;
+}
+
+.l-logo {
+// d-flex align-items-center p-2 p-md-0 
+	display: flex;
+	align-items: center;	
+	padding: .5rem;
+	
 	@include screen("md") {
+		justify-content: center;
 		padding: 2em 0;
 		margin: 0 auto;
 	}

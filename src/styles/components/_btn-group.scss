@@ -1,11 +1,12 @@
 .btn-group {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: center;	
+	padding: 1.5rem 1rem 1.5rem 0;
 	
 	&__item {		
 		width: 260px;
-		margin: 1.5rem;
+		margin: 0 0 1.5rem;
 		text-align: left;
 	}
 }
