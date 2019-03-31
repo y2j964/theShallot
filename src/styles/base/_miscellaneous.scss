@@ -189,6 +189,12 @@
 	padding: 2.25em;
 }
 
+.p-lg-6 {
+	@include screen("lg") {
+		padding: 2.25em;
+	}
+}
+
 .flex-centered {
 	@extend %flex-centered;
 }

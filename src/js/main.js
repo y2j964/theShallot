@@ -5,7 +5,7 @@ const thumbnail = document.querySelectorAll('.reel-story__thumbnail-item');
 const reelStory = document.querySelectorAll('.reel-story');
 const lSearchbar = document.querySelector('.l-searchbar');
 const topNav = document.querySelector('.top-nav');
-const hamburgerMenu = document.querySelector('.js-hamburger-menu');
+const [hamburgerMenu, hamburgerMenu2]  = document.querySelectorAll('.js-hamburger-menu');
 const userIcon = document.querySelector('.js-icon-user');
 const body = document.querySelector('body');
 const dropdownNav = document.getElementById('dropdown-nav');
@@ -16,6 +16,7 @@ const jsModalForm = jsModals.querySelector('.js-modal-form');
 const xIcons = document.querySelectorAll('.js-icon-close');
 const kinjaCloseIcon = document.querySelector('.js-icon-close-kinja');
 const tabSwitches = document.querySelector('.tab-switches');
+const tabSwitchButtons = Array.from(tabSwitches.querySelectorAll('button'));
 const [homeSwitch, userSwitch] = tabSwitches.querySelectorAll('.js-tab-switch');
 const newsletterForm = document.querySelector('.newsletter__form');
 const login = document.querySelector('.js-login');
@@ -24,51 +25,24 @@ const userNameError = document.getElementById('js-username-error');
 const key = document.getElementById('key');
 const keyError = document.getElementById('js-key-error');
 const modalNav = document.querySelector('.js-modal-nav');
-const pageHeight = document.body.scrollHeight;
+// const pageHeight = document.body || document.documentElement;
 const navbarScroll = document.querySelector('.l-navbar-scroll');
 const vh = window.innerHeight || document.documentElement.clientHeight;
 // value will always be the same; piped to support different browsers
 const scrollBottomTrigger = document.querySelector('input[name="emailAddress"]')
 const scrollTopBound = document.getElementById('js-scroll-top');
 const scrollButton = document.getElementById('js-scroll-button');
-const lLogo = document.querySelector('.l-logo');
+const lLogoFixed = document.querySelector('.l-logo-fixed');
+const logoHeading = document.querySelector('.l-logo h1');
 
+let previousActiveEl;   
 const current = 0;
 const emailRegex = /\S+@\S+\.\S+/;
 
+// boolean states
 let dropdownTogglePressed = false;
 let dropdownToggleHovered = false;
-
-function scrollToTop() {
-  console.log(scrollBottomTrigger);
-}
-
-// deploy navbar if scrolled to the email subscribe input
-function deployScrollNav() {   
-  // dynamically grab new top position of scrollBottomTrigger
-  const scrollBottomTriggerTop = scrollBottomTrigger.getBoundingClientRect().top;
-  // detect if topLeft of trigger el is onscreen
-  // has to be between 0 and the height of the viewport
-  if (scrollBottomTriggerTop > 0 && scrollBottomTriggerTop <= vh) {
-    // add navbar and tell screen readers it is visible
-    navbarScroll.classList.add('l-navbar-scroll--is-visible');
-    // lLogo.classList.add('fixed-header');
-    navbarScroll.setAttribute('aria-hidden', 'false');    
-  }
-  if (navbarScroll.classList.contains('l-navbar-scroll--is-visible')) {
-    // dynamically grab new top position of scrollTopBound
-    const scrollTopBoundTop = scrollTopBound.getBoundingClientRect().top;
-    if (scrollTopBoundTop > 0) {      
-    // remove navbar and tell screen readers it is no longer visible
-      navbarScroll.classList.remove('l-navbar-scroll--is-visible');      
-      // lLogo.classList.remove('fixed-header');
-      navbarScroll.setAttribute('aria-hidden', 'true');      
-    }  
-  }
-}
-
-window.addEventListener('scroll', deployScrollNav);
-scrollButton.addEventListener('click', scrollToTop);
+let modalFirstFocused = false;
 
 // FUNCTIONS //
 
@@ -84,7 +58,7 @@ function displayDropdown(e) {
     ? topNavItem.setAttribute('aria-expanded', 'true') 
     : topNavItem.setAttribute('aria-expanded', 'false')
   // toggle dropdown display
-  let dropdown = topNavItem.querySelector('.dropdown')
+  let dropdown = topNavItem.querySelector('.dropdown');
   dropdown.classList.toggle('dropdown--is-visible');
   // toggle button pressed boolean 
   if (!dropdownTogglePressed) {
@@ -111,7 +85,41 @@ function delineateSearchbar() {
   }
 }
 
+function scrollToTop() {  
+  // document.body.scrollTop = 0;
+  // document.documentElement.scrollTop = 0;
+  window.scroll({
+    top: 0,    
+  })
+  // tell screen reader where we currently are 
+  logoHeading.focus();
+}
+
+function deployScrollNav() {   
+  // dynamically grab new top position of scrollBottomTrigger
+  const scrollBottomTriggerTop = scrollBottomTrigger.getBoundingClientRect().top;
+  // detect if topLeft of trigger el is onscreen
+  // has to be between 0 and the height of the viewport
+  if (scrollBottomTriggerTop > 0 && scrollBottomTriggerTop <= vh) {
+    // add navbar and tell screen readers it is visible
+    navbarScroll.classList.add('l-navbar-scroll--is-visible');
+    lLogoFixed.classList.add('l-logo-fixed--is-visible');
+    navbarScroll.setAttribute('aria-hidden', 'false');    
+  }
+  if (navbarScroll.classList.contains('l-navbar-scroll--is-visible')) {
+    // dynamically grab new top position of scrollTopBound
+    const scrollTopBoundTop = scrollTopBound.getBoundingClientRect().top;
+    if (scrollTopBoundTop > 0) {      
+    // remove navbar and tell screen readers it is no longer visible
+      navbarScroll.classList.remove('l-navbar-scroll--is-visible');      
+      lLogoFixed.classList.remove('l-logo-fixed--is-visible');
+      navbarScroll.setAttribute('aria-hidden', 'true');      
+    }
+  }
+}
+
 function updateAriaCheckbox(e) {  
+  // toggle aria-checked state
   if (e.target.classList.contains('checkbox')) {    
     e.target.getAttribute('aria-checked') === 'true'
       ? e.target.setAttribute('aria-checked','false')
@@ -119,78 +127,69 @@ function updateAriaCheckbox(e) {
   }  
 }
 
-function calcPageHeight() {
-  return Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.offsetHeight,
-      document.body.clientHeight,
-      document.documentElement.clientHeight
-  );
-}
-
-// let previousActiveEl
-// const focusableEls = body.querySelectorAll('a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select');
-
-function modalTrapFocus() {
-  previousActiveEl = document.activeElement;
-  for (let i =0; i < focusableEls.length; i++) {
-    focusableEls[i].setAttribute('tabindex', '-1')
+function modalTrapFocus(modalEl) {        
+  let modalFocusableEls;
+  let focusableEls;
+  // find active modal
+  if (jsModalMenu.classList.contains('l-modal--is-visible')) {
+     modalFocusableEls = Array.from(jsModalMenu.querySelectorAll('a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'));
+  } else if (jsModalForm.classList.contains('l-modal--is-visible')) {
+    modalFocusableEls = Array.from(jsModalForm.querySelectorAll('a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'));
   }
-}
-   
-
-// hamburger-menu expand and collapse
-function expandModalMenu() {
-  // remove scroll from body
-  body.classList.toggle('no-scroll');
-  // toggle the display of modal
-  // the first modal represents the menu we want, so we'll just return the first we find  
-  jsModalMenu.classList.toggle('l-modal--is-visible');
-  
-  // function to extract      focusTrap(jsModalMenu)  
-  let focusableEls = jsModalMenu.querySelectorAll('a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select');
+  //if tabSwitch header is visible, concat active modal links to the fixed header (sibling element);       
+  if (tabSwitches.classList.contains('tab-switches--is-visible')) { 
+    focusableEls = tabSwitchButtons.concat(modalFocusableEls);
+    // else just preserve active modal links
+  } else {
+    focusableEls = modalFocusableEls;
+  }
+  // find first and last focusable el in modal  
   let firstFocusableEl = focusableEls[0];  
-  let lastFocusableEl = focusableEls[focusableEls.length - 1];
-  // let currentFocusIndex = 0;   
-  firstFocusableEl.focus(); 
-  
-  
-  jsModalMenu.addEventListener('keydown', function(e) {
-    if (e.key !== 'Tab') {
-      return
-    }
-    if (e.shiftKey) {
-      console.log('shifty');
-      if (document.activeElement === firstFocusableEl) {        
-        lastFocusableEl.focus();
-        console.log(lastFocusableEl);
+  let lastFocusableEl = focusableEls[focusableEls.length - 1];    
+  //  focus first el only on initial open; reset state back to false when modal is closed  
+  if (!modalFirstFocused) {
+    // delay to allow modal to display, then focus
+    setTimeout(function (){
+      firstFocusableEl.focus();
+      }, 100);      
+  }
+  // change firstFocused state true so that it doesn't refocus when toggling modals
+    modalFirstFocused = true
+  // disregard non tab key events
+  modalEl.addEventListener('keydown', function(e) {
+    if (e.key !== 'Tab') {      
+      return      
+    }    
+    // if tab + shift
+    if (e.shiftKey) {            
+      if (document.activeElement === firstFocusableEl) {             
+        lastFocusableEl.focus();                
+        e.preventDefault();
       }  
     } 
-    
-    else {
-      console.log('tabby');
-      if (document.activeElement === lastFocusableEl) {        
-        lastFocusableEl.focus();
-        console.log(lastFocusableEl);
+    // if just tab
+    else {            
+      if (document.activeElement === lastFocusableEl) {                
+        firstFocusableEl.focus();        
+        e.preventDefault();
       }
     }
   });
-  
-  // tab key events
-    // focusableEls[i].setAttribute('tabindex', '-1')
-  
-  // const focusElement =   jsModals.querySelector('button');
-  // // add a delay so the modal can load before focus is applied
-  // setTimeout(function (){
-    // focusElement.focus();
-  // }, 100);
-  
+}
+
+// hamburger-menu expand and collapse
+function expandModalMenu() {
+  // store previous active element so it is on focus when user exits modal
+  previousActiveEl = document.activeElement;
+  // remove scroll from body
+  body.classList.toggle('no-scroll');
+  // toggle the display of modal  
+  jsModalMenu.classList.toggle('l-modal--is-visible');
+  // display fixed header for modal
   tabSwitches.classList.add('tab-switches--is-visible');
-  kinjaCloseIcon.classList.add('icon-close--is-hidden');
-  // if menu is open and click on user, (1)toggle is-visible between two modals, (
-  // 2)remove x from modalForm, and (3)retain header from modalMenu
+  // remove default x icon in jsModalForm; it is supplied by fixed header in this instance
+  kinjaCloseIcon.classList.add('icon-close--is-hidden');  
+  modalTrapFocus(jsModals);
 }
 
 // validate fields in Kinja form
@@ -213,46 +212,45 @@ function validateForm(e) {
   e.preventDefault();
 }
 
-// display and remove modal on icon clicks
+// display and remove modal on icon clicks outside of hamburger toggler
 function displayModalForm() {
   // remove scroll from body
   if (!body.classList.contains('no-scroll')) {
     body.classList.add('no-scroll');
-  }
-
-  // if (jsModalMenu.classList.contains("l-modal--is-visible")){
-    // jsModalMenu.classList.remove("l-modal--is-visible")
-  // }
-
+  }  
   // display modal
   jsModalForm.classList.add('l-modal--is-visible');  
+  // focus-trap
+  modalTrapFocus(jsModalForm);
 }
 
 function closeModal(e) {  
-
-  const lModal = document.querySelector('.l-modal--is-visible');
-  
+  const lModal = document.querySelector('.l-modal--is-visible');  
   // disappear the l-modal and the tabSwitch container
   lModal.classList.remove('l-modal--is-visible');
-  tabSwitches.classList.remove('tab-switches--is-visible');
-  
+  tabSwitches.classList.remove('tab-switches--is-visible');  
   // restore regular close icon to Kinja in case accessed through icon-user on home page
   kinjaCloseIcon.classList.remove('icon-close--is-hidden');
   // restore scroll to body
-  body.classList.remove('no-scroll');
-  previousActiveEl.focus();
-  
+  body.classList.remove('no-scroll');  
   // revert back to homeSwitch in the event that you close when the userSwitch is active
   if (!homeSwitch.classList.contains('tab-switches__item--is-active')) {
     homeSwitch.classList.add('tab-switches__item--is-active');
     homeSwitch.setAttribute('aria-pressed', 'true');
     userSwitch.classList.remove('tab-switches__item--is-active');
     userSwitch.setAttribute('aria-pressed', 'false');
+    // remove the offset; no need when viewed via user icon
+    jsModalForm.classList.remove('l-modal--top-offset'); 
   }
+  // set first el focus state back to false
+  modalFirstFocused = false;
+  // put focus on pre-modal state
+  previousActiveEl.focus();
 }
 
 // clicks on tabSwitches
 function switchModal(e) {
+  
   if (e.target.classList.contains('tab-switches__item')) {    
     // only change if not currently active
      if (!e.target.classList.contains('tab-switches__item--is-active')) {      
@@ -268,8 +266,12 @@ function switchModal(e) {
       // switch modals
       jsModalMenu.classList.toggle('l-modal--is-visible');
       jsModalForm.classList.toggle('l-modal--is-visible'); 
+      jsModalForm.classList.toggle('l-modal--top-offset'); 
+      
     }  
   }
+  // update focusable elements
+  modalTrapFocus(jsModals);
 }
 
 // search bar expand and collapse
@@ -331,6 +333,7 @@ topNav.querySelector('.top-nav__item').addEventListener('mouseout', delineateSea
 
 // clicks on hamburger menu
 hamburgerMenu.addEventListener('click', expandModalMenu);
+hamburgerMenu2.addEventListener('click', expandModalMenu);
 
 // update aria-expanded on dropdown menu
 topNav.addEventListener('click', displayDropdown);
@@ -353,7 +356,7 @@ jsModals.addEventListener('click', function(e) {
 })
 
 // close modal on esc press
-jsModals.addEventListener('keyup', function(e) {
+jsModals.addEventListener('keydown', function(e) {
   if (e.key === "Escape") {    
     // console.log("standing in the window");
     closeModal();
@@ -370,5 +373,10 @@ reelStoryNav.addEventListener('focusout', reelTransition);
 
 // submits on Kinja form
 login.addEventListener('submit', validateForm);
+
+// deploy navbar if scrolled to the email subscribe input
+window.addEventListener('scroll', deployScrollNav);
+// auto-scroll to top of page on click of up arrow
+scrollButton.addEventListener('click', scrollToTop);
 
 // window.onload = autoReel();

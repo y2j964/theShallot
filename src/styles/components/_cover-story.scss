@@ -73,6 +73,7 @@
 	&--hero {
 		display: block;
 		border-bottom: 1px solid $light-grey; 		
+		padding-top: 0;
 		@include screen("md"){
 			border-bottom: none;
 		}

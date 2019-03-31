@@ -1,43 +1,46 @@
+// l-modal provides full page overlay
 .l-modal {
-	display: none;
-	// justify-content: center;
-	// align-items: center;
-	// overflow: hidden;
+	display: none;	
 	overflow: auto;
 	background-color: white;
 	z-index: 10;
 	position: fixed;
-	// padding: 2.25em;
 	@extend %position-zeroes;
 	
 	&--is-visible {
 		display: flex;
 	}
 	
-	// &--fullscreen {
-		// // display: flex;	
-		// justify-content: flex-start;
-		// align-items: flex-start;
-		// overflow: auto;
-		// padding: 0;
-	// }
-}
-
-//l modal; 
-
-.modal-j {	
-	max-width: 1000px;
-	width: 70%;
-	//the onion uses a bigger px and then a negative mx in body to compensate
-	padding: 2em .8em;
-	line-height: 1.4;
-	
-	@include screen("lg"){
-		border: 1px solid $light-grey;
-		position: relative;
+	&--top-offset {
+		margin-top: 48px;
 	}
 	
-	&__heading {
+	// dialog is used to position (center) modal within the overlay; 
+	&__dialog {
+		// d-flex justify-content-center align-items-center w-100 p-6
+		@extend %flex-centered;
+		width: 100%;
+		padding: 2.25em;
+	}
+}
+
+
+
+.modal-j {		
+	max-width: 1000px;
+	width: 100%;	
+	line-height: 1.4;
+	margin: auto;
+	// margin auto here fixes overflow caused by flex align-items center
+	
+	@include screen("lg"){
+		position: relative;
+		border: 1px solid $light-grey;
+		padding: 2em .8em;
+		width: 80%;		
+	}
+	
+	&__header {
 		text-align: center;
 		font-size: $font-xl-1;		
 		margin: 0 0 1.5em;

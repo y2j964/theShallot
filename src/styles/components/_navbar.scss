@@ -1,3 +1,11 @@
+.l-navbar-primary {
+	border-top: 1px solid $light-grey;
+	
+	@include screen("md") {
+		border-bottom: 1px solid $light-grey;
+	}	
+}
+
 .navbar-primary {	
 	display: flex;
 	overflow: scroll;
