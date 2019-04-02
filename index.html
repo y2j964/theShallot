@@ -1,117 +1,203 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 <head>
-	<title>The Shallot</title>
+  <title>The Shallot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="robots" content="index,follow"/>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="stylesheet" type="text/css" href="dist/styles.css" />   
+  <link rel="stylesheet" type="text/css" href="dist/styles.css" />
 </head>
+
 <body class="">
   <header class="">
-    <div class= "l-display-on-medium">
-      <nav class="top-nav">
-        <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <defs>
-        <symbol id="icon-user" viewBox="0 0 32 32">
-        <title>user</title>
-        <path d="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z"></path>
-        </symbol>
-        <symbol id="icon-search" viewBox="0 0 32 32">
-        <title>search</title>
-        <path d="M 0.99108888,27.231 8.5710889,20.784 c 0.784,-0.705 1.6220001,-1.029 2.2990001,-0.998 -1.7890001,-2.096 -2.8700001,-4.815 -2.8700001,-7.787 0,-6.627 5.3730001,-12 12.0000001,-12 6.627,0 12,5.373 12,12 0,6.627 -5.373,12 -12,12 -2.972,0 -5.691,-1.081 -7.787,-2.87 0.031,0.677 -0.293,1.515 -0.998,2.299 l -6.4470001,7.58 c -1.104,1.226 -2.907,1.33 -4.00700002,0.23 -1.1,-1.1 -0.997,-2.903 0.23,-4.007 z M 19.999089,20 c 4.418,0 8,-3.582 8,-8 0,-4.418 -3.582,-8 -8,-8 -4.418,0 -8,3.582 -8,8 0,4.418 3.582,8 8,8 z"></path>
-        </symbol>
-        <symbol id="icon-bars" viewBox="0 0 24 28">
-        <title>bars</title>
-        <path d="M24 21v2c0 0.547-0.453 1-1 1h-22c-0.547 0-1-0.453-1-1v-2c0-0.547 0.453-1 1-1h22c0.547 0 1 0.453 1 1zM24 13v2c0 0.547-0.453 1-1 1h-22c-0.547 0-1-0.453-1-1v-2c0-0.547 0.453-1 1-1h22c0.547 0 1 0.453 1 1zM24 5v2c0 0.547-0.453 1-1 1h-22c-0.547 0-1-0.453-1-1v-2c0-0.547 0.453-1 1-1h22c0.547 0 1 0.453 1 1z"></path>
-        </symbol>
-        </defs>
-        </svg>      
-        <div class="l-searchbar" aria-expanded="false">        
-          <button class="button-plain js-searchbar-toggler magnifying-glass" aria-label="open searchbar" >
-            <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
+    <div class="l-display-on-medium">
+      <nav class="top-nav" aria-label="affiliate sites">
+        <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+            <symbol id="icon-user" viewBox="0 0 32 32">
+              <title>user</title>
+              <path
+                d="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z">
+              </path>
+            </symbol>
+            <symbol id="icon-search" viewBox="0 0 32 32">
+              <title>search</title>
+              <path
+                d="M 0.99108888,27.231 8.5710889,20.784 c 0.784,-0.705 1.6220001,-1.029 2.2990001,-0.998 -1.7890001,-2.096 -2.8700001,-4.815 -2.8700001,-7.787 0,-6.627 5.3730001,-12 12.0000001,-12 6.627,0 12,5.373 12,12 0,6.627 -5.373,12 -12,12 -2.972,0 -5.691,-1.081 -7.787,-2.87 0.031,0.677 -0.293,1.515 -0.998,2.299 l -6.4470001,7.58 c -1.104,1.226 -2.907,1.33 -4.00700002,0.23 -1.1,-1.1 -0.997,-2.903 0.23,-4.007 z M 19.999089,20 c 4.418,0 8,-3.582 8,-8 0,-4.418 -3.582,-8 -8,-8 -4.418,0 -8,3.582 -8,8 0,4.418 3.582,8 8,8 z">
+              </path>
+            </symbol>
+            <symbol id="icon-bars" viewBox="0 0 24 28">
+              <title>bars</title>
+              <path
+                d="M24 21v2c0 0.547-0.453 1-1 1h-22c-0.547 0-1-0.453-1-1v-2c0-0.547 0.453-1 1-1h22c0.547 0 1 0.453 1 1zM24 13v2c0 0.547-0.453 1-1 1h-22c-0.547 0-1-0.453-1-1v-2c0-0.547 0.453-1 1-1h22c0.547 0 1 0.453 1 1zM24 5v2c0 0.547-0.453 1-1 1h-22c-0.547 0-1-0.453-1-1v-2c0-0.547 0.453-1 1-1h22c0.547 0 1 0.453 1 1z">
+              </path>
+            </symbol>
+          </defs>
+        </svg>
+        <div class="l-searchbar">
+          <button class="button-plain js-searchbar-toggler magnifying-glass" id="inputExpanded" aria-controls="inputExpanded" aria-expanded="false" aria-label="open searchbar">
+            <svg class="icon-search">
+              <use xlink:href="#icon-search"></use>
+            </svg>
           </button>
           <div class="l-searchbar-overlay">
-            <form class="searchbar">     
+            <form class="searchbar" role="search">
               <button class="button-plain js-searchbar-toggler" type="button" aria-label="close searchbar">
-                <svg class=" icon-close icon-close--sm icon-close--grey"><use xlink:href="#icon-close"></use></svg>
+                <svg class=" icon-close icon-close--sm icon-close--grey">
+                  <use xlink:href="#icon-close"></use>
+                </svg>
               </button>
-              <input type="text" placeholder="SEARCH THE SHALLOT" role="search" class="searchbar__input">
-            </form>
-          </div>
-        </div>                
-        <ul class="top-nav__list">
-          <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <input class="searchbar__input" type="search" role="searchbox" placeholder="SEARCH THE SHALLOT" aria-label="search the Shallot">
+            </form>          
+          </div>  
+        </div>
+        <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs>
-          <symbol id="icon-caret-down" viewBox="0 0 16 28">
-          <title>caret-down</title>
-          <path d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z"></path>
-          </symbol>
+            <symbol id="icon-caret-down" viewBox="0 0 16 28">
+              <title>caret-down</title>
+              <path
+                d="M16 11c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297s-0.516-0.109-0.703-0.297l-7-7c-0.187-0.187-0.297-0.438-0.297-0.703 0-0.547 0.453-1 1-1h14c0.547 0 1 0.453 1 1z">
+              </path>
+            </symbol>
           </defs>
-          </svg>
-          <li class="top-nav__item" id="dropdown-nav" aria-haspopup="true" aria-expanded="false"><a class="top-nav__link" href="#">Dropdown</a>
-          <button class="button-plain top-nav__toggle-btn" aria-label="expand sub-menu"><svg class="icon icon-caret-down"><use xlink:href="#icon-caret-down"></use></svg></button>
-            <div class="dropdown" aria-labelledby="dropdown-nav" >
+        </svg>
+        <ul class="top-nav__list">          
+          <li class="top-nav__item" id="dropdownNav" aria-haspopup="true"><a
+              class="top-nav__link" href="#">Fender</a>
+            <button class="button-plain top-nav__toggle-btn" aria-label="expand sub-menu" aria-expanded="false" aria-controls="dropdownMenu1"><svg
+                class="icon icon-caret-down">
+                <use xlink:href="#icon-caret-down"></use>
+              </svg></button>
+            <div class="dropdown" id="dropdownMenu1" aria-labelledby="dropdownNav">
               <ul class="d-flex flex-column fr-2">
                 <li class="dropdown__item"><a class="dropdown__link" href="#">acoustic</a></li>
                 <li class="dropdown__item"><a class="dropdown__link" href="#">pickups</a></li>
                 <li class="dropdown__item"><a class="dropdown__link" href="#">preamps</a></li>
                 <li class="dropdown__item"><a class="dropdown__link" href="#">electric</a></li>
-              </ul>  
+              </ul>
               <ul class="d-flex fr-10 flex-row">
                 <li class="dropdown-story"><a href="#">
-                  <div class="ratio-16-9"><img src="dist/assets/images//strat.jpg" alt="Fender Stratocaster guitar"></div>
-                  <h2 class="dropdown-story__title">stratocaster</h2>
-                </a></li>
+                    <div class="ratio-16-9"><img src="dist/assets/images//strat.jpg" alt="Fender Stratocaster guitar">
+                    </div>
+                    <h2 class="dropdown-story__title">stratocaster</h2>
+                  </a></li>
                 <li class="dropdown-story"><a href="#">
-                  <div class="ratio-16-9"><img src="dist/assets/images//tele.jpg" alt="Fender Telecaster guitar"></div>
-                  <h2 class="dropdown-story__title">telecaster</h2>
-                </a></li>
+                    <div class="ratio-16-9"><img src="dist/assets/images//tele.jpg" alt="Fender Telecaster guitar">
+                    </div>
+                    <h2 class="dropdown-story__title">telecaster</h2>
+                  </a></li>
                 <li class="dropdown-story"><a href="#">
-                  <div class="ratio-16-9"><img src="dist/assets/images//jazzmaster.jpg" alt="Fender Jazzmaster guitar"></div>
-                  <h2 class="dropdown-story__title">jazzmaster</h2>
-                </a></li>
+                    <div class="ratio-16-9"><img src="dist/assets/images//jazzmaster.jpg"
+                        alt="Fender Jazzmaster guitar"></div>
+                    <h2 class="dropdown-story__title">jazzmaster</h2>
+                  </a></li>
                 <li class="dropdown-story"><a href="#">
-                  <div class="ratio-16-9"><img src="dist/assets/images//jag.jpg" alt="Fender Jaguar guitar"></div>
-                  <h2 class="dropdown-story__title">jaguar</h2>
-                </a></li>
+                    <div class="ratio-16-9"><img src="dist/assets/images//jag.jpg" alt="Fender Jaguar guitar"></div>
+                    <h2 class="dropdown-story__title">jaguar</h2>
+                  </a></li>
                 <li class="dropdown-story"><a href="#">
-                  <div class="ratio-16-9"><img src="dist/assets/images//mustang.jpg" alt="Fender Mustang guitar"></div>
-                  <h2 class="dropdown-story__title">mustang</h2>
-                </a></li>              
+                    <div class="ratio-16-9"><img src="dist/assets/images//mustang.jpg" alt="Fender Mustang guitar">
+                    </div>
+                    <h2 class="dropdown-story__title">mustang</h2>
+                  </a></li>
               </ul>
-            </div>            
+            </div>
           </li>
-          <li class="top-nav__item"><a class="top-nav__link"  href="#">Nothing</a></li>
-          <li class="top-nav__item"><a class="top-nav__link"  href="#">Nothing</a></li>
-        </ul> 
+          <li class="top-nav__item"><a class="top-nav__link" href="#">Gibson</a></li>
+          <li class="top-nav__item"><a class="top-nav__link" href="#">Gretsch</a></li>
+          <li class="top-nav__item"><a class="top-nav__link" href="#">Duesenberg</a></li>
+          <li class="top-nav__item"><a class="top-nav__link" href="#">Reverend</a></li>
+          <li class="top-nav__item"><a class="top-nav__link" href="#">G&L</a></li>
+        </ul>
         <div class="d-flex align-items-center ml-auto pr-2">
-          <button tabindex="0" class="button-plain ml-auto js-icon-user" aria-label="log in"><svg class="icon icon-user pointer"><use xlink:href="#icon-user"></use></svg></button>
+          <button tabindex="0" class="button-plain ml-auto js-icon-user" aria-label="log in"><svg
+              class="icon icon-user pointer">
+              <use xlink:href="#icon-user"></use>
+            </svg></button>
         </div>
       </nav>
-    </div>   
-    <nav class="l-logo">      
-        <h1 class="my-0" href="#" tabindex="-1" aria-label="The Shallot">
-          <a class="d-flex align-items-center" href="#">            
-            <svg class="logo logo--dynamic" xmlns="http://www.w3.org/2000/svg" id="svg1083" viewBox="0 0 709.637 95.632"><defs id="defs1087"><filter id="filter2303" x="-.088" width="1.175" y="-.158" height="1.316" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation=".289" id="feGaussianBlur2305"/></filter></defs><path d="M13.036 83.354c.269.13.551.234.805.39.03.019.008.07 0 .105-.027.106-.077.205-.104.312-.022.088 0 .308 0 .416v.729" id="path1883" fill="none" stroke="#000" stroke-width="0"/><path d="M7.182 78.836l7.908 4.388" id="path1889" fill="#fca" filter="url(#filter2303)"/><path d="M15.09 83.224" id="path2344" fill="none" stroke="#000"/><g id="g891" transform="translate(6.489 36.812)"><g transform="matrix(1.96519 0 0 1.96519 56.16 -41.14)" id="g1795"><path d="M-8.574 12.501s-10.695 2.475-11.402 2.829c-.707.353-6.894 4.773-7.955 5.833-1.06 1.061-3.358 6.1-3.358 6.1l-.089 6.805s2.033 6.453 2.829 6.453c.795 0 3.712 3.182 3.712 3.182s1.944-2.652 3.977-.796 5.657 3.624 4.508 4.508c-1.149.884 4.596 1.768 7.778.795 3.182-.972 8.397-4.42 8.84-6.275.441-1.856 1.944-5.922 1.59-9.193-.353-3.27-3.093-15.114-2.917-13.435.177 1.68-.618-3.624-.618-3.624s3.358-3.447 4.154-4.242c.795-.796 2.917-1.68 3.624-2.21.707-.53 1.944-4.066 1.944-4.066s-.176-2.651-.795-2.386c-.619.265-2.033 1.326-2.033 1.326l-1.15-1.15s-1.59-.53-1.06 0 1.15 1.68 1.15 1.68l-2.74.619-.531-.089-.53-.795s-.796-.796-.708.442c.089 1.237-2.032 3.535-2.032 3.535s.561-.697.03-.078c-.53.618-3.036 2.641-3.566 2.995-.53.354-2.652 1.237-2.652 1.237z" id="path1750" fill="none" stroke="#b30086"/></g><path id="path2335" d="M22.89 53.367l.146-1.82c2.097-.36-5.93-5.35-5.93-5.35-5.784-7.171-9.547-.073-9.547-.073s1.154 12.099 15.33 7.243" fill="#e9c6af" stroke="#e9c6af" stroke-width=".393"/><path id="path2361" d="M20.855 39.75S52.46-28.911 60.172-26.09" fill="none" stroke="#b30086" stroke-width="1.965"/><path id="path2363" d="M6.37 34.107C4.97 36.074-6.684 15.74 28.783-8.25" fill="none" stroke="#b30086" stroke-width="1.965"/><g id="g876"><path d="M33.083 44.266c1.475.553 27.962-16.414 15.963-41.725" id="path2365" fill="none" stroke="#b30086" stroke-width="1.965" stroke-opacity=".952"/></g><path id="path2340" d="M7.744 46.86c-2.882 1.495-5.232-.89-5.73 1.179" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2342" d="M9.759 50.083c-1.96-.824-5.165-2.114-10.73 2.472" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2346" d="M18.854 53.622c-2.446 1.86-1.052 2.951 1.377 3.836" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2348" d="M15.008 52.903l-1.473 3.27 1.473 2.21" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2350" d="M11.534 51.86c1.925 2.169-.407 3.486-.694 5.211" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2354" d="M10.705 51.335s-6.326 1.106-6.878 3.317" fill="none" stroke="#e9c6af" stroke-width="1.376"/></g><text style="line-height:1.25;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start" x="91.654" y="78.715" id="text70" transform="scale(.93348 1.07126)" font-weight="700" font-size="91.413" font-family="sans-serif" letter-spacing="0" word-spacing="0" stroke-width="1.071"><tspan id="tspan68" x="91.654" y="78.715" style="-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start">the SHALLOT</tspan></text></svg>
-          </a>            
-        </h1>      
-      <button tabindex="0" class="button-plain ml-auto icon-bars-wrapper js-hamburger-menu" aria-label="open navigation"><svg class="icon icon-bars"><use xlink:href="#icon-bars"></use></svg></button>
-    </nav>
-    <nav class="l-logo-fixed">
-      <h1 class="my-0" href="#" aria-label="The Shallot">
-        <a class="d-flex align-items-center" href="#">            
-          <svg class="logo" xmlns="http://www.w3.org/2000/svg" id="svg1083" viewBox="0 0 709.637 95.632"><defs id="defs1087"><filter id="filter2303" x="-.088" width="1.175" y="-.158" height="1.316" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation=".289" id="feGaussianBlur2305"/></filter></defs><path d="M13.036 83.354c.269.13.551.234.805.39.03.019.008.07 0 .105-.027.106-.077.205-.104.312-.022.088 0 .308 0 .416v.729" id="path1883" fill="none" stroke="#000" stroke-width="0"/><path d="M7.182 78.836l7.908 4.388" id="path1889" fill="#fca" filter="url(#filter2303)"/><path d="M15.09 83.224" id="path2344" fill="none" stroke="#000"/><g id="g891" transform="translate(6.489 36.812)"><g transform="matrix(1.96519 0 0 1.96519 56.16 -41.14)" id="g1795"><path d="M-8.574 12.501s-10.695 2.475-11.402 2.829c-.707.353-6.894 4.773-7.955 5.833-1.06 1.061-3.358 6.1-3.358 6.1l-.089 6.805s2.033 6.453 2.829 6.453c.795 0 3.712 3.182 3.712 3.182s1.944-2.652 3.977-.796 5.657 3.624 4.508 4.508c-1.149.884 4.596 1.768 7.778.795 3.182-.972 8.397-4.42 8.84-6.275.441-1.856 1.944-5.922 1.59-9.193-.353-3.27-3.093-15.114-2.917-13.435.177 1.68-.618-3.624-.618-3.624s3.358-3.447 4.154-4.242c.795-.796 2.917-1.68 3.624-2.21.707-.53 1.944-4.066 1.944-4.066s-.176-2.651-.795-2.386c-.619.265-2.033 1.326-2.033 1.326l-1.15-1.15s-1.59-.53-1.06 0 1.15 1.68 1.15 1.68l-2.74.619-.531-.089-.53-.795s-.796-.796-.708.442c.089 1.237-2.032 3.535-2.032 3.535s.561-.697.03-.078c-.53.618-3.036 2.641-3.566 2.995-.53.354-2.652 1.237-2.652 1.237z" id="path1750" fill="none" stroke="#b30086"/></g><path id="path2335" d="M22.89 53.367l.146-1.82c2.097-.36-5.93-5.35-5.93-5.35-5.784-7.171-9.547-.073-9.547-.073s1.154 12.099 15.33 7.243" fill="#e9c6af" stroke="#e9c6af" stroke-width=".393"/><path id="path2361" d="M20.855 39.75S52.46-28.911 60.172-26.09" fill="none" stroke="#b30086" stroke-width="1.965"/><path id="path2363" d="M6.37 34.107C4.97 36.074-6.684 15.74 28.783-8.25" fill="none" stroke="#b30086" stroke-width="1.965"/><g id="g876"><path d="M33.083 44.266c1.475.553 27.962-16.414 15.963-41.725" id="path2365" fill="none" stroke="#b30086" stroke-width="1.965" stroke-opacity=".952"/></g><path id="path2340" d="M7.744 46.86c-2.882 1.495-5.232-.89-5.73 1.179" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2342" d="M9.759 50.083c-1.96-.824-5.165-2.114-10.73 2.472" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2346" d="M18.854 53.622c-2.446 1.86-1.052 2.951 1.377 3.836" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2348" d="M15.008 52.903l-1.473 3.27 1.473 2.21" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2350" d="M11.534 51.86c1.925 2.169-.407 3.486-.694 5.211" fill="none" stroke="#e4c1af" stroke-width="1.572"/><path id="path2354" d="M10.705 51.335s-6.326 1.106-6.878 3.317" fill="none" stroke="#e9c6af" stroke-width="1.376"/></g><text style="line-height:1.25;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start" x="91.654" y="78.715" id="text70" transform="scale(.93348 1.07126)" font-weight="700" font-size="91.413" font-family="sans-serif" letter-spacing="0" word-spacing="0" stroke-width="1.071"><tspan id="tspan68" x="91.654" y="78.715" style="-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start">the SHALLOT</tspan></text></svg>
-        </a>            
-      </h1>         
-      <button tabindex="0" class="button-plain ml-auto js-hamburger-menu" aria-label="open navigation"><svg class="icon icon-bars"><use xlink:href="#icon-bars"></use></svg></button>
-    </nav>
-    <nav class="l-navbar-primary">    
+    </div>
+    <div class="l-logo">
+      <h1 class="my-0 sr-only">The Shallot</h1>
+        <a class="d-flex align-items-center" href="#" aria-label="The Shallot home page">      
+          <svg class="logo logo--dynamic" xmlns="http://www.w3.org/2000/svg" id="svg1083" aria-hidden="true" viewBox="0 0 709.637 95.632">
+            <defs id="defs1087">
+              <filter id="filter2303" x="-.088" width="1.175" y="-.158" height="1.316"
+                color-interpolation-filters="sRGB">
+                <feGaussianBlur stdDeviation=".289" id="feGaussianBlur2305" />
+              </filter>
+            </defs>
+            <path
+              d="M13.036 83.354c.269.13.551.234.805.39.03.019.008.07 0 .105-.027.106-.077.205-.104.312-.022.088 0 .308 0 .416v.729"
+              id="path1883" fill="none" stroke="#000" stroke-width="0" />
+            <path d="M7.182 78.836l7.908 4.388" id="path1889" fill="#fca" filter="url(#filter2303)" />
+            <path d="M15.09 83.224" id="path2344" fill="none" stroke="#000" />
+            <g id="g891" transform="translate(6.489 36.812)">
+              <g transform="matrix(1.96519 0 0 1.96519 56.16 -41.14)" id="g1795">
+                <path
+                  d="M-8.574 12.501s-10.695 2.475-11.402 2.829c-.707.353-6.894 4.773-7.955 5.833-1.06 1.061-3.358 6.1-3.358 6.1l-.089 6.805s2.033 6.453 2.829 6.453c.795 0 3.712 3.182 3.712 3.182s1.944-2.652 3.977-.796 5.657 3.624 4.508 4.508c-1.149.884 4.596 1.768 7.778.795 3.182-.972 8.397-4.42 8.84-6.275.441-1.856 1.944-5.922 1.59-9.193-.353-3.27-3.093-15.114-2.917-13.435.177 1.68-.618-3.624-.618-3.624s3.358-3.447 4.154-4.242c.795-.796 2.917-1.68 3.624-2.21.707-.53 1.944-4.066 1.944-4.066s-.176-2.651-.795-2.386c-.619.265-2.033 1.326-2.033 1.326l-1.15-1.15s-1.59-.53-1.06 0 1.15 1.68 1.15 1.68l-2.74.619-.531-.089-.53-.795s-.796-.796-.708.442c.089 1.237-2.032 3.535-2.032 3.535s.561-.697.03-.078c-.53.618-3.036 2.641-3.566 2.995-.53.354-2.652 1.237-2.652 1.237z"
+                  id="path1750" fill="none" stroke="#b30086" />
+              </g>
+              <path id="path2335"
+                d="M22.89 53.367l.146-1.82c2.097-.36-5.93-5.35-5.93-5.35-5.784-7.171-9.547-.073-9.547-.073s1.154 12.099 15.33 7.243"
+                fill="#e9c6af" stroke="#e9c6af" stroke-width=".393" />
+              <path id="path2361" d="M20.855 39.75S52.46-28.911 60.172-26.09" fill="none" stroke="#b30086"
+                stroke-width="1.965" />
+              <path id="path2363" d="M6.37 34.107C4.97 36.074-6.684 15.74 28.783-8.25" fill="none" stroke="#b30086"
+                stroke-width="1.965" />
+              <g id="g876">
+                <path d="M33.083 44.266c1.475.553 27.962-16.414 15.963-41.725" id="path2365" fill="none"
+                  stroke="#b30086" stroke-width="1.965" stroke-opacity=".952" />
+              </g>
+              <path id="path2340" d="M7.744 46.86c-2.882 1.495-5.232-.89-5.73 1.179" fill="none" stroke="#e4c1af"
+                stroke-width="1.572" />
+              <path id="path2342" d="M9.759 50.083c-1.96-.824-5.165-2.114-10.73 2.472" fill="none" stroke="#e4c1af"
+                stroke-width="1.572" />
+              <path id="path2346" d="M18.854 53.622c-2.446 1.86-1.052 2.951 1.377 3.836" fill="none" stroke="#e4c1af"
+                stroke-width="1.572" />
+              <path id="path2348" d="M15.008 52.903l-1.473 3.27 1.473 2.21" fill="none" stroke="#e4c1af"
+                stroke-width="1.572" />
+              <path id="path2350" d="M11.534 51.86c1.925 2.169-.407 3.486-.694 5.211" fill="none" stroke="#e4c1af"
+                stroke-width="1.572" />
+              <path id="path2354" d="M10.705 51.335s-6.326 1.106-6.878 3.317" fill="none" stroke="#e9c6af"
+                stroke-width="1.376" />
+            </g><text
+              style="line-height:1.25;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start"
+              x="91.654" y="78.715" id="text70" transform="scale(.93348 1.07126)" font-weight="700" font-size="91.413"
+              font-family="sans-serif" letter-spacing="0" word-spacing="0" stroke-width="1.071">
+              <tspan id="tspan68" x="91.654" y="78.715"
+                style="-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start">
+                the SHALLOT</tspan>
+            </text>
+          </svg>
+        </a>      
+      <button tabindex="0" class="button-plain ml-auto icon-bars-wrapper js-hamburger-menu"
+        aria-label="open navigation"><svg class="icon icon-bars">
+          <use xlink:href="#icon-bars"></use>
+        </svg></button>
+    </div>
+    <div class="l-logo-fixed">      
+      <a class="d-flex align-items-center" href="#" aria-label="The Shallot home page">
+        <svg class="logo" aria-hidden="true">
+          <use xlink:href="#svg1083"></use>
+        </svg>
+      </a>      
+      <button tabindex="0" class="button-plain ml-auto js-hamburger-menu" aria-label="open navigation"><svg
+          class="icon icon-bars">
+          <use xlink:href="#icon-bars"></use>
+        </svg></button>
+    </div>
+    <nav class="l-navbar-primary">
       <ul class="navbar-primary mb-0">
         <li><a class="navbar-primary__link" href="#">Politics</a></li>
         <li><a class="navbar-primary__link" href="#">Sports</a></li>
@@ -119,20 +205,24 @@
         <li><a class="navbar-primary__link" href="#">Entertainment</a></li>
         <li><a class="navbar-primary__link" href="#">Opinion</a></li>
         <li><a class="navbar-primary__link" href="#">Video</a></li>
-        <li><a class="navbar-primary__link" href="#">Clickhole</a></li>      
+        <li><a class="navbar-primary__link" href="#">Clickhole</a></li>
       </ul>
     </nav>
-    <nav class="l-navbar-scroll" aria-hidden="true">
-      <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <div class="l-navbar-scroll" aria-hidden="true">
+      <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
-        <symbol id="icon-arrow-up2" viewBox="0 0 32 32">
-        <title>arrow-up2</title>
-        <path d="M27.414 12.586l-10-10c-0.781-0.781-2.047-0.781-2.828 0l-10 10c-0.781 0.781-0.781 2.047 0 2.828s2.047 0.781 2.828 0l6.586-6.586v19.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-19.172l6.586 6.586c0.39 0.39 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828z"></path>
-        </symbol>
+          <symbol id="icon-arrow-up2" viewBox="0 0 32 32">
+            <title>arrow-up2</title>
+            <path
+              d="M27.414 12.586l-10-10c-0.781-0.781-2.047-0.781-2.828 0l-10 10c-0.781 0.781-0.781 2.047 0 2.828s2.047 0.781 2.828 0l6.586-6.586v19.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-19.172l6.586 6.586c0.39 0.39 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828z">
+            </path>
+          </symbol>
         </defs>
-      </svg>  
-      <ul class="navbar-scroll">  
-        <li><a class="px-2 d-flex justify-content-center" href="#"><img class= "favicon-sm" src="favicon-32x32.png"></a></li>
+      </svg>
+      <ul class="navbar-scroll">
+        <li><a class="px-2 d-flex justify-content-center" href="#"><img class="favicon-sm" src="favicon-32x32.png" alt="the Shallot home page"></a>
+        </li>
         <li class="h-bar"></li>
         <li><a class="navbar-scroll__item" href="#">Politics</a></li>
         <li><a class="navbar-scroll__item" href="#">Sports</a></li>
@@ -141,208 +231,255 @@
         <li><a class="navbar-scroll__item" href="#">Opinion</a></li>
         <li><a class="navbar-scroll__item" href="#">Video</a></li>
         <li><a class="navbar-scroll__item" href="#">Clickhole</a></li>
-        <button class="button-plain px-2 ml-auto d-flex justify-content-center align-items-center" id="js-scroll-button"><svg class="icon icon-arrow-up2"><use xlink:href="#icon-arrow-up2"></use></svg></button>
+        <li><button class="button-plain px-2 ml-auto d-flex justify-content-center align-items-center"
+          id="js-scroll-button"><svg class="icon icon-arrow-up2">
+            <use xlink:href="#icon-arrow-up2"></use>
+          </svg></button></li>
       </ul>
-    </nav>
+    </div>
   </header>
   <div class="p-md-3" id="js-scroll-top">
     <div class="grid">
       <aside class="grid-panel grid-panel--secondary">
         <article class="cover-story cover-story--transition-md">
-          <div class= "cover-story__img">          
-            <a class="ratio-16-9" href="#"><img src="dist/assets/images//butler.jpg" alt="Anthony Hopkins as a butler from the film The Remains of the Day"></a>
+          <div class="cover-story__img">
+            <a class="ratio-16-9" href="#"><img src="dist/assets/images//butler.jpg"
+                alt="Anthony Hopkins portraying a butler in the film The Remains of the Day"></a>
           </div>
           <div class="cover-story__body">
             <h2 class="cover-story__title"><a href="#">Fictional Butlers: a Power ranking</a></h2>
-          </div>  
+          </div>
         </article>
         <article class="cover-story cover-story--transition-md">
-          <div class= "cover-story__img" >          
-            <a class="ratio-16-9" href="#"><img src="dist/assets/images//jimmyButler.jpg" alt="Jimmy Butler smiling and pointing towards camera in 76ers uniform"></a>
+          <div class="cover-story__img">
+            <a class="ratio-16-9" href="#"><img src="dist/assets/images//jimmyButler.jpg"
+                alt="Jimmy Butler jovially pointing towards camera in 76ers uniform"></a>
           </div>
           <div class="cover-story__body">
-            <h2 class="cover-story__title"><a href="#">Jimmy Butler commandeers practice to discuss his disappointment with the 76ers mascot</a></h2>
+            <h2 class="cover-story__title"><a href="#">Jimmy Butler commandeers practice to discuss his disappointment
+                with the 76ers mascot</a></h2>
           </div>
-        </article>        
+        </article>
       </aside>
       <div class="grid-panel grid-panel--primary">
         <article class="cover-story cover-story--hero">
-          <div class= "cover-story__img" >
-            <a class="ratio-16-9" href="#"><span></span><img src="dist/assets/images//redRocker.jpg" alt="Sammy Hagar playing a red Explorer live"></a>
+          <div class="cover-story__img">
+            <a class="ratio-16-9" href="#"><span></span><img src="dist/assets/images//redRocker.jpg"
+                alt="Sammy Hagar playing a red Explorer on stage"></a>
           </div>
           <div class="cover-story__body">
-            <h2 class="cover-story__title"><a href="#">Red Rocker claims he always thought red was a hair overrated as a frequency of light</a></h2>
-            <p class="cover-story__text">"Orange was my jam," says Hagar, swirling a tumbler of Cabo Wabo. "But it just didn't have the alliterative possibilities of red. Management really forced my hand on that one." I asked the Orange Whatever for clarification on the "Rack of what!?" break in Van Halen's "Good Enough." He declined to comment.</p>
-            <a class="anchor-primary" href="#">Continue Reading</a>          
+            <h2 class="cover-story__title"><a href="#">Red Rocker claims he always thought red was a hair overrated as a
+                frequency of light</a></h2>
+            <p class="cover-story__text">"Orange was my jam," says Hagar, swirling a tumbler of Cabo Wabo. "But it just
+              didn't have the alliterative possibilities of red. Management really forced my hand on that one." I asked
+              the Orange Whatever for clarification on the "Rack of what!?" break in Van Halen's "Good Enough." He
+              declined to comment.</p>
+            <a class="anchor-primary" href="#">Continue Reading</a>
           </div>
         </article>
       </div>
       <aside class="grid-panel grid-panel--tertiary">
         <h2 class="grid-panel__title">More From The Shallot</h2>
-        <article class="cover-story">          
-          <div class= "cover-story__img">
-            <a class="ratio-16-9" href="#"><img src="dist/assets/images//criterion.jpg" alt="Criterion Collection logo"></a>
+        <article class="cover-story">
+          <div class="cover-story__img">
+            <a class="ratio-16-9" href="#"><img src="dist/assets/images//criterion.jpg"
+                alt="Criterion Collection"></a>
           </div>
           <div class="cover-story__body">
-            <h3 class="cover-story__title"><a href="#">Criterion Collection reconstruct film damaged by nuclear weapons</a></h3>
-          </div>    
-       </article>  
+            <h3 class="cover-story__title"><a href="#">Criterion Collection reconstruct film damaged by nuclear
+                weapons</a></h3>
+          </div>
+        </article>
         <article class="cover-story">
-          <div class= "cover-story__img">
-            <a class="ratio-16-9" href="#"><img src="dist/assets/images//andertons.jpg" alt="Matt and Rabea sitting in the Andertons recording room"></a>
+          <div class="cover-story__img">
+            <a class="ratio-16-9" href="#"><img src="dist/assets/images//andertons.jpg"
+                alt="Matt and Rabea in the Andertons recording room"></a>
           </div>
           <div class="cover-story__body">
-            <h3 class="cover-story__title"><a href="#">Andertons UK: Sound like Sonny and Cher without Busting the Bank</a></h3>
-          </div>  
-        </article>  
+            <h3 class="cover-story__title"><a href="#">Andertons UK: Sound like Sonny and Cher without Busting the
+                Bank</a></h3>
+          </div>
+        </article>
         <article class="cover-story">
-          <div class= "cover-story__img">
-            <a class="ratio-16-9" href="#"><img src="dist/assets/images//bullMoose.jpg" alt="Bull Moose logo"></a>
+          <div class="cover-story__img">
+            <a class="ratio-16-9" href="#"><img src="dist/assets/images//bullMoose.jpg" alt="bull moose"></a>
           </div>
           <div class="cover-story__body">
             <h3 class="cover-story__title"><a href="#">The Resurgence of the Bull Moose Party</a></h3>
-          </div>      
-       </article>   
-      </aside>  
+          </div>
+        </article>
+      </aside>
     </div>
   </div>
-    <div class="container-fluid bt-md-neutral-light">
-      <div class="row">
-        <aside class="l-sidebar br-neutral-light">
-          <div class="max-w-sm">
-            <section class="">
-              <h2 class="font-weight-bold">You may also like</h2>
-              <ol class="reel-story__nav list-unstyled d-flex mb-1" aria-hidden="true">
-                <li class="reel-story__thumbnail-item reel-story__thumbnail-item--is-active"><a class="ratio-16-9 number-overlay" href="#"><img src="dist/assets/images//bigSleep.jpg" alt="Humphrey Bogart in The Big Sleep talking to Dorothy Malone"></a></li>
-                <li class="reel-story__thumbnail-item"><a class="ratio-16-9 number-overlay" href="#"><img src="dist/assets/images//maltese.jpg" alt="Humphrey Bogart pointing authoritatively in The Maltese Falcon"></a></li>
-                <li class="reel-story__thumbnail-item"><a class="ratio-16-9 number-overlay" href="#"><img src="dist/assets/images//noir.jpg" alt="Humphrey Bogart and Lauren Bacall in The Big Sleep"></a></li>
-              </ol>
-              <div class="progress-bar">              
-              
-              </div>
-              <div class="js-reel-articles">
-                <article class="reel-story reel-story--is-active">                
-                  <div class="reel-story__img" >                  
-                    <a class="ratio-16-9" href="#"><img class="js-thumbnail-img" src="dist/assets/images//bigSleep.jpg" alt="Humphrey Bogart in The Big Sleep talking to Dorothy Malone"></a>
-                  </div>
-                  <h3 class="reel-story__title"><a href="#">Woman believes to have understood the plot to The Big Sleep</a></h3>
-                  <time datetime="2019-02-03T11:42"><a href="#">Wednesday 11:42am</a></time>   
-                </article>
-                <article class="reel-story">                
-                  <div class="reel-story__img">
-                    <a class="ratio-16-9" href="#"><img class="js-thumbnail-img" src="dist/assets/images//maltese.jpg" alt="Humphrey Bogart pointing authoritatively in The Maltese Falcon"></a>
-                  </div>
-                    <h3 class="reel-story__title"><a href="#">Same Woman to do a one-woman show of the Maltese Falcon</a></h3>                    
-                    <time datetime="2019-02-03T16:22"><a href="#">Thursday 4:22pm</a></time>
-                </article>
-                <article class="reel-story">                
-                    <div class="reel-story__img">
-                      <a class="ratio-16-9" href="#"><img class="js-thumbnail-img" src="dist/assets/images//noir.jpg" alt="Humphrey Bogart and Lauren Bacall in The Big Sleep"></a>
-                    </div>
-                    <h3 class="reel-story__title"><a href="#">Woman's Husband: "I love her, but it is exhausting being married a noir obsessive"</a></h3>
-                    <time datetime="2019-02-05T13:02"><a href="#">Friday 1:02pm</a></time>                                    
-                </article>                  
-              </div>
-            </section>
-            <section class="my-6">
-              <h2 class=" font-weight-bold">Top 5 Lists</h2>
-              <article class="feature-story feature-story--aside">
-                <div class="feature-story__img">
-                  <a class="ratio-16-9" href="#"><img src="dist/assets/images//simmons.jpg" alt=""></a>
+  <div class="container-fluid bt-md-neutral-light">
+    <div class="row">
+      <aside class="l-sidebar br-neutral-light">
+        <div class="max-w-sm">
+          <section class="">
+            <h2 class="font-weight-bold">You may also like</h2>
+            <ol class="reel-story__nav list-unstyled d-flex mb-1" aria-hidden="true">
+              <li class="reel-story__thumbnail-item reel-story__thumbnail-item--is-active"><a
+                  class="ratio-16-9 number-overlay" href="#"><img src="dist/assets/images//bigSleep.jpg"
+                    alt="Humphrey Bogart and Dorothy Malone in The Big Sleep"></a></li>
+              <li class="reel-story__thumbnail-item"><a class="ratio-16-9 number-overlay" href="#"><img
+                    src="dist/assets/images//maltese.jpg"
+                    alt="Humphrey Bogart pointing authoritatively in The Maltese Falcon"></a></li>
+              <li class="reel-story__thumbnail-item"><a class="ratio-16-9 number-overlay" href="#"><img
+                    src="dist/assets/images//noir.jpg" 
+                    alt="Humphrey Bogart and Lauren Bacall in The Big Sleep"></a>
+              </li>
+            </ol>
+            <div class="progress-bar">
+
+            </div>
+            <div class="js-reel-articles">
+              <article class="reel-story reel-story--is-active">
+                <div class="reel-story__img">
+                  <a class="ratio-16-9" href="#"><img class="js-thumbnail-img" src="dist/assets/images//bigSleep.jpg"
+                      alt="Humphrey Bogart and Dorothy Malone in The Big Sleep"></a>
                 </div>
-                <h3 class="feature-story__title"><a href="#">Top 5 Weirdest Things that Gene Simmons Attempted to Copyright</a></h3>
-                <time datetime="2019-02-08T22:20"><a href="#">Monday 10:20pm</a></time>      
+                <h3 class="reel-story__title"><a href="#">Woman believes to have understood the plot to The Big
+                    Sleep</a></h3>
+                <time datetime="2019-02-03T11:42"><a href="#">Wednesday 11:42am</a></time>
               </article>
-              <article class="feature-story feature-story--aside">
-                <div class="feature-story__img">
-                  <a class="ratio-16-9" href="#"><img src="dist/assets/images//apple.png" alt=""></a>
+              <article class="reel-story">
+                <div class="reel-story__img">
+                  <a class="ratio-16-9" href="#"><img class="js-thumbnail-img" src="dist/assets/images//maltese.jpg"
+                      alt="Humphrey Bogart pointing authoritatively in The Maltese Falcon"></a>
                 </div>
-                <h3 class="feature-story__title"><a href="#">Top 5 Punk Rock anthems co-opted by Apple commercials</a></h3>
-                <time datetime="2019-03-01T11:12"> <a href="#">Wednesday 11:12am</a></time>              
+                <h3 class="reel-story__title"><a href="#">Same Woman to do a one-woman show of the Maltese Falcon</a>
+                </h3>
+                <time datetime="2019-02-03T16:22"><a href="#">Thursday 4:22pm</a></time>
               </article>
-              <article class="feature-story feature-story--aside">
-                <div class="feature-story__img">
-                  <a class="ratio-16-9" href="#"><img src="dist/assets/images//dylan.jpg" alt=""></a>
+              <article class="reel-story">
+                <div class="reel-story__img">
+                  <a class="ratio-16-9" href="#"><img class="js-thumbnail-img" src="dist/assets/images//noir.jpg"
+                      alt="Humphrey Bogart and Lauren Bacall in The Big Sleep"></a>
                 </div>
-                <h3 class="feature-story__title"><a href="#">Top 5 Life Lessons Contained in "Subterranean Homesick Blues"</a></h3>
-                <time datetime="2019-02-01T16:33"><a href="#">Saturday 4:33pm</a></time>              
-              </article>          
-            </section>
+                <h3 class="reel-story__title"><a href="#">Woman's Husband: "I love her, but it is exhausting being
+                    married a noir obsessive"</a></h3>
+                <time datetime="2019-02-05T13:02"><a href="#">Friday 1:02pm</a></time>
+              </article>
+            </div>
+          </section>
+          <section class="my-6">
+            <h2 class=" font-weight-bold">Top 5 Lists</h2>
+            <article class="feature-story feature-story--aside">
+              <div class="feature-story__img">
+                <a class="ratio-16-9" href="#"><img src="dist/assets/images//simmons.jpg" alt="Gene Simmons holding and pointing towards bottle of soda"></a>
+              </div>
+              <h3 class="feature-story__title"><a href="#">Top 5 Weirdest Things that Gene Simmons Attempted to
+                  Copyright</a></h3>
+              <time datetime="2019-02-08T22:20"><a href="#">Monday 10:20pm</a></time>
+            </article>
+            <article class="feature-story feature-story--aside">
+              <div class="feature-story__img">
+                <a class="ratio-16-9" href="#"><img src="dist/assets/images//apple.png" alt="female guitarist singing and looking towards iphone mounted on mic stand"></a>
+              </div>
+              <h3 class="feature-story__title"><a href="#">Top 5 Punk Rock anthems co-opted by Apple commercials</a>
+              </h3>
+              <time datetime="2019-03-01T11:12"> <a href="#">Wednesday 11:12am</a></time>
+            </article>
+            <article class="feature-story feature-story--aside">
+              <div class="feature-story__img">
+                <a class="ratio-16-9" href="#"><img src="dist/assets/images//dylan.jpg" alt="Bob Dylan holding sign in Subterranean Homesick Blues video"></a>
+              </div>
+              <h3 class="feature-story__title"><a href="#">Top 5 Life Lessons Contained in "Subterranean Homesick
+                  Blues"</a></h3>
+              <time datetime="2019-02-01T16:33"><a href="#">Saturday 4:33pm</a></time>
+            </article>
+          </section>
+        </div>
+      </aside>
+      <main class="l-main">
+        <article class="feature-story">
+          <div class="feature-story__header">
+            <span class=""><a class="media-card-2__hashtag anchor-primary" href="">Social Media Media</a></span>
+            <h2 class="feature-story__title"><a href="#">Man deletes Instagram account in excahnge for additional
+                Youtube subscribers</a></h2>
+            <time datetime="2019-02-01T09:33"><a href="#">Sunday 9:33am</a></time>
           </div>
-        </aside>
-        <main class="l-main">          
-          <article class="feature-story">            
-            <div class="feature-story__header">
-              <span class=""><a class="media-card-2__hashtag anchor-primary" href="">Social Media Media</a></span>
-              <h2 class="feature-story__title"><a href="#">Man deletes Instagram account in excahnge for additional Youtube subscribers</a></h2>
-              <time datetime="2019-02-01T09:33"><a href="#">Sunday 9:33am</a></time>                
+          <div class="feature-story__img">
+            <a class="ratio-4-3" href="#"><img src="dist/assets/images//subscribe.jpg" alt="Youtube creator plaques"></a>
+          </div>
+          <p class="feature-story__text">After noticing a dip in his weekly subscriber rate, one Marty Alecson made a
+            play to suicide his own Instagram account. "I chose my side," said Alecson. "Youtube is morally superior and
+            just all-around several digital pioneer points in front of Instagram." Alecson nevertheless stresses that
+            this was really a "Sophie's Choice of social media platforms", and that he anticipates Instagram withdrawl,
+            which he will be eager to explore in his latest Youtube videos.</p>
+        </article>
+        <article class="feature-story feature-story--transition-sm">
+          <div class="feature-story__img">
+            <a class="ratio-16-9" href="#"><img src="dist/assets/images//zuck.jpg" alt="Marc Zuckerberg giving public speech"></a>
+          </div>
+          <div class="feature-story__header">
+            <h2 class="feature-story__title"><a href="#">Facebook Apologizes for selling personal data to intergalactic
+                pirates</a></h2>
+            <time datetime="2019-02-04T17:00"><a href="#">Tuesday 5:00pm</a></time>
+          </div>
+        </article>
+        <article class="feature-story feature-story--transition-sm">
+          <div class="feature-story__img">
+            <a class="ratio-16-9" href="#"><img src="dist/assets/images//javale.jpg" alt="Javale McGee aggressively posting up defender"></a>
+          </div>
+          <div class="feature-story__header">
+            <h2 class="feature-story__title"><a href="#">How Javale McGee became the anchor of the Los Angeles Lakers
+                Defense</a></h2>
+            <time datetime="2019-02-02T15:13"><a href="#">Monday 3:13pm</a></time>
+          </div>
+        </article>
+        <article class="feature-story">
+          <div class="feature-story__header">
+            <span class=""><a class="media-card-2__hashtag anchor-primary" href="">Music News</a></span>
+            <h2 class="feature-story__title"><a href="#">Sound Opinions hosts admit to cloning themselves to keep up
+                with workload</a></h2>
+            <time datetime="2019-02-04T14:02"><a href="#">Tuesday 2:02pm</a></time>
+          </div>
+          <div class="feature-story__img">
+            <a class="img-overlay ratio-4-3" href="#"><img src="dist/assets/images//soundOpinions.jpg"
+                alt="Greg Kot and Jim DeRogatis of Sound Opinions standing with Booker T.Jones"></a>
+          </div>
+          <p class="feature-story__text">Being a music critic is not without its demands. Today I spoke to Greg Kot and
+            Jim DeRogatis to discuss the sheer volume of sound opinions they've issued over the tenure of their WBEZ
+            radio program, Sound Opinions. "We really couldn't have accomplished this without clones," said either
+            DeRogatis or a clone of DeRogatis in a startling admission. "Kot just cloned himself again to prepare for
+            this week's Buried Treasures feautre." Kot, sitting beside him, nodded his head. "I've surprised even myself
+            with this one," said Kot. "And by I, I mean Greg Kot #7 really outdid himself."</p>
+        </article>
+        <article class="feature-story feature-story--transition-sm">
+          <div class="feature-story__img">
+            <div class="ratio-16-9">
+              <a href="#"><img src="dist/assets/images//shoe.jpg" alt="Woman preparing to tie shoe laces"></a>
             </div>
-            <div class="feature-story__img">
-              <a class="ratio-4-3" href="#"><img src="dist/assets/images//subscribe.jpg" alt=""></a>
-            </div>                          
-            <p class="feature-story__text">After noticing a dip in his weekly subscriber rate, one Marty Alecson made a play to suicide his own Instagram account. "I chose my side," said Alecson. "Youtube is morally superior and just all-around several digital pioneer points in front of Instagram." Alecson nevertheless stresses that this was really a "Sophie's Choice of social media platforms", and that he anticipates Instagram withdrawl, which he will be eager to explore in his latest Youtube videos.</p>            
-          </article>
-          <article class="feature-story feature-story--transition-sm">            
-            <div class="feature-story__img">                                          
-              <a class="ratio-16-9" href="#"><img src="dist/assets/images//zuck.jpg" alt=""></a>          
-            </div>              
-            <div class="feature-story__header">
-              <h2 class="feature-story__title"><a href="#">Facebook Apologizes for selling personal data to intergalactic pirates</a></h2>
-              <time datetime="2019-02-04T17:00"><a href="#">Tuesday 5:00pm</a></time>          
-            </div>            
-          </article>
-          <article class="feature-story feature-story--transition-sm">
-            <div class="feature-story__img">       
-              <a class="ratio-16-9" href="#"><img src="dist/assets/images//javale.jpg" alt=""></a>                  
-            </div>            
-            <div class="feature-story__header">
-              <h2 class="feature-story__title"><a href="#">How Javale McGee became the anchor of the Los Angeles Lakers Defense</a></h2>
-              <time datetime="2019-02-02T15:13"><a href="#">Monday 3:13pm</a></time>
-            </div>
-          </article>
-          <article class="feature-story">            
-            <div class="feature-story__header">
-              <span class=""><a class="media-card-2__hashtag anchor-primary" href="">Music News</a></span>
-              <h2 class="feature-story__title"><a href="#">Sound Opinions hosts admit to cloning themselves to keep up with workload</a></h2>
-              <time datetime="2019-02-04T14:02"><a href="#">Tuesday 2:02pm</a></time>                             
-            </div>            
-            <div class="feature-story__img">
-              <a class="img-overlay ratio-4-3" href="#"><img src="dist/assets/images//soundOpinions.jpg" alt="Greg Kot and Jim DeRogatis of Sound Opinions"></a>
-            </div>                                      
-            <p class="feature-story__text">Being a music critic is not without its demands. Today I spoke to Greg Kot and Jim DeRogatis to discuss the sheer volume of sound opinions they've issued over the tenure of their WBEZ radio program, Sound Opinions. "We really couldn't have accomplished this without clones," said either DeRogatis or a clone of DeRogatis in a startling admission. "Kot just cloned himself again to prepare for this week's Buried Treasures feautre." Kot, sitting beside him, nodded his head. "I've surprised even myself with this one," said Kot. "And by I, I mean Greg Kot #7 really outdid himself."</p>
-          </article>            
-          <article class="feature-story feature-story--transition-sm">                      
-            <div class="feature-story__img">          
-              <div class="ratio-16-9">          
-                <a href="#"><img src="dist/assets/images//shoe.jpg" alt="Woman preparing to tie shoe laces"></a>
-              </div>
-            </div>
-            <div class="feature-story__header">            
-              <h2 class="feature-story__title"><a href="#">Experts say that new shoe tying technique is a "game changer"</a></h2>                       
-              <time datetime="2019-02-01T20:24"><a href="#">Monday 8:24pm</a></time>          
-            </div>                        
-          </article>
-          <article class="feature-story feature-story--transition-sm">                       
-            <div class="feature-story__img">
-              <a class="ratio-16-9 hover-img-darken" href="#"><img src="dist/assets/images//cruisers.jpg" alt="Eddie and The Cruisers playing life circa 1963"></a>
-            </div>              
-            <div class="feature-story__header">
-              <h2 class="feature-story__title"><a href="#">New Eddie and the Cruisers tapes unearthed</a> </h2>
-              <time datetime="2019-02-07T22:59"><a href="#">Monday 10:59pm</a></time>   
-            </div>            
-          </article>  
-          <div class="text-center py-5">
-            <button class="btn-j btn-j--inverted">More Stories</button>
-          </div>            
-        </main>
-      </div>
+          </div>
+          <div class="feature-story__header">
+            <h2 class="feature-story__title"><a href="#">Experts say that new shoe tying technique is a "game
+                changer"</a></h2>
+            <time datetime="2019-02-01T20:24"><a href="#">Monday 8:24pm</a></time>
+          </div>
+        </article>
+        <article class="feature-story feature-story--transition-sm">
+          <div class="feature-story__img">
+            <a class="ratio-16-9 hover-img-darken" href="#"><img src="dist/assets/images//cruisers.jpg"
+                alt="Eddie and The Cruisers playing life circa 1963"></a>
+          </div>
+          <div class="feature-story__header">
+            <h2 class="feature-story__title"><a href="#">New Eddie and the Cruisers tapes unearthed</a> </h2>
+            <time datetime="2019-02-07T22:59"><a href="#">Monday 10:59pm</a></time>
+          </div>
+        </article>
+        <div class="text-center py-5">
+          <button class="btn-j btn-j--inverted">More Stories</button>
+        </div>
+      </main>
     </div>
-  <section class="newsletter">    
-    <h1 class="d-inline mb-0 p-0" aria-label="The Shallot">
-      <a href="#">
-        <svg class="logo-sm" ><use xlink:href="#svg1083"></use></svg>
-      </a>  
-    </h1>
+  </div>
+  <div class="newsletter">
+    <a class="d-flex justify-content-center align-items-center" href="#" aria-label="The Shallot home page">
+      <svg class="logo-sm" aria-hidden="true">
+        <use xlink:href="#svg1083"></use>
+      </svg>
+    </a>    
     <form class="newsletter__form mx-auto">
       <p>Want The Shallot's email newsletter?</p>
       <label class="d-block" for="daily">
@@ -354,17 +491,30 @@
         Weekly Updates
       </label>
       <label class="d-block mt-3 mb-5" for="emailAddress">
-        <input class="w-100 text-center bg-lighter-grey bb-only b-black line-height-md" id="emailAddress" name="emailAddress" placeholder="Your email address">
+        <input class="w-100 text-center bg-lighter-grey bb-only b-black line-height-md" id="emailAddress"
+          name="emailAddress" placeholder="Your email address">
       </label>
     </form>
-    <button class="btn-j btn-j--primary">Subscribe</button>     
-  </section>
+    <button class="btn-j btn-j--primary">Subscribe</button>
+  </div>
   <footer class="p-5 bg-black-light">
     <ul class="navbar-sprite">
-      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-facebook" aria-label="facebook" href="#"><svg class="icon-sprite icon-facebook"><use xlink:href="#icon-facebook"></use></svg></a></li>
-      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-instagram" aria-label="instagram" href="#"><svg class="icon-sprite icon-instagram"><use xlink:href="#icon-instagram"></use></svg></a></li>
-      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-twitter" aria-label="twitter" href="#"><svg class="icon-sprite icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a></li>
-      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-rss" aria-label="rss" href="#"><svg class="icon-sprite icon-rss"><use xlink:href="#icon-rss"></use></svg></a></li>
+      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-facebook" aria-label="the Shallot's facebook page" href="#"><svg
+            class="icon-sprite icon-facebook">
+            <use xlink:href="#icon-facebook"></use>
+          </svg></a></li>
+      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-instagram" aria-label="the Shallot's instagram page" href="#"><svg
+            class="icon-sprite icon-instagram">
+            <use xlink:href="#icon-instagram"></use>
+          </svg></a></li>
+      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-twitter" aria-label="the Shallot's twitter page" href="#"><svg
+            class="icon-sprite icon-twitter">
+            <use xlink:href="#icon-twitter"></use>
+          </svg></a></li>
+      <li class="navbar-sprite__item"><a class="navbar-sprite__link bg-rss" aria-label="the Shallot's rss page" href="#"><svg
+            class="icon-sprite icon-rss">
+            <use xlink:href="#icon-rss"></use>
+          </svg></a></li>
     </ul>
     <ul class="navbar-secondary my-5">
       <li class="navbar-secondary__item"><a class="navbar-secondary__link" href="#">About</a></li>
@@ -378,162 +528,239 @@
     </ul>
     <div class="legal-aside">
       <p class="font-xs text-grey-darker text-center mb-1">All quotes and stories are fictitious</p>
-      <p class="font-xs text-grey-darker text-center mb-0 ">With apologies to <a class="text-grey-darker" href="https://www.theonion.com/">The Onion</a></p>
+      <p class="font-xs text-grey-darker text-center mb-0 ">With apologies to <a class="text-grey-darker"
+          href="https://www.theonion.com/">The Onion</a></p>
     </div>
   </footer>
   <div class="js-modals" tabindex="-1">
     <ul class="tab-switches fixed-header" tabindex="-1">
       <li>
-        <button class="button-plain tab-switches__item tab-switches__item--is-active js-tab-switch" aria-label="home navigation" aria-pressed="true">
-          <img class="square-sm" src="favicon-32x32.png" alt="shallot logo">
-        </button>      
-      </li>  
+        <button class="button-plain tab-switches__item tab-switches__item--is-active js-tab-switch"
+          aria-label="home navigation" aria-pressed="true">
+          <img class="square-sm" src="favicon-32x32.png" alt="">
+        </button>
+      </li>
       <li>
-        <button class="button-plain tab-switches__item icon-user-2-wrapper js-icon-user js-tab-switch" aria-label="user login" aria-pressed="false">
-          <svg class="icon icon-user-2"><use xlink:href="#icon-user"></use></svg>
+        <button class="button-plain tab-switches__item icon-user-2-wrapper js-icon-user js-tab-switch"
+          aria-label="user login" aria-pressed="false">
+          <svg class="icon icon-user-2">
+            <use xlink:href="#icon-user"></use>
+          </svg>
         </button>
       </li>
       <li class="d-flex ml-auto pr-2">
         <button class="button-plain js-icon-close" aria-label="close">
-          <svg class="icon icon-close"><use xlink:href="#icon-close"></use>
-        </button>              
-      </li>        
-    </ul>
-    <nav class="l-modal l-modal--top-offset js-modal-menu" role="dialog" aria-label="major Shallot links and affiliate site links">
-      <div class= "w-100 overflow-auto px-3 py-4">      
-        <form class="d-flex bb-neutral-light pb-3 bb-neutral-light">
-          <div>
-            <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>
-          </div>
-          <input class="flex-grow-1 pl-5 pr-3 b-none text-light-grey" type="text" placeholder="SEARCH THE SHALLOT" role="search">
-        </form>    
-        <ul class="tab-group tab-group--dynamic-lg">      
-          <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <defs>
-            <symbol id="icon-price-tag" viewBox="0 0 32 32">
-            <title>price-tag</title>
-            <path d="M30.5 0h-12c-0.825 0-1.977 0.477-2.561 1.061l-14.879 14.879c-0.583 0.583-0.583 1.538 0 2.121l12.879 12.879c0.583 0.583 1.538 0.583 2.121 0l14.879-14.879c0.583-0.583 1.061-1.736 1.061-2.561v-12c0-0.825-0.675-1.5-1.5-1.5zM23 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"></path>
-            </symbol>
-            </def>
+          <svg class="icon icon-close">
+            <use xlink:href="#icon-close"></use>
           </svg>
-          <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Politics</span></a></li>
-          <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Sports</span></a></li>
-          <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Local</span></a></li>
-          <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span>Entertainment</span></a></li>
-          <li class="tab-group__item"><a class="tab-group__link" href="#"><svg class="tab-group__icon icon-price-tag"><use xlink:href="#icon-price-tag"></use></svg><span>Opinion</span></a></li>
-          <li class="tab-group__item"><a class="tab-group__link" href="#"><svg class="tab-group__icon icon-price-tag"><use xlink:href="#icon-price-tag"></use></svg><span>Video</span></a></li>
+        </button>
+      </li>
+    </ul>
+    <div class="l-modal l-modal--top-offset js-modal-menu" role="dialog">
+      <div class="w-100 overflow-auto px-3 py-4">
+        <form class="d-flex bb-neutral-light pb-3 bb-neutral-light" role="search">
+          <span>
+            <svg class="icon icon-search">
+              <use xlink:href="#icon-search"></use>
+            </svg>
+          </span>
+          <input class="flex-grow-1 pl-5 pr-3 b-none text-light-grey placeholder-hover"type="search" role="searchbox" placeholder="SEARCH THE SHALLOT" aria-label="search the Shallot">            
+        </form>
+        <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+            <symbol id="icon-price-tag" viewBox="0 0 32 32">
+              <title>price-tag</title>
+              <path
+                d="M30.5 0h-12c-0.825 0-1.977 0.477-2.561 1.061l-14.879 14.879c-0.583 0.583-0.583 1.538 0 2.121l12.879 12.879c0.583 0.583 1.538 0.583 2.121 0l14.879-14.879c0.583-0.583 1.061-1.736 1.061-2.561v-12c0-0.825-0.675-1.5-1.5-1.5zM23 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z">
+              </path>
+            </symbol>
+            </defs>
+        </svg>
+        <nav aria-label="major internal navigation">
+          <ul class="tab-group tab-group--dynamic-lg">          
+            <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                  src="favicon-32x32.png" alt="the Shallot"><span>Politics</span></a></li>
+            <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                  src="favicon-32x32.png" alt="the Shallot"><span>Sports</span></a></li>
+            <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                  src="favicon-32x32.png" alt="the Shallot"><span>Local</span></a></li>
+            <li class="tab-group__item"><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                  src="favicon-32x32.png" alt="the Shallot"><span>Entertainment</span></a></li>
+            <li class="tab-group__item"><a class="tab-group__link" href="#"><svg class="tab-group__icon icon-price-tag">
+                  <use xlink:href="#icon-price-tag"></use>
+                </svg><span>Opinion</span></a></li>
+            <li class="tab-group__item"><a class="tab-group__link" href="#"><svg class="tab-group__icon icon-price-tag">
+                  <use xlink:href="#icon-price-tag"></use>
+                </svg><span>Video</span></a></li>
+          </ul>
+        </nav>        
+        <ul class="tab-group">
+          <li><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/mogcjp3kihx7oyz31doa.png"
+                alt=""><span class="uppercase">Clickhole</span></a></li>
+          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png"
+                alt="the Shallot home page"><span class="uppercase">the Shallot</span></a></li>
         </ul>
-        <ul class="tab-group">        
-          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/mogcjp3kihx7oyz31doa.png" alt="shallot logo"><span class="uppercase">Clickhole</span></a></li>
-          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="favicon-32x32.png" alt="shallot logo"><span class="uppercase">the Shallot</span></a></li>
-        </ul>
-        <ul class="tab-group">      
-          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/no63bw902mddhwxtjtxh.png" alt="shallot logo"><span class="uppercase">The AV Club</span></a></li>
-          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/rnxqtvv6advgidzfs6am.png" alt="shallot logo"><span class="uppercase">Deadspin</span></a></li>
-          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/fdj3buryz5nuzyf2k620.png" alt="shallot logo"><span class="uppercase">Gizmodo</span></a></li>
-          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/aqhdzcldymb9mkltfhxh.png" alt="shallot logo"><span class="uppercase">Jalopnik</span></a></li>
-          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/pch44wvo0v6acpdlt0f6.png" alt="shallot logo"><span class="uppercase">Jezebel</span></a></li>
-          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/ghxlwgdztvqerb4zptdx.png" alt="shallot logo"><span class="uppercase">Kotaku</span></a></li>
-          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/u0939doeuioaqhspkjyc.png" alt="shallot logo"><span class="uppercase">Lifehacker</span></a></li>
-          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/guli6kfxfg1sgjwfade4.png" alt="shallot logo"><span class="uppercase">Splinter</span></a></li>
-          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/f5zr3vuc90hrpnmx0nme.png" alt="shallot logo"><span class="uppercase">The Root</span></a></li>
-          <li><a class="tab-group__link" href="#"><img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/j59upeyynundqjvbmcwj.png" alt="shallot logo"><span class="uppercase">The Takeout</span></a></li>
-        </ul>
+        <nav aria-label="affiliate sites">
+          <ul class="tab-group">
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                  src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/no63bw902mddhwxtjtxh.png"
+                  alt=""><span class="uppercase">The AV Club</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                  src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/rnxqtvv6advgidzfs6am.png"
+                  alt=""><span class="uppercase">Deadspin</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                  src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/fdj3buryz5nuzyf2k620.png"
+                  alt=""><span class="uppercase">Gizmodo</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                  src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/aqhdzcldymb9mkltfhxh.png"
+                  alt=""><span class="uppercase">Jalopnik</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                  src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/pch44wvo0v6acpdlt0f6.png"
+                  alt=""><span class="uppercase">Jezebel</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                  src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/ghxlwgdztvqerb4zptdx.png"
+                  alt=""><span class="uppercase">Kotaku</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                  src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/u0939doeuioaqhspkjyc.png"
+                  alt=""><span class="uppercase">Lifehacker</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                  src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/guli6kfxfg1sgjwfade4.png"
+                  alt=""><span class="uppercase">Splinter</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                  src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/f5zr3vuc90hrpnmx0nme.png"
+                  alt=""><span class="uppercase">The Root</span></a></li>
+            <li><a class="tab-group__link" href="#"><img class="tab-group__icon"
+                  src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/j59upeyynundqjvbmcwj.png"
+                  alt=""><span class="uppercase">The Takeout</span></a></li>
+          </ul>
+        </nav>  
         <ul class="tab-group">
           <li>
             <a class="tab-group__link" href="#">
-              <img class="tab-group__icon" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/nnak0ogtqbt96hhn2yzn.png" alt="open box">
+              <img class="tab-group__icon"
+                src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_80,q_80,w_80/nnak0ogtqbt96hhn2yzn.png"
+                alt="">
               <span>the Inventory</span>
             </a>
           </li>
         </ul>
       </div>
-    </nav>
-  <div class="l-modal js-modal-form" role="dialog" aria-labelledby="kinja-form-label">
-    <div class="l-modal__dialog">
-      <div class="modal-j">        
-        <h2 class="modal-j__header" id="kinja-form-label">Log into your Kinja account</h2>
-        <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    </div>
+    <div class="l-modal js-modal-form" role="dialog">
+      <div class="l-modal__dialog">
+        <div class="modal-j">
+          <h2 class="modal-j__header" id="kinja-form-label">Log into your Kinja account</h2>
+          <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <symbol id="icon-close" viewBox="0 0 24 24">
-            <title>close</title>
-            <path d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>
+              <title>close</title>
+              <path
+                d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z">
+              </path>
             </symbol>
-          </svg>  
-        <button class="button-plain icon-close-wrapper js-icon-close js-icon-close-kinja" aria-label="close"><svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg></button>
-        <div class="modal-j__body">
-          <div class=" btn-group w-lg-50 br-lg-light-grey">
-            <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">                           
-                <def>
-                  <symbol id="icon-google1" viewBox="0 0 24 28">
-                  <title>google1</title>
-                  <path d="M12 12.281h11.328c0.109 0.609 0.187 1.203 0.187 2 0 6.844-4.594 11.719-11.516 11.719-6.641 0-12-5.359-12-12s5.359-12 12-12c3.234 0 5.953 1.188 8.047 3.141l-3.266 3.141c-0.891-0.859-2.453-1.859-4.781-1.859-4.094 0-7.438 3.391-7.438 7.578s3.344 7.578 7.438 7.578c4.75 0 6.531-3.406 6.813-5.172h-6.813v-4.125z"></path>
-                  </symbol> 
-                </def>
-              </svg>
-            <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">             
+          </svg>
+          <button class="button-plain icon-close-wrapper js-icon-close js-icon-close-kinja" aria-label="close"><svg
+              class="icon icon-close">
+              <use xlink:href="#icon-close"></use>
+            </svg></button>
+          <div class="modal-j__body">
+            <div class=" btn-group w-lg-50 br-lg-light-grey">
+              <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <defs>
-                  <symbol id="icon-facebook" viewBox="0 0 32 32">
-                  <title>facebook</title>
-                  <path d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z"></path>
-                  </symbol>
-                  <symbol id="icon-instagram" viewBox="0 0 32 32">
-                  <title>instagram</title>
-                  <path d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z"></path>
-                  <path d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z"></path>
-                  <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z"></path>
-                  </symbol>
-                  <symbol id="icon-twitter" viewBox="0 0 32 32">
-                  <title>twitter</title>
-                  <path d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z"></path>
-                  </symbol>
-                  <symbol id="icon-rss" viewBox="0 0 32 32">
-                  <title>rss</title>
-                  <path d="M4.259 23.467c-2.35 0-4.259 1.917-4.259 4.252 0 2.349 1.909 4.244 4.259 4.244 2.358 0 4.265-1.895 4.265-4.244-0-2.336-1.907-4.252-4.265-4.252zM0.005 10.873v6.133c3.993 0 7.749 1.562 10.577 4.391 2.825 2.822 4.384 6.595 4.384 10.603h6.16c-0-11.651-9.478-21.127-21.121-21.127zM0.012 0v6.136c14.243 0 25.836 11.604 25.836 25.864h6.152c0-17.64-14.352-32-31.988-32z"></path>
+                  <symbol id="icon-google1" viewBox="0 0 24 28">
+                    <title>google1</title>
+                    <path
+                      d="M12 12.281h11.328c0.109 0.609 0.187 1.203 0.187 2 0 6.844-4.594 11.719-11.516 11.719-6.641 0-12-5.359-12-12s5.359-12 12-12c3.234 0 5.953 1.188 8.047 3.141l-3.266 3.141c-0.891-0.859-2.453-1.859-4.781-1.859-4.094 0-7.438 3.391-7.438 7.578s3.344 7.578 7.438 7.578c4.75 0 6.531-3.406 6.813-5.172h-6.813v-4.125z">
+                    </path>
                   </symbol>
                 </defs>
               </svg>
-            <button class="btn-group__item btn-j btn-j--inverted">
-              <svg class="icon-sprite icon-facebook-2"><use xlink:href="#icon-facebook"></use></svg>
-              <span>Connect with Facebook</span>
-            </button>
-            <button class="btn-group__item btn-j btn-j--inverted">
-              <svg class="icon-sprite icon-twitter-2"><use xlink:href="#icon-twitter"></use></svg>
-              <span>Connect with Twitter</span>
-            </button>
-            <button class="btn-group__item btn-j btn-j--inverted">
-              <svg class="icon icon-google1"><use xlink:href="#icon-google1"></use></svg>
-              <span>Connect with Google</span>
-            </button> 
-          </div>
-          <div class="w-lg-50 d-flex flex-column pl-lg-3">
-            <h3 class="mb-3 font-lg text-center text-lg-left">Or</h3>
-            <p class="modal-j__text mb-3">Use burner accounts to comment anonymously.
-            <span><a href="#" class="anchor-default">Learn more.</a></span></p>
-            <h3 class="mb-3 font-lg">Sign in with your burner account</h3>
-            <form class="js-login">
-              <div class="form-line">         
-                <label for="username" class="form-label">User name:</label>                     
-                <input type="text" id="username" class="form-input">
-                <small id="js-username-error" class="warning-message hide">Please enter a user-name</small>                
-              </div>
-                <div class="form-line">                            
-                  <label for="key" class="form-label">Key:</label>                       
+              <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                  <symbol id="icon-facebook" viewBox="0 0 32 32">
+                    <title>facebook</title>
+                    <path d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z">
+                    </path>
+                  </symbol>
+                  <symbol id="icon-instagram" viewBox="0 0 32 32">
+                    <title>instagram</title>
+                    <path
+                      d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z">
+                    </path>
+                    <path
+                      d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z">
+                    </path>
+                    <path
+                      d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z">
+                    </path>
+                  </symbol>
+                  <symbol id="icon-twitter" viewBox="0 0 32 32">
+                    <title>twitter</title>
+                    <path
+                      d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z">
+                    </path>
+                  </symbol>
+                  <symbol id="icon-rss" viewBox="0 0 32 32">
+                    <title>rss</title>
+                    <path
+                      d="M4.259 23.467c-2.35 0-4.259 1.917-4.259 4.252 0 2.349 1.909 4.244 4.259 4.244 2.358 0 4.265-1.895 4.265-4.244-0-2.336-1.907-4.252-4.265-4.252zM0.005 10.873v6.133c3.993 0 7.749 1.562 10.577 4.391 2.825 2.822 4.384 6.595 4.384 10.603h6.16c-0-11.651-9.478-21.127-21.121-21.127zM0.012 0v6.136c14.243 0 25.836 11.604 25.836 25.864h6.152c0-17.64-14.352-32-31.988-32z">
+                    </path>
+                  </symbol>
+                </defs>
+              </svg>
+              <button class="btn-group__item btn-j btn-j--inverted">
+                <svg class="icon-sprite icon-facebook-2">
+                  <use xlink:href="#icon-facebook"></use>
+                </svg>
+                <span>Connect with Facebook</span>
+              </button>
+              <button class="btn-group__item btn-j btn-j--inverted">
+                <svg class="icon-sprite icon-twitter-2">
+                  <use xlink:href="#icon-twitter"></use>
+                </svg>
+                <span>Connect with Twitter</span>
+              </button>
+              <button class="btn-group__item btn-j btn-j--inverted">
+                <svg class="icon icon-google1">
+                  <use xlink:href="#icon-google1"></use>
+                </svg>
+                <span>Connect with Google</span>
+              </button>
+            </div>
+            <div class="w-lg-50 d-flex flex-column pl-lg-3">
+              <h3 class="mb-3 font-lg text-center text-lg-left">Or</h3>
+              <p class="modal-j__text mb-3">Use burner accounts to comment anonymously.
+                <span><a href="#" class="anchor-default">Learn more.</a></span></p>
+              <h3 class="mb-3 font-lg">Sign in with your burner account</h3>
+              <form class="js-login">
+                <div class="form-line">
+                  <label for="username" class="form-label">User name:</label>
+                  <input type="text" id="username" class="form-input">
+                  <small id="js-username-error" class="warning-message hide">Please enter a user-name</small>
+                </div>
+                <div class="form-line">
+                  <label for="key" class="form-label">Key:</label>
                   <input type="password" id="key" class="form-input">
-                  <small id="js-key-error" class="warning-message hide">Please enter a key</small>                  
+                  <small id="js-key-error" class="warning-message hide">Please enter a key</small>
                 </div>
                 <div class="text-right my-2">
                   <button type="submit" class="btn-j btn-j--inverted btn-j--tiny">OK</button>
                 </div>
               </form>
             </div>
-          </div>          
+          </div>
           <footer class="modal-j__footer p-3">
             <p class="modal-j__text">Don't have an account?<a href="#" class="anchor-default"> Create one here</a></p>
-          </footer>                             
-        </div>  
-      </div>  
+          </footer>
+        </div>
+      </div>
     </div>
-  </div>  
+  </div>
   <script src="src/js/main.js"></script>
 </body>
+
 </html>

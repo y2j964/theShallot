@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     concat = require("gulp-concat"),
     rename = require("gulp-rename"),
     plumber = require("gulp-plumber"),
+    babel = require("gulp-babel"),
     cleanCSS = require("gulp-clean-css"),
     sourcemaps = require("gulp-sourcemaps"),
     lineEndings = require("gulp-line-ending-corrector"),
@@ -41,9 +42,14 @@ gulp.task("eslintFix", function(){
 // concatenate and minify js
 gulp.task("scripts", function(){
   return gulp.src("src/js/*.js")        
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+            presets: ['@babel/env']
+        }))
     .pipe(concat("main.js"))
     .pipe(terser())
     .pipe(lineEndings())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest("dist"))
     .pipe(browserSync.stream())
 });    

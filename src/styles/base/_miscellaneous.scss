@@ -1,3 +1,22 @@
+.placeholder-hover:hover::-webkit-input-placeholder {
+	color: #ff66d9;
+}
+
+.placeholder-hover:hover::-moz-placeholder {
+	color: #ff66d9;
+}
+
+.placeholder-hover:hover::-ms-input-placeholder {
+	color: #ff66d9;
+}
+.placeholder-hover:hover:-moz-placeholder {
+	color: #ff66d9;
+}
+
+.placeholder-hover:focus {
+	color:  #00b300;
+}
+
 .overflow-auto {
 	overflow: auto;
 }

@@ -1,6 +1,6 @@
 .l-searchbar {
 	background-color: white;
-	min-width: 32px;	
+	min-width: 30px;	
 	display: flex;
 	justify-content: center;
 	align-items: center;		
@@ -9,24 +9,8 @@
 	&--is-delineated {
 	border-bottom-color: $light-grey;
 	}
-	
-	&-overlay {
-		display: none;
-		position: absolute;
-		top: 0;
-		left:0;
-		width: 90%;
-		//need to match spacing on top-nav so that the box starts the same place the magnifying box starts
-		margin: 0 8px;
-		background-color: #000;
-		min-width: 32px;
-		z-index:10;	
-		
-		// &--is-active {
-			// display: block;
-		// }
-	}
 
+	// when in expanded state, alter these classes
 	&--is-expanded {
 		
 		.l-searchbar-overlay {
@@ -36,10 +20,28 @@
 		.magnifying-glass {
 			// element is still focusable even after the overlay; so we'll just toggle it like so
 			display: none;	
-		}
-		
+		}	
 	}
 }
+	
+.l-searchbar-overlay {
+	display: none;
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 90%;
+	//need to match spacing on top-nav so that the box starts the same place the magnifying box starts
+	margin: 0 8px;
+	background-color: #000;
+	min-width: 32px;
+	z-index:10;	
+	
+	// &--is-active {
+		// display: block;
+	// }
+}
+
+
 
 .searchbar {
 	padding: 0 .562rem 0 .4rem;

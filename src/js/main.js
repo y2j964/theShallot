@@ -51,13 +51,10 @@ function displayDropdown(e) {
   if (!e.target.classList.contains('top-nav__toggle-btn')) {
     return
   }
-  // climb to top-nav__item parent
-  let topNavItem = e.target.closest('.top-nav__item');  
   // toggle aria-expanded
-  topNavItem.getAttribute('aria-expanded') === 'false'
-    ? topNavItem.setAttribute('aria-expanded', 'true') 
-    : topNavItem.setAttribute('aria-expanded', 'false')
+  updateAriaExpanded(e);
   // toggle dropdown display
+  let topNavItem = e.target.closest('.top-nav__item');  
   let dropdown = topNavItem.querySelector('.dropdown');
   dropdown.classList.toggle('dropdown--is-visible');
   // toggle button pressed boolean 
@@ -118,6 +115,11 @@ function deployScrollNav() {
   }
 }
 
+function updateAriaExpanded(e) {
+  e.target.getAttribute('aria-expanded') === 'false'
+    ? e.target.setAttribute('aria-expanded', 'true') 
+    : e.target.setAttribute('aria-expanded', 'false')
+}
 function updateAriaCheckbox(e) {  
   // toggle aria-checked state
   if (e.target.classList.contains('checkbox')) {    
@@ -274,20 +276,18 @@ function switchModal(e) {
   modalTrapFocus(jsModals);
 }
 
-// search bar expand and collapse
-function expandSearchBar(e) {
+function toggleSearchBar(e) {
   if (!e.target.classList.contains('js-searchbar-toggler')) {
     return;
   }  
   lSearchbar.classList.toggle('l-searchbar--is-expanded');
+  updateAriaExpanded(e);
   // if dropdown menu is visible when magnifying glass is clicked, disappear it
   let dropdown = topNav.querySelector('.dropdown--is-visible');
   if (dropdown) {   
-    dropdown.classList.remove('dropdown--is-visible');
+    dropdown.classList.remove('dropdown--is-visible');    
   }
 }
-
-// hovers on article reel thumbnails
 
 function reelTransition(e) {
   // init previously activated item
@@ -339,7 +339,7 @@ hamburgerMenu2.addEventListener('click', expandModalMenu);
 topNav.addEventListener('click', displayDropdown);
 
 // clicks on magnifying glass and x
-lSearchbar.addEventListener('click', expandSearchBar);
+lSearchbar.addEventListener('click', toggleSearchBar);
 
 // clicks on checkbox
 newsletterForm.addEventListener("click", updateAriaCheckbox);
