@@ -3,7 +3,9 @@ const reelArticles = document.querySelector('.js-reel-articles');
 const reelStoryNav = document.querySelector('.reel-story__nav');
 const thumbnail = document.querySelectorAll('.reel-story__thumbnail-item');
 const reelStory = document.querySelectorAll('.reel-story');
-const lSearchbar = document.querySelector('.l-searchbar');
+const searchbar = document.querySelector('.searchbar');
+const svgToggler =  searchbar.querySelector('.js-searchbar-svg');
+const svgUse = svgToggler.querySelector('use');
 const topNav = document.querySelector('.top-nav');
 const [hamburgerMenu, hamburgerMenu2]  = document.querySelectorAll('.js-hamburger-menu');
 const userIcon = document.querySelector('.js-icon-user');
@@ -18,7 +20,7 @@ const kinjaCloseIcon = document.querySelector('.js-icon-close-kinja');
 const tabSwitches = document.querySelector('.tab-switches');
 const tabSwitchButtons = Array.from(tabSwitches.querySelectorAll('button'));
 const [homeSwitch, userSwitch] = tabSwitches.querySelectorAll('.js-tab-switch');
-const newsletterForm = document.querySelector('.newsletter__form');
+const newsletter = document.querySelector('.newsletter');
 const login = document.querySelector('.js-login');
 const userName = document.getElementById('username');
 const userNameError = document.getElementById('js-username-error');
@@ -32,7 +34,7 @@ const vh = window.innerHeight || document.documentElement.clientHeight;
 const scrollBottomTrigger = document.querySelector('input[name="emailAddress"]')
 const scrollTopBound = document.getElementById('js-scroll-top');
 const scrollButton = document.getElementById('js-scroll-button');
-const lLogoFixed = document.querySelector('.l-logo-fixed');
+const lLogoFixed = document.querySelector('.navbar-mobile');
 const logoHeading = document.querySelector('.l-logo h1');
 
 let previousActiveEl;   
@@ -45,6 +47,10 @@ let dropdownToggleHovered = false;
 let modalFirstFocused = false;
 
 // FUNCTIONS //
+
+function stopSubmission(e) {  
+  e.preventDefault();
+}
 
 function displayDropdown(e) {  
   // only act on btn
@@ -66,7 +72,7 @@ function displayDropdown(e) {
   // delineate searchbar
   // if mouse is not hovering over item (i.e. if down via focus), toggle it
   if (!dropdownToggleHovered) {    
-    lSearchbar.classList.toggle('l-searchbar--is-delineated'); 
+    searchbar.classList.toggle('searchbar--is-delineated'); 
   } else {
     // if you are hovering, let mouseover handle delineation, and do nothing
     return
@@ -78,7 +84,7 @@ function delineateSearchbar() {
   dropdownToggleHovered === true ? dropdownToggleHovered = false : dropdownToggleHovered = true;
   // toggle on hover out if dropdown not displayed
   if (!dropdownTogglePressed) {
-    lSearchbar.classList.toggle('l-searchbar--is-delineated');    
+    searchbar.classList.toggle('searchbar--is-delineated');    
   }
 }
 
@@ -100,7 +106,7 @@ function deployScrollNav() {
   if (scrollBottomTriggerTop > 0 && scrollBottomTriggerTop <= vh) {
     // add navbar and tell screen readers it is visible
     navbarScroll.classList.add('l-navbar-scroll--is-visible');
-    lLogoFixed.classList.add('l-logo-fixed--is-visible');
+    lLogoFixed.classList.add('navbar-mobile--is-visible');
     navbarScroll.setAttribute('aria-hidden', 'false');    
   }
   if (navbarScroll.classList.contains('l-navbar-scroll--is-visible')) {
@@ -109,7 +115,7 @@ function deployScrollNav() {
     if (scrollTopBoundTop > 0) {      
     // remove navbar and tell screen readers it is no longer visible
       navbarScroll.classList.remove('l-navbar-scroll--is-visible');      
-      lLogoFixed.classList.remove('l-logo-fixed--is-visible');
+      lLogoFixed.classList.remove('navbar-mobile--is-visible');
       navbarScroll.setAttribute('aria-hidden', 'true');      
     }
   }
@@ -279,8 +285,17 @@ function switchModal(e) {
 function toggleSearchBar(e) {
   if (!e.target.classList.contains('js-searchbar-toggler')) {
     return;
-  }  
-  lSearchbar.classList.toggle('l-searchbar--is-expanded');
+  }
+  if (svgToggler.classList.contains('icon-search')) {
+    svgToggler.classList.remove('icon-search');
+    svgToggler.classList.add('icon-close', 'icon-close--sm', 'icon-close--grey');
+    svgUse.setAttribute('href', '#icon-close');
+  } else {
+    svgToggler.classList.remove('icon-close', 'icon-close--sm', 'icon-close--grey');
+    svgToggler.classList.add('icon-search');
+    svgUse.setAttribute('href', '#icon-search');
+  }
+  searchbar.classList.toggle('searchbar--is-expanded');
   updateAriaExpanded(e);
   // if dropdown menu is visible when magnifying glass is clicked, disappear it
   let dropdown = topNav.querySelector('.dropdown--is-visible');
@@ -339,10 +354,10 @@ hamburgerMenu2.addEventListener('click', expandModalMenu);
 topNav.addEventListener('click', displayDropdown);
 
 // clicks on magnifying glass and x
-lSearchbar.addEventListener('click', toggleSearchBar);
+searchbar.addEventListener('click', toggleSearchBar);
 
 // clicks on checkbox
-newsletterForm.addEventListener("click", updateAriaCheckbox);
+newsletter.addEventListener("click", updateAriaCheckbox);
 
 // clicks on user icon
 userIcon.addEventListener('click', displayModalForm);
@@ -378,5 +393,8 @@ login.addEventListener('submit', validateForm);
 window.addEventListener('scroll', deployScrollNav);
 // auto-scroll to top of page on click of up arrow
 scrollButton.addEventListener('click', scrollToTop);
+
+// stop the submission of all forms
+document.addEventListener('submit', stopSubmission);
 
 // window.onload = autoReel();

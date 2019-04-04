@@ -1,0 +1,48 @@
+// form is prefixed with my initial, j, to differentiate from bootstrap
+.j-form {
+	
+	&-group {		
+		display: block;
+		margin: 2rem 0;
+		
+		@include screen("lg") {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+	
+	&-label {
+		width: 100%;
+		height: 100%;		
+		margin: 0;
+		font-size: $font-sm;
+		
+		&-container {
+			@include screen("lg") {
+				width: 33.3%;
+				flex: 0 0 33.3%;
+				align-self: flex-start;
+			}	
+		}
+	}
+	
+	&-input {				
+		width: 100%;
+		height: 100%;		
+		// margin: 0 0 1.5rem;				
+		margin: 0;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-bottom: 1px solid black;
+		
+		&-container {
+			@include screen("lg") {
+				width: 66.7%;
+				flex: 0 0 66.7%;	
+				align-self: flex-start;
+			}	
+		}
+	}
+	
+}

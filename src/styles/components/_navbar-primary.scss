@@ -38,22 +38,3 @@
 		}
 	}
 }
-
-.navbar-secondary {
-	@extend %flex-centered;
-	flex-wrap: wrap;
-
-	&__item {
-		padding: 0 1.5rem;
-	}
-	
-	&__link {
-		font-size: $font-sm;
-		color: $grey;
-		
-		&:hover{
-			text-decoration: underline;
-			color: $grey;
-		}
-	}
-}

@@ -1,4 +1,18 @@
-.grid {
+.l-flag {
+// d-flex align-items-center p-2 p-md-0 
+	background-color: white;
+	display: flex;
+	align-items: center;	
+	padding: 1rem .5rem;
+	
+	@include screen("md") {
+		justify-content: center;
+		padding: 2em 0;
+		margin: 0 auto;
+	}
+}
+
+.l-grid {
   display: flex;
   flex-direction: column;
 	@include screen("md"){		
@@ -56,21 +70,6 @@
   } 
 }
 
-.sidebar {
-	display: none;
-	@include screen("lg") {
-		display: block;
-	}
-}
-
-.main-wrapper {
-	max-width: 800px;
-	margin: 0 auto;
-	@include screen("lg"){
-		padding-right: 60px;
-	}
-}
-
 .l-main { 
 	width:100%;
 	flex: 0 0 100%;
@@ -93,28 +92,19 @@
 		display: block;
 		width: 33.3%;
 		flex: 0 0 33.3%;
-		padding: 1.5rem 15px;
+		padding: 0 15px 1.5rem;
 	}
+	
+	&__title {
+		font-size: $font-xl-1;
+		font-weight: bold;
+		text-transform: capitalize;
+		font-family: $font-serif; 
+	}	
 }
 
-.l-display-on-medium {
-	display: none;
-	@include screen("md") {
-		display: block;
-	}
-}
-
-.newsletter {
+.l-newsletter {
 	text-align: center;
   background-color: $lighter-grey;
   padding: 30px 0;
-
-	&__form {
-	max-width: 362px;
-	margin:1em auto 0;
 }
-	
-	&__label {
-		font-size: $font-sm;
-	} 
-}	

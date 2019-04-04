@@ -1,4 +1,4 @@
-.l-logo-fixed {
+.navbar-mobile {
 	display: flex;
 	align-items: center;	
 	padding: 1rem .5rem;
@@ -9,7 +9,7 @@
 	right: 0;
 	z-index: 1;			
 	border-bottom: 1px solid $light-grey;
-	transform: translate(0, -60px);	
+	transform: translate(0, -60px); 
 	// -60px b/c height is 60px
 	transition: transform 200ms linear;
 	

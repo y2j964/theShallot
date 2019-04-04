@@ -1,5 +1,3 @@
-/* Base styles */
-
 @font-face {
     font-family: 'latoregular';
     src: url('../src/assets/fonts/lato-regular-webfont.woff2') format('woff2'),
@@ -8,77 +6,16 @@
     font-style: normal;
 }
 
-* {
-  box-sizing: border-box;  
+.sans-serif {
+	font-family: $font-sans-serif;
 }
 
-html {
-	scroll-behavior: smooth;
-}
-
-ul,
-li {
-    list-style-type: none;
-    padding: 0px;
-    margin: 0px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-p,
-span {
-  font-family: Verdana, Geneva, sans-serif;
-}
-
-a {
-  color: black;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: black;
-	cursor: pointer;
-}
-
-a:focus {
-  // outline: 1px dotted;
-  // outline-color: inherit;
-}
-
-// to prevent inner svg or use element from eating my click event in event delegation
-a > svg,
-a > img,
-button > svg,
-button > img {
-	pointer-events: none;
-}
-
-.hover-underline:hover{
-  text-decoration: underline;
-}
-
-input:focus{
-  outline: none;
-}
-
-.button-plain {
-  padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-	cursor: pointer;
-}
-
-time {
-	font-size: $font-sm;
+.serif {
+	font-family: $font-serif;
 }
 
 .font-xs {
-	font-size: .7em;
+	font-size: $font-xs;
 }
 
 .font-sm {
@@ -86,11 +23,23 @@ time {
 }
 
 .font-md {
-	font-size: $font-sm;
+	font-size: $font-md;
 }
 
-.capitalize {
-	text-transform: capitalize;
+.font-lg {
+	font-size: $font-lg;
+}
+
+.font-xl-1 {
+	font-size: $font-xl-1;
+}
+
+.font-xl-2 {
+	font-size: $font-xl-2;
+}
+
+.text-black {
+	color: black;
 }
 
 .text-grey {
@@ -105,6 +54,22 @@ time {
 	color: $light-grey;
 }
 
+.capitalize {
+	text-transform: capitalize;
+}
+
+.text-underline-none {
+	color: $grey;
+	&:hover {
+		text-decoration: none;
+		color: darken($grey, 10%);
+	}
+}
+
+.hover-underline:hover{
+  text-decoration: underline;
+}
+
 .anchor-primary {
   color: $magenta;
   font-family: Verdana, Geneva, sans-serif;	
@@ -112,21 +77,8 @@ time {
 	&:hover {
 		color: darken($magenta, 10%)		
 	}
-}
-		
+}		
 
 .anchor-default {
 	color: $blue-link;
-}
-
-.font-sm {
-	font-size: $font-sm;
-}
-
-.font-md {
-	font-size: $font-md;
-}
-
-.font-lg {
-	font-size: $font-lg;
 }

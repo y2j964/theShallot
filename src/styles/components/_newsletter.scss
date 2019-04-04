@@ -1,0 +1,13 @@
+.newsletter {
+	max-width: 362px;
+	padding: 0 30px 30px;
+	margin:1em auto 0;
+	
+	&__label {
+		display: block;
+		
+		&:last-child {
+			margin: 1rem 0 3rem;			
+		}
+	} 
+}	

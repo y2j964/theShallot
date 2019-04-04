@@ -8,10 +8,6 @@
 	flex-direction: column;
 	padding: 8px 0;
 	text-transform: uppercase;
-
-	// &:first-child {
-		// margin-top: 48 + 1 + px;
-	// }
 	
 	&:not(:last-child) {
 		border-bottom: 1px solid $light-grey;
@@ -35,6 +31,7 @@
 		//setting height w/ line height so that text is centered and we can vertical-align icon to top
 		line-height: 48px;
 		display: flex;
+		font-family: Verdana, Geneva, sans-serif;
 		vertical-align: bottom;
 		color: $grey;
 		text-transform: uppercase;
@@ -50,6 +47,5 @@
     height: 32px;
     margin-right: 10px;
     vertical-align: top;
-	}
-	
+	}	
 }

@@ -1,11 +1,14 @@
 .top-nav {
-	display: flex;
+	display: none;
 	height: 30px;
 	line-height: 30px;
 	background-color: black;
 	padding: 0 8px;
 	position: relative;	
-	// z-index:1;	
+	@include screen("md") {
+		display: flex;
+	}
+	
 	
 	&__list {
 		display: flex;		
@@ -18,15 +21,14 @@
 		border-right: 1px solid transparent;
 		
 		// put border on left to separate from searchbar
-		&:first-of-type {									
+		&:first-of-type {												
+			
 			&:hover {
-				border-left-color: $light-grey;								
+				border-left-color: $light-grey;												
 			}
 		}
 		
-		&:hover {
-		// focus-within to keep dropdown open while tabbing through contents
-		
+		&:hover {				
 			background-color: white;						
 			
 			.top-nav__link {				
@@ -49,8 +51,6 @@
 	}
 	
 	&__toggle-btn {
-		margin-left: -2px;
-		margin-right: 2px;
-	}
-	
+		margin-left: -2px;		
+	}	
 }

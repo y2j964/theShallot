@@ -1,3 +1,62 @@
+// made into a pseudo element b/c of counter content
+.number-overlay:before {					
+	transition: all .5s ease-in-out;					
+	@extend %flex-centered;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;		
+	cursor: pointer;
+	content: counter(thumbnail-item);
+	font-size: 2em;		
+	color: white;				
+	z-index: 1;
+	opacity: 0;	 
+}
+
+.ratio-16-9 {
+	position: relative;
+	overflow: hidden; 
+	display: block;
+	padding-top: 56.25%;		
+	background-color: transparent;
+	
+	& img {
+		position: absolute;
+		border: 0;		
+		top: 0;
+		left:0;
+		right: 0;
+		bottom: 0;
+		display: block;
+		margin: auto;		
+	}	
+}
+
+.ratio-4-3 {
+	position: relative;
+	overflow: hidden; 
+	display: block;
+	padding-top: 75.8%;			
+	background-color: transparent;	
+	
+	& img {	
+		position: absolute;
+		border: 0;		
+		top: 0;
+		left:0;
+		right: 0;
+		bottom: 0;
+		display: block;
+		margin: auto;
+	}
+}
+
+.img-overlay:hover:before {
+	background-color: rgba(0,0,0,0.3);
+}
+
 .placeholder-hover:hover::-webkit-input-placeholder {
 	color: #ff66d9;
 }
@@ -17,6 +76,27 @@
 	color:  #00b300;
 }
 
+.pointer {
+	pointer-events: auto!important;
+}
+
+.pointer-none {
+	pointer-events: none!important;
+}
+
+.z-boost {
+	z-index: 5;
+}
+
+.button-plain {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+	cursor: pointer;
+}
+
 .overflow-auto {
 	overflow: auto;
 }
@@ -29,18 +109,15 @@
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
 }
 
-.text-underline-none {
-	color: $grey;
-	&:hover {
-		text-decoration: none;
-		color: darken($grey, 10%);
-	}
-}
-
-.h-bar {
+.vertical-bar {
 	width: 1px;
 	height: 25px;
 	background-color: $light-grey;
+}
+
+.horizontal-bar {
+	height: 1px;
+	width: 100%;
 }
 
 .warning-message {
@@ -54,142 +131,10 @@
 
 .no-scroll {
 	overflow: hidden;
-}
-	
-// made into a pseudo element b/c of counter content
-.number-overlay:before {					
-	transition: all .5s ease-in-out;					
-	@extend %flex-centered;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;		
-	cursor: pointer;
-	content: counter(thumbnail-item);
-	font-size: 2em;		
-	color: white;				
-	z-index: 1;
-	opacity: 0;	
- // transform: translate(80px,0);
-}
-
-.ratio-16-9 {
-	position: relative;
-	overflow: hidden; 
-	display: block;
-	padding-top: 56.25%;		
-	background-color: black;
-	
-
-	& img {
-		position: absolute;
-		border: 0;		
-		top: 0;
-		left:0;
-		right: 0;
-		bottom: 0;
-		display: block;
-		margin: auto;		
-	}	
-}
-
-.ratio-4-3 {
-	position: relative;
-	overflow: hidden; 
-	display: block;
-	padding-top: 75.8%;			
-	background-color: black;	
-	
-	& img {	
-		position: absolute;
-		border: 0;		
-		top: 0;
-		left:0;
-		right: 0;
-		bottom: 0;
-		display: block;
-		margin: auto;
-	}
-}
-
-.img-overlay:hover:before {
-	background-color: rgba(0,0,0,0.3);
-}
+}	
 
 .overflow-hidden {
 	overflow: hidden;
-}
-
-.text-black {
-	color: black;
-}
-
-// .full-screen{
-	// display: block;
-	// position: fixed;
-	// top: 0;
-	// left: 0;
-	// right: 0;
-	// bottom: 0;
-	// z-index: 10;
-	// overflow: auto;
-	// background-color: white;
-// }
-
-.uppercase {
-	text-transform: uppercase;
-	color: $grey;
-}
-
-.square-30{
-	// 32 is important for it to line up right with text; the text is 16px + line-height of 16px on the top and bottom (16 + 16 = 32); 
-	// different fonts look bigger or smaller, so this may not be as plainly mathematical as I'm making it out to be
-	width: 32px;
-	height: 32px;
-	margin-right: 10px;
-	vertical-align: top;
-}
-
-.square-sm{
-	// 32 is important for it to line up right with text; the text is 16px + line-height of 16px on the top and bottom (16 + 16 = 32); 
-	// different fonts look bigger or smaller, so this may not be as plainly mathematical as I'm making it out to be
-	width: 32px;
-	height: 32px;
-	vertical-align: top;
-}
-
-.line-height-lg {
-	//setting height w/ line height so that text is centered and we can vertical-align icon to top
-	line-height: 48px;
-	display: flex;
-	vertical-align: bottom;
-	
-	&:hover {
-		text-decoration: none;
-	}
-}
-
-.square-48 {
-	height: 48px;
-	width: 48px;
-}
-
-.fixed-height {
-// add the border of 1px
-	height: 48px + 1 + px;
-}
-
-.flex-row-lg {
-	@include screen("lg"){
-		flex-direction: row!important;
-	}
-}
-
-.tab--is-active {
-	background-color: white;
-	border-bottom: none;
-	margin-bottom: -1px;
 }
 
 .fixed-header {
@@ -200,28 +145,6 @@
 	z-index: 1;
 }
 
-.mt-50 {
-	margin-top: 49px
-}	
-
-.p-6 {
-	padding: 2.25em;
-}
-
-.p-lg-6 {
-	@include screen("lg") {
-		padding: 2.25em;
-	}
-}
-
 .flex-centered {
 	@extend %flex-centered;
-}
-
-.pointer {
-	pointer-events: auto!important;
-}
-
-.pointer-none {
-	pointer-events: none!important;
 }
