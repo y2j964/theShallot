@@ -44,7 +44,10 @@
 	
 	&__nav {
 		counter-reset: thumbnail-item;
-	
+		display: flex;
+		padding: 0;
+		margin-bottom: 2px;
+		list-style: none;
 	}
 
 	&--is-active {

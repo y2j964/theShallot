@@ -1,4 +1,12 @@
 // made into a pseudo element b/c of counter content
+.j-progress-bar {
+	height: 4px;
+	width: 100%;
+	display: flex;
+	margin-bottom: 2px;
+	border-radius: 12px;
+}
+
 .number-overlay:before {					
 	transition: all .5s ease-in-out;					
 	@extend %flex-centered;

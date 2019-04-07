@@ -31,5 +31,7 @@
     "gulp-terser": "^1.1.7",
     "node-sass": "^4.11.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash.throttle": "^4.1.1"
+  }
 }

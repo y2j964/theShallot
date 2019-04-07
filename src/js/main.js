@@ -38,6 +38,7 @@ const lLogoFixed = document.querySelector('.navbar-mobile');
 const logoHeading = document.querySelector('.l-logo h1');
 
 let previousActiveEl;   
+let timeout;
 const current = 0;
 const emailRegex = /\S+@\S+\.\S+/;
 
@@ -99,6 +100,7 @@ function scrollToTop() {
 }
 
 function deployScrollNav() {   
+  console.log('throttle');
   // dynamically grab new top position of scrollBottomTrigger
   const scrollBottomTriggerTop = scrollBottomTrigger.getBoundingClientRect().top;
   // detect if topLeft of trigger el is onscreen
@@ -340,6 +342,52 @@ function reelTransition(e) {
   // setTimeout(autoReel, 4000);
 // }
 
+
+// Chris Ferdinandi's debounce function
+var debounce = function(fn) {
+
+	// Setup a timer
+	var timeout;
+
+	// Return a function to run debounced
+	return function () {
+
+		// Setup the arguments
+		var context = this;
+		var args = arguments;
+
+		// If there's a timer, cancel it
+		if (timeout) {
+			window.cancelAnimationFrame(timeout);
+		}
+
+		// Setup the new requestAnimationFrame()
+		timeout = window.requestAnimationFrame(function () {
+			fn.apply(context, args);
+		});
+
+	}
+};
+
+// http://sampsonblog.com/simple-throttle-function/
+function throttle (callback, limit) {
+  var tick = false;
+  return function () {
+    if (!tick) {
+      callback.call();
+      tick = true;
+      setTimeout(function () {
+        tick = false;
+      }, limit);
+    }
+  }
+}
+
+// debounce function applied to scroll event
+const deployScrollNavDebounced = throttle(deployScrollNav, 120);
+
+
+
 // EVENTS //
 
 // hovers over first top nav item
@@ -389,8 +437,13 @@ reelStoryNav.addEventListener('focusout', reelTransition);
 // submits on Kinja form
 login.addEventListener('submit', validateForm);
 
+
+function logScroll() {   
+  console.log('now he\'s chilled');
+}
 // deploy navbar if scrolled to the email subscribe input
-window.addEventListener('scroll', deployScrollNav);
+window.addEventListener('scroll', deployScrollNavDebounced);
+
 // auto-scroll to top of page on click of up arrow
 scrollButton.addEventListener('click', scrollToTop);
 
