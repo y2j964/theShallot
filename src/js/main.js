@@ -1,8 +1,5 @@
 // init DOM elements
-const reelArticles = document.querySelector('.js-reel-articles');
 const reelStoryNav = document.querySelector('.reel-story__nav');
-const thumbnail = document.querySelectorAll('.reel-story__thumbnail-item');
-const reelStory = document.querySelectorAll('.reel-story');
 const searchbar = document.querySelector('.searchbar');
 const svgToggler =  searchbar.querySelector('.js-searchbar-svg');
 const svgUse = svgToggler.querySelector('use');
@@ -27,7 +24,6 @@ const userNameError = document.getElementById('js-username-error');
 const key = document.getElementById('key');
 const keyError = document.getElementById('js-key-error');
 const modalNav = document.querySelector('.js-modal-nav');
-// const pageHeight = document.body || document.documentElement;
 const navbarScroll = document.querySelector('.l-navbar-scroll');
 const vh = window.innerHeight || document.documentElement.clientHeight;
 // value will always be the same; piped to support different browsers
@@ -38,9 +34,7 @@ const lLogoFixed = document.querySelector('.navbar-mobile');
 const logoHeading = document.querySelector('.l-logo h1');
 
 let previousActiveEl;   
-let timeout;
-const current = 0;
-const emailRegex = /\S+@\S+\.\S+/;
+// const current = 0;
 
 // boolean states
 let dropdownTogglePressed = false;
@@ -99,8 +93,7 @@ function scrollToTop() {
   logoHeading.focus();
 }
 
-function deployScrollNav() {   
-  console.log('throttle');
+function deployScrollNav() {     
   // dynamically grab new top position of scrollBottomTrigger
   const scrollBottomTriggerTop = scrollBottomTrigger.getBoundingClientRect().top;
   // detect if topLeft of trigger el is onscreen
@@ -276,8 +269,7 @@ function switchModal(e) {
       // switch modals
       jsModalMenu.classList.toggle('l-modal--is-visible');
       jsModalForm.classList.toggle('l-modal--is-visible'); 
-      jsModalForm.classList.toggle('l-modal--top-offset'); 
-      
+      jsModalForm.classList.toggle('l-modal--top-offset');      
     }  
   }
   // update focusable elements
@@ -304,44 +296,114 @@ function toggleSearchBar(e) {
   if (dropdown) {   
     dropdown.classList.remove('dropdown--is-visible');    
   }
-}
+}    
 
-function reelTransition(e) {
-  // init previously activated item
-  const formerActiveThumb = reelStoryNav.querySelector('.reel-story__thumbnail-item--is-active');
-  // init previously activated item
-  const formerActiveArticle = reelArticles.querySelector('.reel-story--is-active');
+const reelTransition = (function(){
+  // private variables
+  const reelArticles = document.querySelector('.js-reel-articles');  
+  const thumbnails = document.querySelectorAll('.reel-story__thumbnail-item');
+  const reelStories = document.querySelectorAll('.reel-story');
+  const progressBarFills = document.querySelectorAll('.j-progress-bar__fill');
+  const delay = 5000;
+  let current = 0;
+  let previousActiveThumbnail;  
+  let previousActiveArticle;  
+  let timeout;  
+  let start;
+  let remaining; 
+  let formerActiveThumb;  
+  let formerActiveArticle;
+  let currentThumbnailLi;
+  let currentArticle;
+  
+  // setTimeout triggered article reel
+  function autoReel() {       
+    // remaining time is initially the same as the delay duration
+    remaining = delay;    
+    // grab start time for when you pause timeout
+    start = Date.now();    
+    // if not the first function call from onload        
+    if (previousActiveThumbnail) {
+      // remove active classes from previous elements          
+      previousActiveThumbnail.classList.remove('reel-story__thumbnail-item--is-active');
+      previousActiveArticle.classList.remove('reel-story--is-active');   
+      // if you are at the end of the loop
+      if (previousActiveThumbnail === thumbnails[(thumbnails.length -1)]) {        
+        for (let i = 0; i < progressBarFills.length; i++) {
+          // reset all the fills back to 0
+          progressBarFills[i].classList.remove('j-progress-bar__fill--is-active');          
+          // void offsetWidth in order to restart animation
+          void progressBarFills[i].offsetWidth;
+        }
+      }  
+    }    
+    // add active classes to current elements
+    thumbnails[current].classList.add('reel-story__thumbnail-item--is-active');
+    reelStories[current].classList.add('reel-story--is-active');
+    progressBarFills[current].classList.add('j-progress-bar__fill--is-active');    
+    // store previous active elements
+    previousActiveThumbnail = thumbnails[current];      
+    previousActiveArticle = reelStories[current];
+    tickingProgressFill = progressBarFills[current];
+    // if at end of loop, start again from 0; else iterate 
+    if (current === thumbnails.length - 1) {
+      current = 0;                    
+    } else {          
+      current++;
+    }
+    // run the timeout; delay time is set equal to the time specified in j-progress-bar__fill--is-active animation property
+    timeout = setTimeout(autoReel, delay);
+  }
+  
+  // transition article via hover
+  function pauseTimer(e) {
+    // pause the css animation on the fill
+    tickingProgressFill.classList.add('j-progress-bar__fill--is-paused');        
+    if (timeout) {
+      window.clearTimeout(timeout);
+    }                
+    remaining -= (Date.now() - start);              
+    // init previously activated item
+    formerActiveThumb = reelStoryNav.querySelector('.reel-story__thumbnail-item--is-active');
+    // init previously activated item
+    formerActiveArticle = reelArticles.querySelector('.reel-story--is-active');    
+    // reset formerly active img to default state
+    formerActiveThumb.classList.remove('reel-story__thumbnail-item--is-active');
+    // reset formerly active article to default state
+    formerActiveArticle.classList.remove('reel-story--is-active');
+    // grab alt value of e.target's img
+    currentThumbnailLi = e.target.parentElement;
+    const currentThumbnailImg = currentThumbnailLi.querySelector('img');
+    const currentThumbnailAlt = currentThumbnailImg.getAttribute('alt');
+    // find corresponding article based on img alt, and climb to ancestor reel-story
+    currentArticle = reelArticles.querySelector(`img[alt="${currentThumbnailAlt}"]`).closest('.reel-story');
+    // activate thumbnail and article
+    currentThumbnailLi.classList.add('reel-story__thumbnail-item--is-active');
+    currentArticle.classList.add('reel-story--is-active');
+  }
+  
+  function resumeTimer() {    
+    // resume animation 
+    tickingProgressFill.classList.remove('j-progress-bar__fill--is-paused');        
+    // new start value is used in the event that user mouseovers and mouseouts multiple times before returning auto again
+    start = Date.now();    
+    // deactivate hovered items
+    currentThumbnailLi.classList.remove('reel-story__thumbnail-item--is-active');
+    currentArticle.classList.remove('reel-story--is-active');
+    // reactivate auto selected items
+    formerActiveThumb.classList.add('reel-story__thumbnail-item--is-active');        
+    formerActiveArticle.classList.add('reel-story--is-active');            
+    // wait out remaining time in timeout, then let auto proceed to next item
+    timeout = setTimeout(autoReel, remaining);
+  }
 
-  // reset formerly active img to default state
-  formerActiveThumb.classList.remove('reel-story__thumbnail-item--is-active');
-  // reset formerly active article to default state
-  formerActiveArticle.classList.remove('reel-story--is-active');
-
-  // grab alt value of e.target's img
-  const currentThumbnailLi = e.target.parentElement;
-  const currentThumbnailImg = currentThumbnailLi.querySelector('img');
-  const currentThumbnailAlt = currentThumbnailImg.getAttribute('alt');
-
-  // find corresponding article based on img alt, and climb to ancestor reel-story
-  const currentArticle = reelArticles.querySelector(`img[alt="${currentThumbnailAlt}"]`).closest('.reel-story');
-
-  // activate thumbnail and article
-  currentThumbnailLi.classList.add('reel-story__thumbnail-item--is-active');
-  currentArticle.classList.add('reel-story--is-active');
-}
-
-// autoReel of article reel with setTimeout
-// function autoReel(){
-  // reset();
-  // reelInit();
-  // if(current < thumbnail.length - 1 ) {
-    // current++;
-  // } else {
-    // current = 0;
-  // }
-  // setTimeout(autoReel, 4000);
-// }
-
+  return {
+    hoverIn: pauseTimer,
+    hoverOut: resumeTimer,
+    auto: autoReel
+  }
+    
+})()
 
 // Chris Ferdinandi's debounce function
 var debounce = function(fn) {
@@ -369,7 +431,7 @@ var debounce = function(fn) {
 	}
 };
 
-// http://sampsonblog.com/simple-throttle-function/
+// throttle function from http://sampsonblog.com/simple-throttle-function/
 function throttle (callback, limit) {
   var tick = false;
   return function () {
@@ -385,7 +447,6 @@ function throttle (callback, limit) {
 
 // debounce function applied to scroll event
 const deployScrollNavDebounced = throttle(deployScrollNav, 120);
-
 
 
 // EVENTS //
@@ -430,17 +491,14 @@ jsModals.addEventListener('keydown', function(e) {
 tabSwitches.addEventListener('click', switchModal);
 
 // mouse over reel article thumbnails
-reelStoryNav.addEventListener('mouseover', reelTransition);
-reelStoryNav.addEventListener('focusin', reelTransition);
-reelStoryNav.addEventListener('focusout', reelTransition);
+reelStoryNav.addEventListener('mouseover', reelTransition.hoverIn);
+reelStoryNav.addEventListener('mouseout', reelTransition.hoverOut);
+reelStoryNav.addEventListener('focusin', reelTransition.hoverIn);
+reelStoryNav.addEventListener('focusout', reelTransition.hoverIn);
 
 // submits on Kinja form
 login.addEventListener('submit', validateForm);
 
-
-function logScroll() {   
-  console.log('now he\'s chilled');
-}
 // deploy navbar if scrolled to the email subscribe input
 window.addEventListener('scroll', deployScrollNavDebounced);
 
@@ -450,4 +508,5 @@ scrollButton.addEventListener('click', scrollToTop);
 // stop the submission of all forms
 document.addEventListener('submit', stopSubmission);
 
-// window.onload = autoReel();
+// run auto reel on window load
+window.onload = reelTransition.auto();

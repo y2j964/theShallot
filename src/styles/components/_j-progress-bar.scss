@@ -1,0 +1,43 @@
+.j-progress-bar {
+	height: 4px;
+	width: 100%;
+	background-color: $light-grey;
+	display: flex;
+	margin-bottom: 2px;
+	border-radius: 12px;
+	
+	&__segment {						
+		width: 33.3%;
+		position: relative
+		
+		// animation-duration: 8s;
+		// animation-iteration-count: infinite;
+		// animation-timing-function: linear;
+	}
+	
+	&__fill {
+		display: block;
+		position: absolute;
+		@extend %position-zeroes;
+		background-color: $grey;
+		width: 0;		
+		
+		&--is-active {			
+			animation: progress-fill 5s linear;
+			width: 100%;		
+			animation-play-state: running;
+		}
+		&--is-paused {
+			animation-play-state: paused;
+		}
+	}
+}
+
+@keyframes progress-fill {
+	from {		
+		width: 0;		
+	}
+	to {		
+		width:100%;		
+	}
+}
