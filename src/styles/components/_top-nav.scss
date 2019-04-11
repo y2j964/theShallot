@@ -12,7 +12,11 @@
 	
 	&__list {
 		display: flex;		
-	}
+		
+		&--is-hidden {
+			display: none;
+		}
+	}	
 	
 	&__item {		
 		color: #a6a6a6;
@@ -42,15 +46,25 @@
 	}
 	
 	&__link {
-		color: #a6a6a6;
-		text-transform: uppercase;		
+		color: #a6a6a6;		
+		text-transform: uppercase;				
 		
 		&:hover {
 			text-decoration: none;
 		}									
+		
+		&:focus {
+			color: $magenta;
+		}
 	}
 	
 	&__toggle-btn {
 		margin-left: -2px;		
+		
+		&:focus {
+			.icon-caret-down {
+				fill: $magenta;
+			}
+		}
 	}	
 }

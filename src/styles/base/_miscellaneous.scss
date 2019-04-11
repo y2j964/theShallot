@@ -58,6 +58,25 @@
 	background-color: rgba(0,0,0,0.3);
 }
 
+.placeholder-hover::-webkit-input-placeholder {
+	color: black;
+	transition: color .5s ease-in-out;	
+}
+
+.placeholder-hover::-moz-placeholder {
+	color: black;
+	transition: color .5s ease-in-out;	
+}
+
+.placeholder-hover::-ms-input-placeholder {
+	color: black;
+	transition: color .5s ease-in-out;	
+}
+.placeholder-hover:-moz-placeholder {
+	color: black;
+  transition: color .5s ease-in-out;
+}
+
 .placeholder-hover:hover::-webkit-input-placeholder {
 	color: #ff66d9;
 }
@@ -73,8 +92,19 @@
 	color: #ff66d9;
 }
 
-.placeholder-hover:focus {
-	color:  #00b300;
+.placeholder-hover:focus::-webkit-input-placeholder {
+	color: #ff66d9;
+}
+
+.placeholder-hover:focus::-moz-placeholder {
+	color: #ff66d9;
+}
+
+.placeholder-hover:focus::-ms-input-placeholder {
+	color: #ff66d9;
+}
+.placeholder-hover:focus:-moz-placeholder {
+	color: #ff66d9;
 }
 
 .pointer {

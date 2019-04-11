@@ -46,7 +46,14 @@ button > img {
 	pointer-events: none;
 }
 
-input:focus{
+// input:focus{
+  // outline: none;
+// }
+
+[type="email"]:focus,
+[type="search"]:focus,
+[type="text"]:focus, 
+[type="password"]:focus {
   outline: none;
 }
 

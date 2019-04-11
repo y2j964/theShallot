@@ -8,11 +8,15 @@
 	
 	&__link {
 		font-size: $font-sm;
-		color: $grey;
+		color: $grey;		
 		
 		&:hover{
 			text-decoration: underline;
 			color: $grey;
+		}
+		
+		&:focus {
+			color: $magenta;
 		}
 	}
 }

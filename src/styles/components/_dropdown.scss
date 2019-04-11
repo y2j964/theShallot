@@ -16,7 +16,8 @@
 	}
 	
 	&__link {
-		font-size: $font-md;
+		font-size: $font-sm;
+		color: $grey;
 		text-transform: uppercase;
 		 transition: color 300ms;
 		
