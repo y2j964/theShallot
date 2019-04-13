@@ -13,6 +13,8 @@
         "ecmaVersion": 2018
     },
     "rules": {
-			"indent": ["error", 2, { "ignoreComments": true }]
+        "indent": ["error", 2, {
+            "ignoreComments": true
+        }]
     }
 }

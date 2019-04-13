@@ -1,228 +1,303 @@
-// init DOM elements
+// init DOM elements for event listeners
 const reelStoryNav = document.querySelector('.reel-story__nav');
 const topNavList = document.querySelector('.top-nav__list');
 const searchbar = document.querySelector('.searchbar');
-const svgToggler = searchbar.querySelector('.js-searchbar-svg');
-const svgUse = svgToggler.querySelector('use');
 const topNav = document.querySelector('.top-nav');
 const [hamburgerMenu, hamburgerMenu2] = document.querySelectorAll(
   '.js-hamburger-menu',
 );
 const userIcon = document.querySelector('.js-icon-user');
-const body = document.querySelector('body');
-// const dropdownNav = document.getElementById('dropdown-nav');
 const jsModals = document.querySelector('.js-modals');
-// const lModals = document.querySelectorAll('.l-modal');
-const jsModalMenu = jsModals.querySelector('.js-modal-menu');
-const jsModalForm = jsModals.querySelector('.js-modal-form');
-// const xIcons = document.querySelectorAll('.js-icon-close');
-const kinjaCloseIcon = document.querySelector('.js-icon-close-kinja');
 const tabSwitches = document.querySelector('.tab-switches');
-const tabSwitchButtons = Array.from(tabSwitches.querySelectorAll('button'));
-const [homeSwitch, userSwitch] = tabSwitches.querySelectorAll('.js-tab-switch');
 const newsletter = document.querySelector('.newsletter');
 const login = document.querySelector('.js-login');
-const userName = document.getElementById('username');
-const userNameError = document.getElementById('js-username-error');
-const key = document.getElementById('key');
-const keyError = document.getElementById('js-key-error');
-// const modalNav = document.querySelector('.js-modal-nav');
-const navbarScroll = document.querySelector('.l-navbar-scroll');
-const vh = window.innerHeight || document.documentElement.clientHeight;
-// value will always be the same; piped to support different browsers
-const scrollBottomTrigger = document.querySelector(
-  'input[name="emailAddress"]',
-);
-const scrollTopBound = document.getElementById('js-scroll-top');
 const scrollButton = document.getElementById('js-scroll-button');
-const lLogoFixed = document.querySelector('.navbar-mobile');
-const lFlag = document.querySelector('.l-flag h1');
-
-let previousActiveEl;
-// const current = 0;
-
-// boolean states
-// let dropdownTogglePressed = false;
-let dropdownParentHovered = false;
-let modalFirstFocused = false;
 
 // FUNCTIONS //
 
 function updateAriaCheckbox(e) {
   // toggle aria-checked state
-  if (e.target.classList.contains('checkbox')) {
-    e.target.getAttribute('aria-checked') === 'true' ?
-      e.target.setAttribute('aria-checked', 'false') :
-      e.target.setAttribute('aria-checked', 'true');
+  if (!e.target.classList.contains('checkbox')) {
+    return;
+  }
+  if (e.target.getAttribute('aria-checked') === 'true') {
+    e.target.setAttribute('aria-checked', 'false');
+  } else {
+    e.target.setAttribute('aria-checked', 'true');
   }
 }
 
 function updateAriaExpanded(e, parentContainer) {
-  parentContainer = parentContainer || null;
-  if (e.target.hasAttribute('aria-expanded')) {
-    e.target.getAttribute('aria-expanded') === 'false' ?
-      e.target.setAttribute('aria-expanded', 'true') :
-      e.target.setAttribute('aria-expanded', 'false');
-  } else {
+  if (!e.target.hasAttribute('aria-expanded')) {
     const ariaExpandedEl = parentContainer.querySelector('[aria-expanded="true"]');
     ariaExpandedEl.setAttribute('aria-expanded', 'false');
-  }
-}
-
-function toggleDropdown(e) {
-  // only act on btn
-  if (!e.target.classList.contains('top-nav__toggle-btn')) {
     return;
   }
-  // if there is an open dropdown already, close it and updateAriaExpanded
-  // toggle aria-expanded
-  updateAriaExpanded(e);
-  // toggle dropdown display
-  const topNavItem = e.target.closest('.top-nav__item');
-  const dropdown = topNavItem.querySelector('.dropdown');
-  dropdown.classList.toggle('dropdown--is-visible');
-  // delineate searchbar
-  // if mouse is not hovering over item (i.e. if down via focus), toggle delineation
-  if (!dropdownParentHovered) {
-    searchbar.classList.toggle('searchbar--is-delineated');
-  } 
-}
-
-function delineateSearchbar() {
-  const openedDropdown = document.querySelector('.dropdown--is-visible');
-  // engage on press if not already engaged via hover; disengage on press if not hovered;
-  dropdownParentHovered === true ?
-    (dropdownParentHovered = false) :
-    (dropdownParentHovered = true);
-  // toggle on hover out if dropdown not displayed
-  if (!openedDropdown) {
-    // if button isn't pressed (i.e. if dropdown menu isn't visible
-    searchbar.classList.toggle('searchbar--is-delineated');
+  if (e.target.getAttribute('aria-expanded') === 'false') {
+    e.target.setAttribute('aria-expanded', 'true');
+  } else {
+    e.target.setAttribute('aria-expanded', 'false');
   }
 }
 
-function focusOutDropdown(e) {
-  const openedDropdown = document.querySelector('.dropdown--is-visible');
-  // if dropdown is visible and e.target is not within 
-  // the element containing the dropdown (and, by extension, the dropdown menu)
-  if (openedDropdown && !openedDropdown.parentElement.contains(e.target)) {
-      // toggle aria-expanded
-    updateAriaExpanded(e, topNavList);
+const dropdown = (function dropdownScope() {
+  let openedDropdown;
+  let dropdownParentIsHovered = false;
+
+  function toggleDropdown(e) {
+    // only act on btn
+    if (!e.target.classList.contains('top-nav__toggle-btn')) {
+      return;
+    }
+    // if there is an open dropdown already, close it and updateAriaExpanded
+    // toggle aria-expanded
+    updateAriaExpanded(e);
     // toggle dropdown display
-    const topNavItem = e.target.closest('.top-nav__item');    
-    openedDropdown.classList.toggle('dropdown--is-visible');
-    if (!dropdownParentHovered) {
+    const topNavItem = e.target.closest('.top-nav__item');
+    const dropdownContainer = topNavItem.querySelector('.dropdown');
+    dropdownContainer.classList.toggle('dropdown--is-visible');
+    // check if dropdown is open and store in  variable
+    openedDropdown = topNavList.querySelector('.dropdown--is-visible');
+    // delineate searchbar
+    // if mouse is not hovering over item (i.e. if down via focus), toggle delineation
+    if (!dropdownParentIsHovered) {
       searchbar.classList.toggle('searchbar--is-delineated');
     }
   }
-}
-
-function scrollToTop() {
-  // document.body.scrollTop = 0;
-  // document.documentElement.scrollTop = 0;
-  window.scroll({
-    top: 0,
-  });
-  // tell screen reader where we currently are
-  lFlag.focus();
-}
-
-function deployScrollNav() {
-  // dynamically grab new top position of scrollBottomTrigger
-  const scrollBottomTriggerTop = scrollBottomTrigger.getBoundingClientRect()
-    .top;
-  // detect if topLeft of trigger el is onscreen
-  // has to be between 0 and the height of the viewport
-  if (scrollBottomTriggerTop > 0 && scrollBottomTriggerTop <= vh) {
-    // add navbar and tell screen readers it is visible
-    navbarScroll.classList.add('l-navbar-scroll--is-visible');
-    lLogoFixed.classList.add('navbar-mobile--is-visible');
-    navbarScroll.setAttribute('aria-hidden', 'false');
+  // remove dropdown when tab focus is outside of it
+  function focusOutDropdown(e) {
+    if (!openedDropdown || openedDropdown.parentElement.contains(e.target)) {
+      return;
+    }
+    // if dropdown is visible and e.target is not within
+    // the element containing the dropdown (and, by extension, the dropdown menu)
+    updateAriaExpanded(e, topNavList);
+    // toggle dropdown display
+    openedDropdown.classList.remove('dropdown--is-visible');
+    if (!dropdownParentIsHovered) {
+      searchbar.classList.toggle('searchbar--is-delineated');
+    }
   }
-  if (navbarScroll.classList.contains('l-navbar-scroll--is-visible')) {
-    // dynamically grab new top position of scrollTopBound
-    const scrollTopBoundTop = scrollTopBound.getBoundingClientRect().top;
-    if (scrollTopBoundTop > 0) {
+  // add border to searchbar
+  function delineateSearchbar() {
+    // engage on press if not already engaged via hover; disengage on press if not hovered;
+    if (dropdownParentIsHovered === true) {
+      dropdownParentIsHovered = false;
+    } else {
+      dropdownParentIsHovered = true;
+    }
+    // toggle on hover out if dropdown not displayed
+    if (!openedDropdown) {
+      // if button isn't pressed (i.e. if dropdown menu isn't visible
+      searchbar.classList.toggle('searchbar--is-delineated');
+    }
+  }
+  return {
+    toggle: toggleDropdown,
+    focusOut: focusOutDropdown,
+    delineate: delineateSearchbar,
+  };
+}());
+
+const scrollToTop = (function scrollToTopScope() {
+  const lFlag = document.querySelector('.l-flag h1');
+  return () => {
+    // document.body.scrollTop = 0;
+    // document.documentElement.scrollTop = 0;
+    window.scroll({
+      top: 0,
+    });
+    // tell screen reader where we currently are
+    lFlag.focus();
+  };
+}());
+
+const deployScrollNav = (function deployScrollNavScope() {
+  const lLogoFixed = document.querySelector('.navbar-mobile');
+  const scrollTopBoundaryAbsolute = document.getElementById('js-scroll-top');
+  const scrollBottomBoundaryAbsolute = document.querySelector(
+    'input[name="emailAddress"]',
+  );
+  const navbarScroll = document.querySelector('.l-navbar-scroll');
+  const vh = window.innerHeight || document.documentElement.clientHeight;
+  // value will always be the same; piped to support different browsers
+  return () => {
+    // dynamically grab new top position of scrollBottomTrigger
+    const scrollBottomBoundaryrRelative = scrollBottomBoundaryAbsolute.getBoundingClientRect()
+      .top;
+    // detect if topLeft of trigger el is onscreen
+    // has to be between 0 and the height of the viewport
+    if (scrollBottomBoundaryrRelative > 0 && scrollBottomBoundaryrRelative <= vh) {
+      // add navbar and tell screen readers it is visible
+      navbarScroll.classList.add('l-navbar-scroll--is-visible');
+      lLogoFixed.classList.add('navbar-mobile--is-visible');
+      navbarScroll.setAttribute('aria-hidden', 'false');
+    }
+    if (!navbarScroll.classList.contains('l-navbar-scroll--is-visible')) {
+      return;
+    }
+    // dynamically grab new top position of scrollTopBoundary
+    const scrollTopBoundaryRelative = scrollTopBoundaryAbsolute.getBoundingClientRect().top;
+    if (scrollTopBoundaryRelative > 0) {
       // remove navbar and tell screen readers it is no longer visible
       navbarScroll.classList.remove('l-navbar-scroll--is-visible');
       lLogoFixed.classList.remove('navbar-mobile--is-visible');
       navbarScroll.setAttribute('aria-hidden', 'true');
     }
-  }
-}
+  };
+}());
 
-function modalTrapFocus(modalEl) {
-  let modalFocusableEls;
-  let focusableEls;
-  // store previous active element so it is on focus when user exits modal
-  previousActiveEl = document.activeElement;
-  // find active modal
-  if (jsModalMenu.classList.contains('l-modal--is-visible')) {
-    modalFocusableEls = Array.from(
-      jsModalMenu.querySelectorAll(
-        'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select',
-      ),
-    );
-  } else if (jsModalForm.classList.contains('l-modal--is-visible')) {
-    modalFocusableEls = Array.from(
-      jsModalForm.querySelectorAll(
-        'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select',
-      ),
-    );
-  }
-  // if tabSwitch header is visible,
-  // concat active modal links to the fixed header (sibling element);
-  if (tabSwitches.classList.contains('tab-switches--is-visible')) {
-    focusableEls = tabSwitchButtons.concat(modalFocusableEls);
-    // else just preserve active modal links
-  } else {
-    focusableEls = modalFocusableEls;
-  }
-  // find first and last focusable el in modal
-  const firstFocusableEl = focusableEls[0];
-  const lastFocusableEl = focusableEls[focusableEls.length - 1];
-  //  focus first el only on initial open; reset state back to false when modal is closed
-  if (!modalFirstFocused) {
-    // delay to allow modal to display, then focus
-    setTimeout(() => {
-      firstFocusableEl.focus();
-    }, 100);
-  }
-  // change firstFocused state true so that it doesn't refocus when toggling modals
-  modalFirstFocused = true;
-  // disregard non tab key events
-  modalEl.addEventListener('keydown', (e) => {
-    if (e.key !== 'Tab') {
-      return;
+const modal = (function modalScope() {
+  const tabSwitchButtons = Array.from(tabSwitches.querySelectorAll('button'));
+  const [homeSwitch, userSwitch] = tabSwitches.querySelectorAll('.js-tab-switch');
+  const jsModalMenu = jsModals.querySelector('.js-modal-menu');
+  const jsModalForm = jsModals.querySelector('.js-modal-form');
+  const kinjaCloseIcon = document.querySelector('.js-icon-close-kinja');
+  const body = document.querySelector('body');
+  let previousActiveEl;
+  let modalFirstFocused = false;
+
+  function modalTrapFocus(modalEl) {
+    let modalFocusableEls;
+    let focusableEls;
+    // store previous active element so it is on focus when user exits modal
+    previousActiveEl = document.activeElement;
+    // find active modal
+    if (jsModalMenu.classList.contains('l-modal--is-visible')) {
+      modalFocusableEls = Array.from(
+        jsModalMenu.querySelectorAll(
+          'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select',
+        ),
+      );
+    } else if (jsModalForm.classList.contains('l-modal--is-visible')) {
+      modalFocusableEls = Array.from(
+        jsModalForm.querySelectorAll(
+          'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select',
+        ),
+      );
     }
-    // if tab + shift
-    if (e.shiftKey) {
-      if (document.activeElement === firstFocusableEl) {
-        lastFocusableEl.focus();
-        e.preventDefault();
-      }
+    // if tabSwitch header is visible,
+    // concat active modal links to the fixed header (sibling element);
+    if (tabSwitches.classList.contains('tab-switches--is-visible')) {
+      focusableEls = tabSwitchButtons.concat(modalFocusableEls);
+      // else just preserve active modal links
     } else {
-      // if just tab press and at end of focusable els
-      if (document.activeElement === lastFocusableEl) {
+      focusableEls = modalFocusableEls;
+    }
+    // find first and last focusable el in modal
+    const firstFocusableEl = focusableEls[0];
+    const lastFocusableEl = focusableEls[focusableEls.length - 1];
+    //  focus first el only on initial open; reset state back to false when modal is closed
+    if (!modalFirstFocused) {
+      // delay to allow modal to display, then focus
+      setTimeout(() => {
+        firstFocusableEl.focus();
+      }, 100);
+    }
+    // change firstFocused state true so that it doesn't refocus when toggling modals
+    modalFirstFocused = true;
+    // disregard non tab key events
+    modalEl.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') {
+        return;
+      }
+      // if tab + shift
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusableEl) {
+          lastFocusableEl.focus();
+          e.preventDefault();
+        }
+      } else if (document.activeElement === lastFocusableEl) {
+        // if just tab press and at end of focusable els . . .
         firstFocusableEl.focus();
         e.preventDefault();
       }
-    }
-  });
-}
+    });
+  }
 
-// hamburger-menu expand and collapse
-function expandModalMenu() {
-  // remove scroll from body
-  body.classList.toggle('no-scroll');
-  // toggle the display of modal
-  jsModalMenu.classList.toggle('l-modal--is-visible');
-  // display fixed header for modal
-  tabSwitches.classList.add('tab-switches--is-visible');
-  // remove default x icon in jsModalForm; it is supplied by fixed header in this instance
-  kinjaCloseIcon.classList.add('icon-close--is-hidden');
-  modalTrapFocus(jsModals);
-}
+  // hamburger-menu expand and collapse
+  function displayModalMenu() {
+    // remove scroll from body
+    body.classList.toggle('no-scroll');
+    // toggle the display of modal
+    jsModalMenu.classList.toggle('l-modal--is-visible');
+    // display fixed header for modal
+    tabSwitches.classList.add('tab-switches--is-visible');
+    // remove default x icon in jsModalForm; it is supplied by fixed header in this instance
+    kinjaCloseIcon.classList.add('icon-close--is-hidden');
+    modalTrapFocus(jsModals);
+  }
+
+  // display and remove modal on icon clicks outside of hamburger toggler
+  function displayModalForm() {
+    // remove scroll from body
+    if (!body.classList.contains('no-scroll')) {
+      body.classList.add('no-scroll');
+    }
+    // display modal
+    jsModalForm.classList.add('l-modal--is-visible');
+    // focus-trap
+    modalTrapFocus(jsModalForm);
+  }
+
+  // clicks on tabSwitches
+  function switchModal(e) {
+    if (!e.target.classList.contains('tab-switches__item')) {
+      // only change if not currently active
+      return;
+    }
+    if (!e.target.classList.contains('tab-switches__item--is-active')) {
+      // grab activeTab (there can only be one activeTab at a time)
+      const activeTab = tabSwitches.querySelector(
+        '.tab-switches__item--is-active',
+      );
+      // remove active state from activeTab
+      activeTab.classList.remove('tab-switches__item--is-active');
+      // update aria-pressed
+      activeTab.setAttribute('aria-pressed', 'false');
+      // add active background color on newly activated tab
+      e.target.classList.add('tab-switches__item--is-active');
+      e.target.setAttribute('aria-pressed', 'true');
+      // switch modals
+      jsModalMenu.classList.toggle('l-modal--is-visible');
+      jsModalForm.classList.toggle('l-modal--is-visible');
+      jsModalForm.classList.toggle('l-modal--top-offset');
+    }
+    // update focusable elements
+    modalTrapFocus(jsModals);
+  }
+
+  function closeModal() {
+    const lModal = document.querySelector('.l-modal--is-visible');
+    // disappear the l-modal and the tabSwitch container
+    lModal.classList.remove('l-modal--is-visible');
+    tabSwitches.classList.remove('tab-switches--is-visible');
+    // restore regular close icon to Kinja in case accessed through icon-user on home page
+    kinjaCloseIcon.classList.remove('icon-close--is-hidden');
+    // restore scroll to body
+    body.classList.remove('no-scroll');
+    // revert back to homeSwitch in the event that you close when the userSwitch is active
+    if (!homeSwitch.classList.contains('tab-switches__item--is-active')) {
+      homeSwitch.classList.add('tab-switches__item--is-active');
+      homeSwitch.setAttribute('aria-pressed', 'true');
+      userSwitch.classList.remove('tab-switches__item--is-active');
+      userSwitch.setAttribute('aria-pressed', 'false');
+      // remove the offset; no need when viewed via user icon
+      jsModalForm.classList.remove('l-modal--top-offset');
+    }
+    // set first el focus state back to false
+    modalFirstFocused = false;
+    // put focus on pre-modal state
+    previousActiveEl.focus();
+  }
+  return {
+    trapFocus: modalTrapFocus,
+    displayMenu: displayModalMenu,
+    displayForm: displayModalForm,
+    switch: switchModal,
+    close: closeModal,
+  };
+}());
 
 function stopSubmission(e) {
   e.preventDefault();
@@ -246,110 +321,59 @@ function validateField(input, message, warningId) {
 }
 
 // basic form validation
-function validateForm(e) {
-  validateField(userName, userNameError, 'js-username-error');
-  validateField(key, keyError, 'js-key-error');
+const validateForm = (function validateFormScope() {
+  const userName = document.getElementById('username');
+  const userNameError = document.getElementById('js-username-error');
+  const key = document.getElementById('key');
+  const keyError = document.getElementById('js-key-error');
 
-  // prevent form from submitting; no server side code
-  e.preventDefault();
-}
+  return (e) => {
+    validateField(userName, userNameError, 'js-username-error');
+    validateField(key, keyError, 'js-key-error');
 
-// display and remove modal on icon clicks outside of hamburger toggler
-function displayModalForm() {
-  // remove scroll from body
-  if (!body.classList.contains('no-scroll')) {
-    body.classList.add('no-scroll');
-  }
-  // display modal
-  jsModalForm.classList.add('l-modal--is-visible');
-  // focus-trap
-  modalTrapFocus(jsModalForm);
-}
+    // prevent form from submitting; no server side code
+    e.preventDefault();
+  };
+}());
 
-function closeModal() {
-  const lModal = document.querySelector('.l-modal--is-visible');
-  // disappear the l-modal and the tabSwitch container
-  lModal.classList.remove('l-modal--is-visible');
-  tabSwitches.classList.remove('tab-switches--is-visible');
-  // restore regular close icon to Kinja in case accessed through icon-user on home page
-  kinjaCloseIcon.classList.remove('icon-close--is-hidden');
-  // restore scroll to body
-  body.classList.remove('no-scroll');
-  // revert back to homeSwitch in the event that you close when the userSwitch is active
-  if (!homeSwitch.classList.contains('tab-switches__item--is-active')) {
-    homeSwitch.classList.add('tab-switches__item--is-active');
-    homeSwitch.setAttribute('aria-pressed', 'true');
-    userSwitch.classList.remove('tab-switches__item--is-active');
-    userSwitch.setAttribute('aria-pressed', 'false');
-    // remove the offset; no need when viewed via user icon
-    jsModalForm.classList.remove('l-modal--top-offset');
-  }
-  // set first el focus state back to false
-  modalFirstFocused = false;
-  // put focus on pre-modal state
-  previousActiveEl.focus();
-}
-
-// clicks on tabSwitches
-function switchModal(e) {
-  if (e.target.classList.contains('tab-switches__item')) {
-    // only change if not currently active
-    if (!e.target.classList.contains('tab-switches__item--is-active')) {
-      // grab activeTab (there can only be one activeTab at a time)
-      const activeTab = tabSwitches.querySelector(
-        '.tab-switches__item--is-active',
-      );
-      // remove active state from activeTab
-      activeTab.classList.remove('tab-switches__item--is-active');
-      // update aria-pressed
-      activeTab.setAttribute('aria-pressed', 'false');
-      // add active background color on newly activated tab
-      e.target.classList.add('tab-switches__item--is-active');
-      e.target.setAttribute('aria-pressed', 'true');
-      // switch modals
-      jsModalMenu.classList.toggle('l-modal--is-visible');
-      jsModalForm.classList.toggle('l-modal--is-visible');
-      jsModalForm.classList.toggle('l-modal--top-offset');
+const toggleSearchBar = (function toggleSearchBarScope() {
+  const svgToggler = searchbar.querySelector('.js-searchbar-svg');
+  const svgUse = svgToggler.querySelector('use');
+  return (e) => {
+    if (!e.target.classList.contains('js-searchbar-toggler')) {
+      return;
     }
-  }
-  // update focusable elements
-  modalTrapFocus(jsModals);
-}
-
-function toggleSearchBar(e) {
-  if (!e.target.classList.contains('js-searchbar-toggler')) {
-    return;
-  }
-  if (svgToggler.classList.contains('icon-search')) {
-    svgToggler.classList.remove('icon-search');
-    svgToggler.classList.add(
-      'icon-close',
-      'icon-close--sm',
-      'icon-close--grey',
-    );
-    svgUse.setAttribute('href', '#icon-close');
-  } else {
-    svgToggler.classList.remove(
-      'icon-close',
-      'icon-close--sm',
-      'icon-close--grey',
-    );
-    svgToggler.classList.add('icon-search');
-    svgUse.setAttribute('href', '#icon-search');
-  }
-  searchbar.classList.toggle('searchbar--is-expanded');
-  updateAriaExpanded(e);
-  // there is an overlay obscuring the menu items, it still shows in some contexts, so disappear it
-  topNavList.classList.toggle('top-nav__list--is-hidden');
-  // if dropdown menu is visible when magnifying glass is clicked, disappear it
-  const dropdown = topNav.querySelector('.dropdown--is-visible');
-  if (dropdown) {
-    dropdown.classList.remove('dropdown--is-visible');
-  }
-}
+    if (svgToggler.classList.contains('icon-search')) {
+      svgToggler.classList.remove('icon-search');
+      svgToggler.classList.add(
+        'icon-close',
+        'icon-close--sm',
+        'icon-close--grey',
+      );
+      svgUse.setAttribute('href', '#icon-close');
+    } else {
+      svgToggler.classList.remove(
+        'icon-close',
+        'icon-close--sm',
+        'icon-close--grey',
+      );
+      svgToggler.classList.add('icon-search');
+      svgUse.setAttribute('href', '#icon-search');
+    }
+    searchbar.classList.toggle('searchbar--is-expanded');
+    updateAriaExpanded(e);
+    // there is an overlay obscuring the menu items,
+    // but it still shows in some contexts, so disappear it
+    topNavList.classList.toggle('top-nav__list--is-hidden');
+    // if dropdown menu is visible when magnifying glass is clicked, disappear it
+    const dropdownContainer = topNav.querySelector('.dropdown--is-visible');
+    if (dropdownContainer) {
+      dropdownContainer.classList.remove('dropdown--is-visible');
+    }
+  };
+}());
 
 const reelTransition = (function reelTransitionScope() {
-  // private variables
   const reelArticles = document.querySelector('.js-reel-articles');
   const thumbnails = document.querySelectorAll('.reel-story__thumbnail-item');
   const reelStories = document.querySelectorAll('.reel-story');
@@ -388,6 +412,7 @@ const reelTransition = (function reelTransitionScope() {
             'j-progress-bar__fill--is-active',
           );
           // void offsetWidth in order to restart animation
+          // eslint-disable-next-line no-void
           void progressBarFills[i].offsetWidth;
         }
       }
@@ -512,20 +537,20 @@ const deployScrollNavThrottled = throttle(deployScrollNav, 120);
 // hovers over first top nav item
 topNav
   .querySelector('.top-nav__item:first-child')
-  .addEventListener('mouseover', delineateSearchbar);
+  .addEventListener('mouseover', dropdown.delineate);
 topNav
   .querySelector('.top-nav__item:first-child')
-  .addEventListener('mouseout', delineateSearchbar);
+  .addEventListener('mouseout', dropdown.delineate);
 
 // focusing out of dropdown menu
-  topNavList.addEventListener('focusin', focusOutDropdown);
-  
+topNavList.addEventListener('focusin', dropdown.focusOut);
+
 // clicks on hamburger menu
-hamburgerMenu.addEventListener('click', expandModalMenu);
-hamburgerMenu2.addEventListener('click', expandModalMenu);
+hamburgerMenu.addEventListener('click', modal.displayMenu);
+hamburgerMenu2.addEventListener('click', modal.displayMenu);
 
 // update aria-expanded on dropdown menu
-topNav.addEventListener('click', toggleDropdown);
+topNav.addEventListener('click', dropdown.toggle);
 
 // clicks on magnifying glass and x
 searchbar.addEventListener('click', toggleSearchBar);
@@ -534,31 +559,29 @@ searchbar.addEventListener('click', toggleSearchBar);
 newsletter.addEventListener('click', updateAriaCheckbox);
 
 // clicks on user icon
-userIcon.addEventListener('click', displayModalForm);
+userIcon.addEventListener('click', modal.displayForm);
 
 // clicks on close icon
 jsModals.addEventListener('click', (e) => {
   if (!e.target.classList.contains('js-icon-close')) {
     return;
   }
-  closeModal(e);
+  modal.close(e);
 });
 
 // close modal on esc press
 jsModals.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    closeModal();
+    modal.close();
   }
 });
 
 // clicks on tab-switches
-tabSwitches.addEventListener('click', switchModal);
+tabSwitches.addEventListener('click', modal.switch);
 
 // mouse over reel article thumbnails
 reelStoryNav.addEventListener('mouseover', reelTransition.hoverIn);
 reelStoryNav.addEventListener('mouseout', reelTransition.hoverOut);
-reelStoryNav.addEventListener('focusin', reelTransition.hoverIn);
-reelStoryNav.addEventListener('focusout', reelTransition.hoverIn);
 
 // submits on Kinja form
 login.addEventListener('submit', validateForm);
