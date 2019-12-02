@@ -1,5 +1,5 @@
 # theShallot
-The Shallot is a humorously fictitious news media webpage I wrote in the vein of [The Onion](https://www.theonion.com/).
+The Shallot is a humorously fictitious news media webpage I created in the vein of [The Onion](https://www.theonion.com/).
 
 ![The Shallot animated demo](demo/demo.gif)
 
