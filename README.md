@@ -12,7 +12,7 @@ The Shallot is a humorously fictitious news media webpage I created in the vein 
 * [Acknowledgements](#acknowledgements)
 
 ## Demo
-[Watch video demo](https://youtu.be/Igac3Qn17LA).
+[Watch silent video demo](https://youtu.be/Igac3Qn17LA).
 
 [Interact with demo](https://y2j964.github.io/theShallot/).
 
